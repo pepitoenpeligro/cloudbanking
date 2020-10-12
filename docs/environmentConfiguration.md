@@ -23,4 +23,4 @@
 Three repositories have been created for the management of the subject:
 * https://github.com/pepitoenpeligro/CC-20-21
 * https://github.com/pepitoenpeligro/CC-Ejercicios
-* https://github.com/pepitoenpeligro/CC-Proyecto
+* https://github.com/pepitoenpeligro/CC-Project
