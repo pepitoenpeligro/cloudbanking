@@ -2,7 +2,8 @@
 # Environment Configuration - Lab 7/10/2020
 
 ## Github Profile Config
-![Profile Config](https://github.com/pepitoenpeligro/CC-Ejercicios/blob/master/main/docs/img/profile-config.png)
+
+![Profile Config](https://github.com/pepitoenpeligro/CC-Project/blob/master/main/docs/img/profile-config.png)
 
 ## Git Global Config
 
@@ -11,14 +12,14 @@
 
 ## Two Factor Authentication
 
-![Two Factor Authentication Enabled](https://github.com/pepitoenpeligro/CC-Ejercicios/blob/master/main/docs/img/two-factor-auth-enabled.png)
+![Two Factor Authentication Enabled](https://github.com/pepitoenpeligro/CC-Project/blob/master/main/docs/img/two-factor-auth-enabled.png)
 
 
 ## Adding SSH-Key
 
-![Adding SSH-Key](https://github.com/pepitoenpeligro/CC-Ejercicios/blob/master/main/docs/img/ssh-key-add.png)
+![Adding SSH-Key](https://github.com/pepitoenpeligro/CC-Project/blob/master/main/docs/img/ssh-key-add.png)
 
-![SSH-Key Added](https://github.com/pepitoenpeligro/CC-Ejercicios/blob/master/main/docs/img/ssh-key-added.png)
+![SSH-Key Added](https://github.com/pepitoenpeligro/CC-Project/blob/master/main/docs/img/ssh-key-added.png)
 
 
 
