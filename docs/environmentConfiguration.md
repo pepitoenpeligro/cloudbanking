@@ -1,7 +1,7 @@
 
 # Environment Configuration - Lab 7/10/2020
 
-## Github Profile Config
+## Github Profile Config
 
 ![Profile Config](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/img/profile-config.png)
 
