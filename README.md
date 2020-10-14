@@ -11,7 +11,7 @@ In this way, the platform would be the main entry point for clients to manage al
 
 ## Initial description
 
-An initial description of the project can be found here: [Initial Configuration](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/index.md)
+An initial description of the project can be found here: [Initial Configuration](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/environmentConfiguration.md)
 
 
 ## Interesting additional documentation 
