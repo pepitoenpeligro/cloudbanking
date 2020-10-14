@@ -1,4 +1,4 @@
-# PepitoBanking
+# PepitoBanking Initial Description
 
 El problema a resolver con este proyecto es el de la gestión y operación bancaria de diferentes cuentas bancarias, depósitos y tarjetas bancarias. La idea principal es que un cliente que posea múltiples productos financieros en entidades diferentes, puedan consultar, gestionar y operar desde una única plataforma.
 
@@ -9,10 +9,10 @@ En una descripción inicial de la funcionalidad, la plataforma debería de ser c
 * Añadir un depósito o fondo de inversión.
 * Explorar el estado de sus productos {cuenta bancaria, tarjetas y depósitos}
 * Configurar alertas sobre sus productos (aviso de compras con tarjetas, aviso de adeudos con cuenta...)
-* 
 
 
-## Arquitectura
+## Arquitectura
+
 
 ### Arquitectura Software 
 
