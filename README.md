@@ -7,10 +7,15 @@ The aim is to be able to take advantage of the platform to make split payments o
 In this way, the platform would be the main entry point for clients to manage all their finances
 
 
-## Basic configuration to start
 
-We can find the steps followed in the configuration of git and GitHub.
 
 ## Initial description
 
-An initial description of the project can be found here: [](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/index.md)
+An initial description of the project can be found here: [Initial Configuration](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/index.md)
+
+
+## Interesting additional documentation 
+
+### 
+
+We can find the steps followed in the configuration of git and GitHub in [Initial Project Setup, Git and GitHub](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/index.md)
