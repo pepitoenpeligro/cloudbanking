@@ -5,12 +5,12 @@
 
 ![Profile Config](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/img/profile-config.png)
 
-## Git Global Config
+## Git Global Config
 
 ![Git Config](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/img/git-config.png)
 
 
-## Two Factor Authentication
+## Two Factor Authentication
 
 ![Two Factor Authentication Enabled](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/img/two-factor-auth-enabled.png)
 
@@ -23,7 +23,8 @@
 
 
 
-## Repositories 
+
+## Repositories 
 
 Three repositories have been created for the management of the subject:
 * https://github.com/pepitoenpeligro/CC-20-21

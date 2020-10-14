@@ -4,7 +4,7 @@ The problem to be solved with this project is the management and operation of di
 
 The aim is to be able to take advantage of the platform to make split payments or shared savings, so that platform users can form groups of customers among whom they can share the weight of an operation or create a shared savings space.
 
-In this way, the platform would be the main entry point for clients to manage all their finances
+In this way, the platform would be the main entry point for clients to manage all their finances.
 
 
 
