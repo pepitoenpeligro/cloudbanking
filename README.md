@@ -6,7 +6,7 @@ The aim is to be able to take advantage of the platform to make split payments o
 
 In this way, the platform would be the main entry point for clients to manage all their finances.
 
-
+:warning: **The development of the project is under construction**
 
 
 ## Initial description
