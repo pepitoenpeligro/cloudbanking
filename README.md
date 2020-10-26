@@ -46,6 +46,8 @@ The list of tasks and the status of the project can be found at [Project Plan](h
   -  [(HU14) Create account - register user](https://github.com/pepitoenpeligro/CloudBanking/issues/26)
   -  [(HU15) Loggin user](https://github.com/pepitoenpeligro/CloudBanking/issues/27)
   -  [(HU16) Erase Account](https://github.com/pepitoenpeligro/CloudBanking/issues/28)
+  -  [(H17) Disable account](https://github.com/pepitoenpeligro/CloudBanking/issues/29)
+  -  [(H18) Enable disabled account](https://github.com/pepitoenpeligro/CloudBanking/issues/30)
 
 ## References :books:
 * [Rust](https://www.rust-lang.org)
