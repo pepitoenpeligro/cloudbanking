@@ -84,6 +84,10 @@ As a message queue system we will use 'RabbitMQ'.
 As a log system we will use `logs4rs`
 
 
+### Virtual environment
+
+
+
 ## References
 * [warp](https://github.com/seanmonstar/warp)
 * [serde](https://github.com/serde-rs/serde)
@@ -94,3 +98,4 @@ As a log system we will use `logs4rs`
 * [MongoDB](https://www.mongodb.com/)
 * [Rabbit MQ](https://www.rabbitmq.com)
 * [logs4rs](https://crates.io/crates/log4rs)
+* [rustenv](https://pypi.org/project/rustenv/)
