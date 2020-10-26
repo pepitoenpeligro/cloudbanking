@@ -65,9 +65,32 @@ As far as I know its use, integration and deployment.
 The default version control system for `Rust` is `git`. I have used `git` before and also its competitors as `subversion` or `mercurial`. I see more scope for the project as a programmer using git.
 
 
+### Task tool and dependency manager
+
+As a project dependency manager we are going to use 'load' which is the default utility of Rust.
+As a task manager we are going to use 'task
+
+### Project environment configuration
+
+To configure project environment variables we are going to use `std::env`. A standard library to manage `.env` files.
+
+### Message System
+
+As a message queue system we will use 'RabbitMQ'. 
+
+
+### Log system
+
+As a log system we will use `logs4rs`
 
 
 ## References
 * [warp](https://github.com/seanmonstar/warp)
 * [serde](https://github.com/serde-rs/serde)
 * [parking_lot](https://github.com/Amanieu/parking_lot)
+* [cargo](https://crates.io/cargo)
+* [rtask](https://github.com/the-kenny/rtask)
+* [environment](https://doc.rust-lang.org/std/env/index.html)
+* [MongoDB](https://www.mongodb.com/)
+* [Rabbit MQ](https://www.rabbitmq.com)
+* [logs4rs](https://crates.io/crates/log4rs)
