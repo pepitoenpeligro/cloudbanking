@@ -15,6 +15,7 @@ The list of tasks and the status of the project can be found at [Project Plan](h
 
 
 
+## Milestones and issues covered
 
 
 ## References :books:
