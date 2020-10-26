@@ -18,6 +18,43 @@
 :bookmark_tabs: The list of tasks and the status of the project can be found at [Project Plan](https://github.com/pepitoenpeligro/CloudBanking/projects/1)
 
 
+## Basic Structure 
+
+
+```bash
+src
+├── bankaccount
+│   ├── mod.rs
+│   └── model.rs
+├── bankcard
+│   ├── mod.rs
+│   └── model.rs
+├── bankfund
+│   ├── mod.rs
+│   └── model.rs
+├── controller
+│   ├── mod.rs
+│   └── model.rs
+├── main.rs
+├── paymentgroup
+│   ├── mod.rs
+│   └── model.rs
+├── savinggroup
+│   ├── mod.rs
+│   └── model.rs
+└── user
+    ├── mod.rs
+    └── model.rs
+```
+
+:surfer: The project can __be compiled__ without errors
+
+
+```
+cargo build
+cargo run
+```
+
 
 ## Milestones and issues covered :wrench:
 * [Milestone 0](https://github.com/pepitoenpeligro/CloudBanking/milestone/1)
