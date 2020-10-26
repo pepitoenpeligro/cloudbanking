@@ -1,5 +1,6 @@
 .DS_Store
 Cargo.toml
+Cargo.lock
 # Added by cargo
 /list
 /target
