@@ -5,7 +5,7 @@
 
 The description of the problem can be found in [Problem-Description](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/problem-description.md)
 
-A technological feasibility study of the project can be consulted at [Feasibility Study](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/feasibility-study.md)
+A technological feasibility study and the argument of the technologies finally proposed to be used in the project can be consulted at [Feasibility Study](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/feasibility-study.md)
 
 Initial Setup of Git and GitHub [Initial Configuration](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/environmentConfiguration.md)
 
