@@ -18,8 +18,7 @@
 :bookmark_tabs: The list of tasks and the status of the project can be found at [Project Plan](https://github.com/pepitoenpeligro/CloudBanking/projects/1)
 
 
-## Basic Structure 
-
+## Basic Structure 
 
 ```bash
 src
