@@ -2,7 +2,7 @@
 
 
 
-## Theory Introduction to Microservice Architecture.
+## Theory Introduction to Microservice Architecture.
 
 The objective of this section is to motivate the use of an architecture based on microservices.
 
@@ -34,12 +34,12 @@ Not everything is a microservice. You have to know how to detect what a microser
 4. __Integration tests__ are more complex when we have to take into account each and every one of the microservices that provide the software system.
 
 
-## Proposed design
+
+## Proposed design
+
 
 Proposed microservices:
 * Authentication microservice.
 * Microservice for collecting statistics.
 * Product catalog microservice (accounts, cards, deposits and common user savings accounts).
 * Notification microservice (e-mails, push).
-
-
