@@ -89,6 +89,9 @@ As a log system we will use `logs4rs`
 As a virtual environment system we will use 'rustenv`
 
 
+### Test 
+We will use `Test Driven Development` with `cargo test` like test-executor and built-in functions of Rust. 
+
 ## References
 * [warp](https://github.com/seanmonstar/warp)
 * [serde](https://github.com/serde-rs/serde)
@@ -100,3 +103,4 @@ As a virtual environment system we will use 'rustenv`
 * [Rabbit MQ](https://www.rabbitmq.com)
 * [logs4rs](https://crates.io/crates/log4rs)
 * [rustenv](https://pypi.org/project/rustenv/)
+* [tdd](https://carol-nichols.com/2015/03/28/tdd-example-in-rust/)
