@@ -1,4 +1,4 @@
-# Cloud Banking
+# Cloud Banking :euro:
 
 :warning: **The development of the project is under construction**
 
@@ -15,7 +15,7 @@ The list of tasks and the status of the project can be found at [Project Plan](h
 
 
 
-## Milestones and issues covered
+## Milestones and issues covered :wrench:
 * [Milestone 0](https://github.com/pepitoenpeligro/CloudBanking/milestone/1)
   - [Create Readme.md](https://github.com/pepitoenpeligro/CloudBanking/issues/1)
   - [Create .gitignore](https://github.com/pepitoenpeligro/CloudBanking/issues/2)
