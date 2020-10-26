@@ -20,7 +20,7 @@ The list of tasks and the status of the project can be found at [Project Plan](h
   - [Create Readme.md](https://github.com/pepitoenpeligro/CloudBanking/issues/1)
   - [Create .gitignore](https://github.com/pepitoenpeligro/CloudBanking/issues/2)
   - [Create documentation directory](https://github.com/pepitoenpeligro/CloudBanking/issues/3)
-  -   - [Fill documentation with design of the project and technologies to use](https://github.com/pepitoenpeligro/CloudBanking/issues/4)
+  - [Fill documentation with design of the project and technologies to use](https://github.com/pepitoenpeligro/CloudBanking/issues/4)
   - [Adding License GPLv3](https://github.com/pepitoenpeligro/CloudBanking/issues/6)
   - [Justify Environment Configuration](https://github.com/pepitoenpeligro/CloudBanking/issues/7)
   - [Re-try Milestone 0](https://github.com/pepitoenpeligro/CloudBanking/issues/8)
