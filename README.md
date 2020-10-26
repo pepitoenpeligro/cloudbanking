@@ -15,8 +15,21 @@ The list of tasks and the status of the project can be found at [Project Plan](h
 
 
 
-## Milestones and issues covered
-
+## Milestones and issues covered
+* [Milestone 0](https://github.com/pepitoenpeligro/CloudBanking/milestone/1)
+  - [Create Readme.md](https://github.com/pepitoenpeligro/CloudBanking/issues/1)
+  - [Create .gitignore](https://github.com/pepitoenpeligro/CloudBanking/issues/2)
+  - [Create documentation directory](https://github.com/pepitoenpeligro/CloudBanking/issues/3)
+  -   - [Fill documentation with design of the project and technologies to use](https://github.com/pepitoenpeligro/CloudBanking/issues/4)
+  - [Adding License GPLv3](https://github.com/pepitoenpeligro/CloudBanking/issues/6)
+  - [Justify Environment Configuration](https://github.com/pepitoenpeligro/CloudBanking/issues/7)
+  - [Re-try Milestone 0](https://github.com/pepitoenpeligro/CloudBanking/issues/8)
+* [Milestone 1](https://github.com/pepitoenpeligro/CloudBanking/milestone/2)
+  - [Technology feasibility study](https://github.com/pepitoenpeligro/CloudBanking/issues/9)
+  - [Change Name from CC-Project to CloudBanking and re-describe problem to solve](https://github.com/pepitoenpeligro/CloudBanking/issues/10)
+  - [Architecture description](https://github.com/pepitoenpeligro/CloudBanking/issues/11)
+  - [Milestones and Issues description involved in this project](https://github.com/pepitoenpeligro/CloudBanking/issues/12)
+* [User-Stories (HU)](https://github.com/pepitoenpeligro/CloudBanking/milestone/3)
 
 ## References :books:
 * [Rust](https://www.rust-lang.org)
