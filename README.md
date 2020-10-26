@@ -11,6 +11,8 @@
 
 :factory: A description of the architecture can be found at [Architecture Description](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/tecnology-architecture-description.md)
 
+:rocket: A initial setup of project in Rust can be found at [Project Rust Init](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/project-rust-setup.md)
+
 :hammer: Initial Setup of Git and GitHub [Initial Configuration](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/environmentConfiguration.md)
 
 :bookmark_tabs: The list of tasks and the status of the project can be found at [Project Plan](https://github.com/pepitoenpeligro/CloudBanking/projects/1)

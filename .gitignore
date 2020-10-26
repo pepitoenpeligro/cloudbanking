@@ -1,2 +1,5 @@
 .DS_Store
-
+Cargo.toml
+# Added by cargo
+/list
+/target
