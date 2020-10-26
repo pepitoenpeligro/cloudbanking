@@ -5,15 +5,15 @@
 :warning: **The development of the project is under construction**
 
 
-The description of the problem can be found in [Problem-Description](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/problem-description.md)
+:mag_right: The description of the problem can be found in [Problem-Description](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/problem-description.md)
 
-A technological feasibility study and the argument of the technologies finally proposed to be used in the project can be consulted at [Feasibility Study](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/feasibility-study.md)
+:factory: A technological feasibility study and the argument of the technologies finally proposed to be used in the project can be consulted at [Feasibility Study](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/feasibility-study.md)
 
-A description of the architecture can be found at [Architecture Description](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/tecnology-architecture.md)
+:factory: A description of the architecture can be found at [Architecture Description](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/tecnology-architecture.md)
 
-Initial Setup of Git and GitHub [Initial Configuration](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/environmentConfiguration.md)
+:hammer: Initial Setup of Git and GitHub [Initial Configuration](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/environmentConfiguration.md)
 
-The list of tasks and the status of the project can be found at [Project Plan](https://github.com/pepitoenpeligro/CloudBanking/projects/1)
+:bookmark_tabs The list of tasks and the status of the project can be found at [Project Plan](https://github.com/pepitoenpeligro/CloudBanking/projects/1)
 
 
 
