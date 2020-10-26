@@ -86,6 +86,7 @@ As a log system we will use `logs4rs`
 
 ### Virtual environment
 
+As a virtual environment system we will use 'rustenv`
 
 
 ## References
