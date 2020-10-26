@@ -9,7 +9,7 @@
 
 :checkered_flag: A technological feasibility study and the argument of the technologies finally proposed to be used in the project can be consulted at [Feasibility Study](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/feasibility-study.md)
 
-:factory: A description of the architecture can be found at [Architecture Description](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/tecnology-architecture.md)
+:factory: A description of the architecture can be found at [Architecture Description](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/tecnology-architecture-description.md)
 
 :hammer: Initial Setup of Git and GitHub [Initial Configuration](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/environmentConfiguration.md)
 

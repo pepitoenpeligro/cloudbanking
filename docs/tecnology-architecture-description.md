@@ -37,7 +37,6 @@ Not everything is a microservice. You have to know how to detect what a microser
 
 ## Proposed design
 
-
 Proposed microservices:
 * Authentication microservice.
 * Microservice for collecting statistics.
