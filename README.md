@@ -5,9 +5,9 @@
 
 The description of the problem can be found in [Problem-Description](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/problem-description.md)
 
+A technological feasibility study of the project can be consulted at [Feasibility Study](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/feasibility-study.md)
 
 The list of tasks and the status of the project can be found at [Project Plan](https://github.com/pepitoenpeligro/CloudBanking/projects/1)
-
 
 
 
