@@ -1,4 +1,3 @@
----
 entidad:
  - src/bankaccount/model.rs
  - src/bankcard/model.rs
