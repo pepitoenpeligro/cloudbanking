@@ -26,5 +26,5 @@ fn main() {
     let p: Paymentgroup;
     let controller: CloudBankingController;
 
-    println!("Welcome to Cloud Banking");
+    println!("Welcome to Cloud Banking {user, account, card, fund, savinggroup, paymentgroup, and cloudbankingcontroller are created");
 }
