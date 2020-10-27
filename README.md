@@ -1,6 +1,6 @@
 # Cloud Banking :euro:
 
-![icon](https://github.com/pepitoenpeligro/CloudBanking/blob/master/docs/img/icon.png)
+![icon](https://github.com/pepitoenpeligro/CloudBanking/blob/master/docs/img/icon.png?raw=true)
 
 
 :warning: **The development of the project is under construction**
