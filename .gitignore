@@ -3,3 +3,5 @@ Cargo.lock
 # Added by cargo
 /list
 /target
+.metals
+.vscode
