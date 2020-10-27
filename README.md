@@ -109,6 +109,13 @@ In a __third phase__ it would be ideal to be able to carry out a minimal managem
 * [(H17) Disable account](https://github.com/pepitoenpeligro/CloudBanking/issues/29)
 * [(H18) Enable disabled account](https://github.com/pepitoenpeligro/CloudBanking/issues/30)
 
+In a __fourth phase__ of development it would be necessary to enable the ability to remove financial products from the user account, thus covering the following user stories
+* [(HU4) Delete bank account as customer user user-stories](https://github.com/pepitoenpeligro/CloudBanking/issues/16)
+* [(HU5) Delete bank card as customer user user-stories](https://github.com/pepitoenpeligro/CloudBanking/issues/17)
+* [(HU6) Delete fund investment as customer user user-stories](https://github.com/pepitoenpeligro/CloudBanking/issues/18)
+* [(HU8) Exit from saving-group user-stories](https://github.com/pepitoenpeligro/CloudBanking/issues/20)
+* [(HU10) Exit from payment-group](https://github.com/pepitoenpeligro/CloudBanking/issues/22)
+
 
 ## References :books:
 * [Rust](https://www.rust-lang.org)
