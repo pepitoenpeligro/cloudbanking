@@ -1,4 +1,0 @@
-2020.10.26 23:52:16 INFO  started: Metals version 0.9.4 in workspace '/Users/pp/Google Drive/mii/1/CC/repos/CloudBanking' for client vscode.
-2020.10.26 23:52:18 INFO  time: initialize in 2.25s
-2020.10.26 23:52:19 WARN  no build tool detected in workspace '/Users/pp/Google Drive/mii/1/CC/repos/CloudBanking'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
-2020.10.26 23:58:01 INFO  shutting down Metals
