@@ -116,6 +116,11 @@ In a __fourth phase__ of development it would be necessary to enable the ability
 * [(HU8) Exit from saving-group user-stories](https://github.com/pepitoenpeligro/CloudBanking/issues/20)
 * [(HU10) Exit from payment-group](https://github.com/pepitoenpeligro/CloudBanking/issues/22)
 
+In a __fifth phase__ of development it would be ideal to implement the functionalities related to the creation of alerts on financial products.
+* [(HU11) Create alert-trigger for bank-account movement user-stories](https://github.com/pepitoenpeligro/CloudBanking/issues/23)
+* [(HU12) Create alert-trigger for bank-card movement](https://github.com/pepitoenpeligro/CloudBanking/issues/24)
+* [(HU13) Create alert-trigger for fund investment movement](https://github.com/pepitoenpeligro/CloudBanking/issues/25)
+
 
 ## References :books:
 * [Rust](https://www.rust-lang.org)
