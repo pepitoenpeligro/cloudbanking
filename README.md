@@ -92,6 +92,24 @@ cargo run
   -  [(H17) Disable account](https://github.com/pepitoenpeligro/CloudBanking/issues/29)
   -  [(H18) Enable disabled account](https://github.com/pepitoenpeligro/CloudBanking/issues/30)
 
+
+## Roadmap
+
+In a __first phase__ I want to achieve a minimum viable product. In a first phase I want to achieve a minimum viable product like: __bank account__ and __bank card__ .On the other hand, we should be able to create an account as a client user and be able to log in.
+* [(HU1) Add bank account as customer user user-stories](https://github.com/pepitoenpeligro/CloudBanking/issues/13)
+* [(HU2) Add bank-card as customer user](https://github.com/pepitoenpeligro/CloudBanking/issues/14)
+* [(HU14) Create account - register user](https://github.com/pepitoenpeligro/CloudBanking/issues/26)
+
+In a __second phase__, I would develop additional functionalities with non-core entities such as __fund investment__, __payment group__ and __saving group__. 
+* [(HU3) Add investment fund as customer user](https://github.com/pepitoenpeligro/CloudBanking/issues/15)
+* [(HU7) Create saving-group user-stories](https://github.com/pepitoenpeligro/CloudBanking/issues/19)
+* [(HU9) Create a payment-group user-stories](https://github.com/pepitoenpeligro/CloudBanking/issues/21)
+
+In a __third phase__ it would be ideal to be able to carry out a minimal management with an administrator user. So the following user stories would be covered:
+* [(H17) Disable account](https://github.com/pepitoenpeligro/CloudBanking/issues/29)
+* [(H18) Enable disabled account](https://github.com/pepitoenpeligro/CloudBanking/issues/30)
+
+
 ## References :books:
 * [Rust](https://www.rust-lang.org)
 * [warp](https://github.com/seanmonstar/warp)
