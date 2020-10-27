@@ -123,6 +123,8 @@ In a __fifth phase__ of development it would be ideal to implement the functiona
 * [(HU12) Create alert-trigger for bank-card movement](https://github.com/pepitoenpeligro/CloudBanking/issues/24)
 * [(HU13) Create alert-trigger for fund investment movement](https://github.com/pepitoenpeligro/CloudBanking/issues/25)
 
+The implementation of the respective __system logs__ would be transversal to the whole project
+
 
 ## References :books:
 * [Rust](https://www.rust-lang.org)
