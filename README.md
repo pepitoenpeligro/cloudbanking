@@ -6,7 +6,7 @@
 :warning: **The development of the project is under construction**
 
 
-:bookmark_tabs: Source Code Documentation of this proyect is available in [CloudBankingDocs](https://github.com/pepitoenpeligro/CloudBanking/blob/master/docs/documentation/CloudBanking/index.html)
+:bookmark_tabs: Source Code Documentation of this proyect is available in [CloudBankingDocs](https://htmlpreview.github.io/?https://github.com/pepitoenpeligro/CloudBanking/blob/master/docs/documentation/CloudBanking/index.html)
 
 :mag_right: The description of the problem can be found in [Problem-Description](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/problem-description.md)
 
