@@ -43,49 +43,49 @@ impl Account{
         }
     }
 
-    // Getter (inmutable) for id private attribute.
+    /// Getter (inmutable) for id private attribute.
     pub fn get_id(&self) -> &String{
         &self.id
     }
 
-    // Getter (inmutable) for swift private attribute.
+    /// Getter (inmutable) for swift private attribute.
     pub fn get_swift(&self) -> &String{
         &self.swift
     }
 
-    // Getter (inmutable) for iban private attribute.
+    /// Getter (inmutable) for iban private attribute.
     pub fn get_iban(&self) -> &String{
         &self.iban
     }
 
-    // Getter (inmutable) for created_at private attribute.
-    pub fn get_date(&self) -> &String{
+    /// Getter (inmutable) for created_at private attribute.
+    pub fn get_date(&self) -> &NaiveDateTime{
         &self.created_at
     }
 
-    // Getter (inmutable) for status private attribute.
-    pub fn get_status(&self) -> &String{
+    /// Getter (inmutable) for status private attribute.
+    pub fn get_status(&self) -> &bool{
         &self.status
     }
 
-    // Enables an account
-    fn enable(){
+    /// Enables an account
+    fn enable(&mut self) -> (){
         self.status = true
     }
 
-    // Disables an account
-    fn disable(){
+    /// Disables an account
+    fn disable(&mut self) -> (){
         self.status = false
     }
 
-    // The to_json method allows to account to produce it own JSON serialization
+    /// The to_json method allows to account to produce it own JSON serialization
     pub fn to_json(&self)->String {
         serde_json::to_string_pretty(&self).unwrap()
     }
 }
 
 
- // The fmt method allows display all atributes of an Account
+/// The fmt method allows display all atributes of an Account
 impl fmt::Display for Account{
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "({}, {}, {}, {}, {})", self.id, self.swift, self.iban, self.created_at, self.status)
