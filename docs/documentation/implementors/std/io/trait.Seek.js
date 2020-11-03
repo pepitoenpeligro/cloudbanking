@@ -1,0 +1,4 @@
+(function() {var implementors = {};
+implementors["buf_redux"] = [{"text":"impl&lt;R:&nbsp;Seek, P:&nbsp;ReaderPolicy&gt; Seek for BufReader&lt;R, P&gt;","synthetic":false,"types":[]},{"text":"impl&lt;W:&nbsp;Write + Seek, P:&nbsp;WriterPolicy&gt; Seek for BufWriter&lt;W, P&gt;","synthetic":false,"types":[]}];
+implementors["tempfile"] = [{"text":"impl Seek for NamedTempFile","synthetic":false,"types":[]},{"text":"impl&lt;'a&gt; Seek for &amp;'a NamedTempFile","synthetic":false,"types":[]},{"text":"impl Seek for SpooledTempFile","synthetic":false,"types":[]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()
