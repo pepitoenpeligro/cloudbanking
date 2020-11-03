@@ -8,16 +8,26 @@ use serde::{Serialize,Deserialize};
 /// Bank Account model
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Account{
+    /// Identification of account, it should be an identification intern of app that it's consistent with database identificator
     id: String,
+
+    /// International bank code that identifies (worldwide) tha bank associated to account (better than BIC)
+    /// Example of Swift: BSCHESMMXXX
     swift: String,
+
+    /// International Bank Account Number only for Europe.
+    /// Example of IBAN: ES32 6688 05 1111222233344
     iban:String,
+
+    /// Timestamp. Represent timestamp which account was added in our application. For statisticals use.
     created_at: NaiveDateTime,
+
+    /// Status of account. User can disable an account for not operating (not interesting account)
     status: bool,
 }
 
 
 impl Account{
-
     /// Allocates a Account object and initializes it so that it represent the bankaccount needed.
     /// # Usage
     /// ```
@@ -34,17 +44,38 @@ impl Account{
     }
 
     // Getter (inmutable) for id private attribute.
-    pub fn id(&self) -> &String{
+    pub fn get_id(&self) -> &String{
         &self.id
     }
 
-
-    fn enable(){
-
+    // Getter (inmutable) for swift private attribute.
+    pub fn get_swift(&self) -> &String{
+        &self.swift
     }
 
-    fn disable(){
+    // Getter (inmutable) for iban private attribute.
+    pub fn get_iban(&self) -> &String{
+        &self.iban
+    }
 
+    // Getter (inmutable) for created_at private attribute.
+    pub fn get_date(&self) -> &String{
+        &self.created_at
+    }
+
+    // Getter (inmutable) for status private attribute.
+    pub fn get_status(&self) -> &String{
+        &self.status
+    }
+
+    // Enables an account
+    fn enable(){
+        self.status = true
+    }
+
+    // Disables an account
+    fn disable(){
+        self.status = false
     }
 
     // The to_json method allows to account to produce it own JSON serialization
@@ -54,8 +85,9 @@ impl Account{
 }
 
 
+ // The fmt method allows display all atributes of an Account
 impl fmt::Display for Account{
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "({}, {})", self.id, self.swift)
+        write!(f, "({}, {}, {}, {}, {})", self.id, self.swift, self.iban, self.created_at, self.status)
     }
 }
