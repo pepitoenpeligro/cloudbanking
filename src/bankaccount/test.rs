@@ -1,12 +1,9 @@
-use crate::bankaccount::model::{Account};
-use chrono::{NaiveDate, NaiveDateTime};
-use crate::utils::model::{Lib};
-
-
 #[cfg(test)]
 /// Test for Bankaccount
 mod test_bankaccount{
-    use super::*;
+
+    use chrono::{NaiveDate, NaiveDateTime};
+    use crate::bankaccount::model::bankaccount::*;
 
     #[test]
     /// Test if ID assignment is correct (inmutable getter - constructor)

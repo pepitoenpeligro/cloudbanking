@@ -1,8 +1,8 @@
 use parking_lot::RwLock;
 use std::sync::Arc;
 
-use crate::user::model::{User};
-use crate::bankaccount::model::{Account};
+use crate::user::model::User::User;
+use crate::bankaccount::model::bankaccount::*;
 use crate::bankcard::model::{Card};
 use crate::bankfund::model::{Fund};
 use crate::savinggroup::model::{Savinggroup};

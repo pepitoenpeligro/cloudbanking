@@ -10,8 +10,10 @@ mod utils;
 use chrono::{NaiveDate, NaiveDateTime};
 extern crate serde_json;
 
+
+
 use crate::user::model::User;
-use crate::bankaccount::model::{Account};
+use crate::bankaccount::model::bankaccount::*;
 use crate::bankcard::model::{Card};
 use crate::bankfund::model::{Fund};
 use crate::savinggroup::model::{Savinggroup};
@@ -22,7 +24,7 @@ use crate::controller::model::{CloudBankingController};
 
 
 fn main() {
-    let u: User;
+    // let u: User;
     let a: Account =  Account::new(String::from("0"), String::from("swift"), String::from("iban"), NaiveDate::from_ymd(2020, 7, 8).and_hms(22, 18, 0), true);
     let c: Card;
     let f: Fund;
