@@ -5,6 +5,8 @@ mod bankfund;
 mod paymentgroup;
 mod savinggroup;
 mod controller;
+mod utils;
+
 use chrono::{NaiveDate, NaiveDateTime};
 extern crate serde_json;
 

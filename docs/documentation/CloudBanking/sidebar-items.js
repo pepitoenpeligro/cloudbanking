@@ -1,1 +1,1 @@
-initSidebarItems({"fn":[["main",""]],"mod":[["bankaccount",""],["bankcard",""],["bankfund",""],["controller",""],["paymentgroup",""],["savinggroup",""],["user",""]]});
+initSidebarItems({"fn":[["main",""]],"mod":[["bankaccount",""],["bankcard",""],["bankfund",""],["controller",""],["paymentgroup",""],["savinggroup",""],["user",""],["utils",""]]});

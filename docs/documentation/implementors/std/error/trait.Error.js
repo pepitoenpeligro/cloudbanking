@@ -1,4 +1,5 @@
 (function() {var implementors = {};
+implementors["aho_corasick"] = [{"text":"impl Error for Error","synthetic":false,"types":[]}];
 implementors["base64"] = [{"text":"impl Error for DecodeError","synthetic":false,"types":[]}];
 implementors["buf_redux"] = [{"text":"impl&lt;W:&nbsp;Any + Send + Debug&gt; Error for IntoInnerError&lt;W&gt;","synthetic":false,"types":[]}];
 implementors["chrono"] = [{"text":"impl Error for ParseError","synthetic":false,"types":[]},{"text":"impl Error for RoundingError","synthetic":false,"types":[]}];
@@ -19,6 +20,8 @@ implementors["proc_macro2"] = [{"text":"impl Error for LexError","synthetic":fal
 implementors["rand"] = [{"text":"impl Error for WeightedError","synthetic":false,"types":[]}];
 implementors["rand_core"] = [{"text":"impl Error for Error","synthetic":false,"types":[]}];
 implementors["rand_jitter"] = [{"text":"impl Error for TimerError","synthetic":false,"types":[]}];
+implementors["regex"] = [{"text":"impl Error for Error","synthetic":false,"types":[]}];
+implementors["regex_syntax"] = [{"text":"impl Error for Error","synthetic":false,"types":[]},{"text":"impl Error for Error","synthetic":false,"types":[]},{"text":"impl Error for Error","synthetic":false,"types":[]},{"text":"impl Error for CaseFoldError","synthetic":false,"types":[]},{"text":"impl Error for UnicodeWordError","synthetic":false,"types":[]}];
 implementors["serde"] = [{"text":"impl Error for Error","synthetic":false,"types":[]}];
 implementors["serde_json"] = [{"text":"impl Error for Error","synthetic":false,"types":[]}];
 implementors["serde_urlencoded"] = [{"text":"impl Error for Error","synthetic":false,"types":[]}];

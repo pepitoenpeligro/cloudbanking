@@ -7,6 +7,7 @@ implementors["hyper"] = [{"text":"impl FromStr for Name","synthetic":false,"type
 implementors["log"] = [{"text":"impl FromStr for Level","synthetic":false,"types":[]},{"text":"impl FromStr for LevelFilter","synthetic":false,"types":[]}];
 implementors["mime"] = [{"text":"impl FromStr for Mime","synthetic":false,"types":[]}];
 implementors["proc_macro2"] = [{"text":"impl FromStr for TokenStream","synthetic":false,"types":[]}];
+implementors["regex"] = [{"text":"impl FromStr for Regex","synthetic":false,"types":[]},{"text":"impl FromStr for Regex","synthetic":false,"types":[]}];
 implementors["serde_json"] = [{"text":"impl FromStr for Number","synthetic":false,"types":[]},{"text":"impl FromStr for Value","synthetic":false,"types":[]}];
 implementors["tracing_core"] = [{"text":"impl FromStr for Level","synthetic":false,"types":[]},{"text":"impl FromStr for LevelFilter","synthetic":false,"types":[]}];
 implementors["unicase"] = [{"text":"impl&lt;S:&nbsp;FromStr&gt; FromStr for Ascii&lt;S&gt;","synthetic":false,"types":[]},{"text":"impl&lt;S:&nbsp;FromStr + AsRef&lt;str&gt;&gt; FromStr for UniCase&lt;S&gt;","synthetic":false,"types":[]}];

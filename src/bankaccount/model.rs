@@ -1,9 +1,14 @@
 use chrono::{NaiveDate, NaiveDateTime};
 use std::fmt;
+
+extern crate regex;
 use regex::Regex;
+
 extern crate serde;
 extern crate serde_json;
 use serde::{Serialize,Deserialize};
+
+use crate::utils::model::{Lib};
 
 /// Bank Account model
 #[derive(Serialize, Deserialize, Debug)]
@@ -28,7 +33,6 @@ pub struct Account{
 
 //@todo
 // funcion para comprobar un iban valido
-// funcion para comprobar un swift valido
 impl Account{
     /// Allocates a Account object and initializes it so that it represent the bankaccount needed.
     /// # Usage
@@ -73,7 +77,6 @@ impl Account{
         self.iban=new_iban;
         &self.iban
     }
-
 
 
     /// Getter (inmutable) for created_at private attribute.
