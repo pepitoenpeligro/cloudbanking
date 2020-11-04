@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["User",""]]});
+initSidebarItems({"mod":[["User",""]]});

@@ -1,5 +1,5 @@
 (function() {var implementors = {};
-implementors["CloudBanking"] = [{"text":"impl Display for Account","synthetic":false,"types":[]}];
+implementors["CloudBanking"] = [{"text":"impl Display for User","synthetic":false,"types":[]},{"text":"impl Display for Account","synthetic":false,"types":[]}];
 implementors["aho_corasick"] = [{"text":"impl Display for Error","synthetic":false,"types":[]}];
 implementors["base64"] = [{"text":"impl&lt;'a&gt; Display for Base64Display&lt;'a&gt;","synthetic":false,"types":[]},{"text":"impl Display for DecodeError","synthetic":false,"types":[]}];
 implementors["buf_redux"] = [{"text":"impl&lt;W&gt; Display for IntoInnerError&lt;W&gt;","synthetic":false,"types":[]}];

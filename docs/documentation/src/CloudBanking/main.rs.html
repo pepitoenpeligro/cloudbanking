@@ -36,6 +36,8 @@
 <span id="35">35</span>
 <span id="36">36</span>
 <span id="37">37</span>
+<span id="38">38</span>
+<span id="39">39</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="kw">mod</span> <span class="ident">user</span>;
 <span class="kw">mod</span> <span class="ident">bankaccount</span>;
@@ -49,8 +51,10 @@
 <span class="kw">use</span> <span class="ident">chrono</span>::{<span class="ident">NaiveDate</span>, <span class="ident">NaiveDateTime</span>};
 <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">serde_json</span>;
 
+
+
 <span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">user</span>::<span class="ident">model</span>::<span class="ident">User</span>;
-<span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">bankaccount</span>::<span class="ident">model</span>::{<span class="ident">Account</span>};
+<span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">bankaccount</span>::<span class="ident">model</span>::<span class="ident">bankaccount</span>::<span class="kw-2">*</span>;
 <span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">bankcard</span>::<span class="ident">model</span>::{<span class="ident">Card</span>};
 <span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">bankfund</span>::<span class="ident">model</span>::{<span class="ident">Fund</span>};
 <span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">savinggroup</span>::<span class="ident">model</span>::{<span class="ident">Savinggroup</span>};
@@ -61,7 +65,7 @@
 
 
 <span class="kw">fn</span> <span class="ident">main</span>() {
-    <span class="kw">let</span> <span class="ident">u</span>: <span class="ident">User</span>;
+    <span class="comment">// let u: User;</span>
     <span class="kw">let</span> <span class="ident">a</span>: <span class="ident">Account</span> <span class="op">=</span>  <span class="ident">Account</span>::<span class="ident">new</span>(<span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;0&quot;</span>), <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;swift&quot;</span>), <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;iban&quot;</span>), <span class="ident">NaiveDate</span>::<span class="ident">from_ymd</span>(<span class="number">2020</span>, <span class="number">7</span>, <span class="number">8</span>).<span class="ident">and_hms</span>(<span class="number">22</span>, <span class="number">18</span>, <span class="number">0</span>), <span class="bool-val">true</span>);
     <span class="kw">let</span> <span class="ident">c</span>: <span class="ident">Card</span>;
     <span class="kw">let</span> <span class="ident">f</span>: <span class="ident">Fund</span>;

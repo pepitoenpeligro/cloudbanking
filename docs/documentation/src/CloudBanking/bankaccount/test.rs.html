@@ -105,19 +105,13 @@
 <span id="104">104</span>
 <span id="105">105</span>
 <span id="106">106</span>
-<span id="107">107</span>
-<span id="108">108</span>
-<span id="109">109</span>
 </pre><div class="example-wrap"><pre class="rust ">
-<span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">bankaccount</span>::<span class="ident">model</span>::{<span class="ident">Account</span>};
-<span class="kw">use</span> <span class="ident">chrono</span>::{<span class="ident">NaiveDate</span>, <span class="ident">NaiveDateTime</span>};
-<span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">utils</span>::<span class="ident">model</span>::{<span class="ident">Lib</span>};
-
-
 <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">test</span>)]</span>
 <span class="doccomment">/// Test for Bankaccount</span>
 <span class="kw">mod</span> <span class="ident">test_bankaccount</span>{
-    <span class="kw">use</span> <span class="kw">super</span>::<span class="kw-2">*</span>;
+
+    <span class="kw">use</span> <span class="ident">chrono</span>::{<span class="ident">NaiveDate</span>, <span class="ident">NaiveDateTime</span>};
+    <span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">bankaccount</span>::<span class="ident">model</span>::<span class="ident">bankaccount</span>::<span class="kw-2">*</span>;
 
     <span class="attribute">#[<span class="ident">test</span>]</span>
     <span class="doccomment">/// Test if ID assignment is correct (inmutable getter - constructor)</span>
