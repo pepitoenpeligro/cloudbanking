@@ -1,6 +1,6 @@
 use chrono::{NaiveDate, NaiveDateTime};
 use std::fmt;
-
+use regex::Regex;
 extern crate serde;
 extern crate serde_json;
 use serde::{Serialize,Deserialize};
@@ -26,14 +26,16 @@ pub struct Account{
     status: bool,
 }
 
-
+//@todo
+// funcion para comprobar un iban valido
+// funcion para comprobar un swift valido
 impl Account{
     /// Allocates a Account object and initializes it so that it represent the bankaccount needed.
     /// # Usage
     /// ```
     /// let my_account = Account::new(id,swift,iban,date,status)
     /// ```
-    pub fn new(new_id: String, new_swift: String, new_iban: String, new_created_at: NaiveDateTime, new_status: bool) -> Account {
+    pub fn new(new_id: String, new_swift: String, new_iban: String, new_created_at: NaiveDateTime, new_status: bool) ->  Account {
         Account {
             id: new_id,
             swift: new_swift,
@@ -49,7 +51,14 @@ impl Account{
     }
 
     /// Getter (inmutable) for swift private attribute.
+    /// A bank could be fusioned with other bank and change a swift code
     pub fn get_swift(&self) -> &String{
+        &self.swift
+    }
+
+    /// Muttable access for swift private attribute
+    pub fn set_swift(&mut self, new_swift: String) -> &String{
+        self.swift=new_swift;
         &self.swift
     }
 
@@ -57,6 +66,15 @@ impl Account{
     pub fn get_iban(&self) -> &String{
         &self.iban
     }
+
+    /// Muttable access for swift private attribute
+    /// A bank could be fusioned with other bank and change a iban code
+    pub fn set_iban(&mut self, new_iban: String) -> &String{
+        self.iban=new_iban;
+        &self.iban
+    }
+
+
 
     /// Getter (inmutable) for created_at private attribute.
     pub fn get_date(&self) -> &NaiveDateTime{
