@@ -64,7 +64,17 @@ pub mod User{
         }
 
 
-
+        /// Getter (inmutable) for bank_accounts private attribute.
+        pub fn get_bank_accounts(&self) -> &HashMap<String,Account>{
+            &self.bank_accounts
+        }
+        
+    
+        /// Scenario HU1
+        pub fn add_bank_account(&mut self, account: Account) -> usize{
+            &self.bank_accounts.insert(String::from(account.get_id()), account);
+            self.bank_accounts.len()
+        }
 
     
         /// Scenario HU4
