@@ -18,12 +18,30 @@
 <span id="17">17</span>
 <span id="18">18</span>
 <span id="19">19</span>
+<span id="20">20</span>
+<span id="21">21</span>
+<span id="22">22</span>
+<span id="23">23</span>
+<span id="24">24</span>
+<span id="25">25</span>
+<span id="26">26</span>
+<span id="27">27</span>
+<span id="28">28</span>
+<span id="29">29</span>
+<span id="30">30</span>
+<span id="31">31</span>
+<span id="32">32</span>
+<span id="33">33</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">regex</span>;
 <span class="kw">use</span> <span class="ident">regex</span>::<span class="ident">Regex</span>;
 <span class="kw">use</span> <span class="ident">std</span>::<span class="ident">str</span>;
 
-<span class="kw">static</span> <span class="ident">regex_swift</span>: <span class="kw-2">&amp;</span><span class="ident">str</span> <span class="op">=</span> <span class="string">&quot;^[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?$&quot;</span>;
+<span class="doccomment">/// Regular expression patter to check a valid SWIFT code</span>
+<span class="kw">static</span> <span class="ident">REGEX_SWIFT</span>: <span class="kw-2">&amp;</span><span class="ident">str</span> <span class="op">=</span> <span class="string">r&quot;^[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?$&quot;</span>;
+
+<span class="doccomment">/// Regular expression patter to check a valid IBAN code</span>
+<span class="kw">static</span> <span class="ident">REGEX_IBAN</span>: <span class="kw-2">&amp;</span><span class="ident">str</span> <span class="op">=</span> <span class="string">r&quot;([A-Z]{2})\s*\t*(\d\d)\s*\t*(\d\d\d\d)\s*\t*(\d\d\d\d)\s*\t*(\d\d)\s*\t*(\d\d\d\d\d\d\d\d)&quot;</span>;
 
 <span class="kw">pub</span>(<span class="kw">crate</span>) <span class="kw">struct</span> <span class="ident">Lib</span>{
     
@@ -31,10 +49,20 @@
 
 <span class="kw">impl</span> <span class="ident">Lib</span> {
 
-
+    <span class="doccomment">/// Check if an SWIFT is correct or not returning true or false</span>
+    <span class="doccomment">/// Valid swift example: BBVAESMMXXX</span>
+    <span class="doccomment">/// Invalid swift example: BVAEMMX</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">check_swift</span>(<span class="ident">swift</span>: <span class="ident">String</span>) <span class="op">-&gt;</span> <span class="ident">bool</span>{
-        <span class="kw">let</span> <span class="ident">reg_ex</span> <span class="op">=</span> <span class="ident">Regex</span>::<span class="ident">new</span>(<span class="ident">regex_swift</span>).<span class="ident">unwrap</span>();
+        <span class="kw">let</span> <span class="ident">reg_ex</span> <span class="op">=</span> <span class="ident">Regex</span>::<span class="ident">new</span>(<span class="ident">REGEX_SWIFT</span>).<span class="ident">unwrap</span>();
         <span class="ident">reg_ex</span>.<span class="ident">is_match</span>(<span class="kw-2">&amp;</span><span class="ident">swift</span>)
+    }
+
+    <span class="doccomment">/// Check if an IBAN code is correct or not returning true or false</span>
+    <span class="doccomment">/// Valid iban example: ES49998877666655554440</span>
+    <span class="doccomment">/// Invalid iban example: XXX632505000002014145</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">check_iban</span>(<span class="ident">iban</span>: <span class="ident">String</span>) <span class="op">-&gt;</span> <span class="ident">bool</span>{
+        <span class="kw">let</span> <span class="ident">reg_ex</span> <span class="op">=</span> <span class="ident">Regex</span>::<span class="ident">new</span>(<span class="ident">REGEX_IBAN</span>).<span class="ident">unwrap</span>();
+        <span class="ident">reg_ex</span>.<span class="ident">is_match</span>(<span class="kw-2">&amp;</span><span class="ident">iban</span>)
     }
 
 }</pre></div>

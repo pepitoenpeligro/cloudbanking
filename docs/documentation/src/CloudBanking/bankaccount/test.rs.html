@@ -108,23 +108,6 @@
 <span id="107">107</span>
 <span id="108">108</span>
 <span id="109">109</span>
-<span id="110">110</span>
-<span id="111">111</span>
-<span id="112">112</span>
-<span id="113">113</span>
-<span id="114">114</span>
-<span id="115">115</span>
-<span id="116">116</span>
-<span id="117">117</span>
-<span id="118">118</span>
-<span id="119">119</span>
-<span id="120">120</span>
-<span id="121">121</span>
-<span id="122">122</span>
-<span id="123">123</span>
-<span id="124">124</span>
-<span id="125">125</span>
-<span id="126">126</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">bankaccount</span>::<span class="ident">model</span>::{<span class="ident">Account</span>};
 <span class="kw">use</span> <span class="ident">chrono</span>::{<span class="ident">NaiveDate</span>, <span class="ident">NaiveDateTime</span>};
@@ -141,7 +124,7 @@
     <span class="kw">fn</span> <span class="ident">test_get_id</span>(){
         <span class="kw">let</span> <span class="ident">id</span>      : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;507f1f77bcf86cd799439011&quot;</span>);
         <span class="kw">let</span> <span class="ident">swift</span>   : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;BSCHESMMXXX&quot;</span>);
-        <span class="kw">let</span> <span class="ident">iban</span>    : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;ES326688051111222233344&quot;</span>);
+        <span class="kw">let</span> <span class="ident">iban</span>    : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;ES32668805111122223334&quot;</span>);
         <span class="kw">let</span> <span class="ident">date</span>    : <span class="ident">NaiveDateTime</span>     <span class="op">=</span> <span class="ident">NaiveDate</span>::<span class="ident">from_ymd</span>(<span class="number">2020</span>, <span class="number">7</span>, <span class="number">8</span>).<span class="ident">and_hms</span>(<span class="number">22</span>, <span class="number">18</span>, <span class="number">0</span>);
         <span class="kw">let</span> <span class="ident">status</span>  : <span class="ident">bool</span>              <span class="op">=</span> <span class="bool-val">true</span>;
         <span class="kw">let</span> <span class="ident">acc</span>     : <span class="ident">Account</span>           <span class="op">=</span> <span class="ident">Account</span>::<span class="ident">new</span>(<span class="ident">id</span>, <span class="ident">swift</span>, <span class="ident">iban</span>, <span class="ident">date</span>, <span class="ident">status</span>);
@@ -155,7 +138,7 @@
     <span class="kw">fn</span> <span class="ident">test_get_swift</span>(){
         <span class="kw">let</span> <span class="ident">id</span>      : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;507f1f77bcf86cd799439011&quot;</span>);
         <span class="kw">let</span> <span class="ident">swift</span>   : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;BSCHESMMXXX&quot;</span>);
-        <span class="kw">let</span> <span class="ident">iban</span>    : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;ES326688051111222233344&quot;</span>);
+        <span class="kw">let</span> <span class="ident">iban</span>    : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;ES32668805111122223334&quot;</span>);
         <span class="kw">let</span> <span class="ident">date</span>    : <span class="ident">NaiveDateTime</span>     <span class="op">=</span> <span class="ident">NaiveDate</span>::<span class="ident">from_ymd</span>(<span class="number">2020</span>, <span class="number">7</span>, <span class="number">8</span>).<span class="ident">and_hms</span>(<span class="number">22</span>, <span class="number">18</span>, <span class="number">0</span>);
         <span class="kw">let</span> <span class="ident">status</span>  : <span class="ident">bool</span>              <span class="op">=</span> <span class="bool-val">true</span>;
         <span class="kw">let</span> <span class="ident">acc</span>     : <span class="ident">Account</span>           <span class="op">=</span> <span class="ident">Account</span>::<span class="ident">new</span>(<span class="ident">id</span>, <span class="ident">swift</span>, <span class="ident">iban</span>, <span class="ident">date</span>, <span class="ident">status</span>);
@@ -168,12 +151,12 @@
     <span class="kw">fn</span> <span class="ident">test_get_iban</span>(){
         <span class="kw">let</span> <span class="ident">id</span>      : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;507f1f77bcf86cd799439011&quot;</span>);
         <span class="kw">let</span> <span class="ident">swift</span>   : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;BSCHESMMXXX&quot;</span>);
-        <span class="kw">let</span> <span class="ident">iban</span>    : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;ES326688051111222233344&quot;</span>);
+        <span class="kw">let</span> <span class="ident">iban</span>    : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;ES32668805111122223334&quot;</span>);
         <span class="kw">let</span> <span class="ident">date</span>    : <span class="ident">NaiveDateTime</span>     <span class="op">=</span> <span class="ident">NaiveDate</span>::<span class="ident">from_ymd</span>(<span class="number">2020</span>, <span class="number">7</span>, <span class="number">8</span>).<span class="ident">and_hms</span>(<span class="number">22</span>, <span class="number">18</span>, <span class="number">0</span>);
         <span class="kw">let</span> <span class="ident">status</span>  : <span class="ident">bool</span>              <span class="op">=</span> <span class="bool-val">true</span>;
         <span class="kw">let</span> <span class="ident">acc</span>     : <span class="ident">Account</span>           <span class="op">=</span> <span class="ident">Account</span>::<span class="ident">new</span>(<span class="ident">id</span>, <span class="ident">swift</span>, <span class="ident">iban</span>, <span class="ident">date</span>, <span class="ident">status</span>);
 
-        <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="kw-2">*</span><span class="ident">acc</span>.<span class="ident">get_iban</span>(), <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;ES326688051111222233344&quot;</span>));
+        <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="kw-2">*</span><span class="ident">acc</span>.<span class="ident">get_iban</span>(), <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;ES32668805111122223334&quot;</span>));
     }
 
     <span class="attribute">#[<span class="ident">test</span>]</span>
@@ -181,7 +164,7 @@
     <span class="kw">fn</span> <span class="ident">test_get_date</span>(){
         <span class="kw">let</span> <span class="ident">id</span>      : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;507f1f77bcf86cd799439011&quot;</span>);
         <span class="kw">let</span> <span class="ident">swift</span>   : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;BSCHESMMXXX&quot;</span>);
-        <span class="kw">let</span> <span class="ident">iban</span>    : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;ES326688051111222233344&quot;</span>);
+        <span class="kw">let</span> <span class="ident">iban</span>    : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;ES32668805111122223334&quot;</span>);
         <span class="kw">let</span> <span class="ident">date</span>    : <span class="ident">NaiveDateTime</span>     <span class="op">=</span> <span class="ident">NaiveDate</span>::<span class="ident">from_ymd</span>(<span class="number">2020</span>, <span class="number">7</span>, <span class="number">8</span>).<span class="ident">and_hms</span>(<span class="number">22</span>, <span class="number">18</span>, <span class="number">0</span>);
         <span class="kw">let</span> <span class="ident">status</span>  : <span class="ident">bool</span>              <span class="op">=</span> <span class="bool-val">true</span>;
         <span class="kw">let</span> <span class="ident">acc</span>     : <span class="ident">Account</span>           <span class="op">=</span> <span class="ident">Account</span>::<span class="ident">new</span>(<span class="ident">id</span>, <span class="ident">swift</span>, <span class="ident">iban</span>, <span class="ident">date</span>, <span class="ident">status</span>);
@@ -194,7 +177,7 @@
     <span class="kw">fn</span> <span class="ident">test_get_status</span>(){
         <span class="kw">let</span> <span class="ident">id</span>      : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;507f1f77bcf86cd799439011&quot;</span>);
         <span class="kw">let</span> <span class="ident">swift</span>   : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;BSCHESMMXXX&quot;</span>);
-        <span class="kw">let</span> <span class="ident">iban</span>    : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;ES326688051111222233344&quot;</span>);
+        <span class="kw">let</span> <span class="ident">iban</span>    : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;ES32668805111122223334&quot;</span>);
         <span class="kw">let</span> <span class="ident">date</span>    : <span class="ident">NaiveDateTime</span>     <span class="op">=</span> <span class="ident">NaiveDate</span>::<span class="ident">from_ymd</span>(<span class="number">2020</span>, <span class="number">7</span>, <span class="number">8</span>).<span class="ident">and_hms</span>(<span class="number">22</span>, <span class="number">18</span>, <span class="number">0</span>);
         <span class="kw">let</span> <span class="ident">status</span>  : <span class="ident">bool</span>              <span class="op">=</span> <span class="bool-val">true</span>;
         <span class="kw">let</span> <span class="ident">acc</span>     : <span class="ident">Account</span>           <span class="op">=</span> <span class="ident">Account</span>::<span class="ident">new</span>(<span class="ident">id</span>, <span class="ident">swift</span>, <span class="ident">iban</span>, <span class="ident">date</span>, <span class="ident">status</span>);
@@ -207,7 +190,7 @@
     <span class="kw">fn</span> <span class="ident">test_set_swift</span>(){
         <span class="kw">let</span> <span class="ident">id</span>      : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;507f1f77bcf86cd799439011&quot;</span>);
         <span class="kw">let</span> <span class="ident">swift</span>   : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;BSCHESMMXXX&quot;</span>);
-        <span class="kw">let</span> <span class="ident">iban</span>    : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;ES326688051111222233344&quot;</span>);
+        <span class="kw">let</span> <span class="ident">iban</span>    : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;ES32668805111122223334&quot;</span>);
         <span class="kw">let</span> <span class="ident">date</span>    : <span class="ident">NaiveDateTime</span>     <span class="op">=</span> <span class="ident">NaiveDate</span>::<span class="ident">from_ymd</span>(<span class="number">2020</span>, <span class="number">7</span>, <span class="number">8</span>).<span class="ident">and_hms</span>(<span class="number">22</span>, <span class="number">18</span>, <span class="number">0</span>);
         <span class="kw">let</span> <span class="ident">status</span>  : <span class="ident">bool</span>              <span class="op">=</span> <span class="bool-val">true</span>;
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">acc</span>     : <span class="ident">Account</span>           <span class="op">=</span> <span class="ident">Account</span>::<span class="ident">new</span>(<span class="ident">id</span>, <span class="ident">swift</span>, <span class="ident">iban</span>, <span class="ident">date</span>, <span class="ident">status</span>);
@@ -223,33 +206,16 @@
     <span class="kw">fn</span> <span class="ident">test_set_iban</span>(){
         <span class="kw">let</span> <span class="ident">id</span>      : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;507f1f77bcf86cd799439011&quot;</span>);
         <span class="kw">let</span> <span class="ident">swift</span>   : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;BSCHESMMXXX&quot;</span>);
-        <span class="kw">let</span> <span class="ident">iban</span>    : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;ES326688051111222233344&quot;</span>);
+        <span class="kw">let</span> <span class="ident">iban</span>    : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;ES32668805111122223334&quot;</span>);
         <span class="kw">let</span> <span class="ident">date</span>    : <span class="ident">NaiveDateTime</span>     <span class="op">=</span> <span class="ident">NaiveDate</span>::<span class="ident">from_ymd</span>(<span class="number">2020</span>, <span class="number">7</span>, <span class="number">8</span>).<span class="ident">and_hms</span>(<span class="number">22</span>, <span class="number">18</span>, <span class="number">0</span>);
         <span class="kw">let</span> <span class="ident">status</span>  : <span class="ident">bool</span>              <span class="op">=</span> <span class="bool-val">true</span>;
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">acc</span>     : <span class="ident">Account</span>           <span class="op">=</span> <span class="ident">Account</span>::<span class="ident">new</span>(<span class="ident">id</span>, <span class="ident">swift</span>, <span class="ident">iban</span>, <span class="ident">date</span>, <span class="ident">status</span>);
 
-        <span class="kw">let</span> <span class="ident">new_iban</span>  : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;ES499988776666555544404&quot;</span>);
+        <span class="kw">let</span> <span class="ident">new_iban</span>  : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;ES49998877666655554440&quot;</span>);
         <span class="ident">acc</span>.<span class="ident">set_iban</span>(<span class="ident">new_iban</span>);
-        <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="kw-2">*</span><span class="ident">acc</span>.<span class="ident">get_iban</span>(), <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;ES499988776666555544404&quot;</span>));
-        <span class="macro">assert_ne</span><span class="macro">!</span>(<span class="kw-2">*</span><span class="ident">acc</span>.<span class="ident">get_iban</span>(), <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;ES326688051111222233344&quot;</span>));
+        <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="kw-2">*</span><span class="ident">acc</span>.<span class="ident">get_iban</span>(), <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;ES49998877666655554440&quot;</span>));
+        <span class="macro">assert_ne</span><span class="macro">!</span>(<span class="kw-2">*</span><span class="ident">acc</span>.<span class="ident">get_iban</span>(), <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;ES32668805111122223334&quot;</span>));
     }
 
-    <span class="attribute">#[<span class="ident">test</span>]</span>
-    <span class="kw">fn</span> <span class="ident">test_check_valid_swift</span>(){
-        <span class="kw">let</span> <span class="ident">id</span>      : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;507f1f77bcf86cd799439011&quot;</span>);
-        <span class="kw">let</span> <span class="ident">swift</span>   : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;BSCHESMMXXX&quot;</span>);
-        <span class="kw">let</span> <span class="ident">iban</span>    : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;ES326688051111222233344&quot;</span>);
-        <span class="kw">let</span> <span class="ident">date</span>    : <span class="ident">NaiveDateTime</span>     <span class="op">=</span> <span class="ident">NaiveDate</span>::<span class="ident">from_ymd</span>(<span class="number">2020</span>, <span class="number">7</span>, <span class="number">8</span>).<span class="ident">and_hms</span>(<span class="number">22</span>, <span class="number">18</span>, <span class="number">0</span>);
-        <span class="kw">let</span> <span class="ident">status</span>  : <span class="ident">bool</span>              <span class="op">=</span> <span class="bool-val">true</span>;
-        <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">acc</span>     : <span class="ident">Account</span>           <span class="op">=</span> <span class="ident">Account</span>::<span class="ident">new</span>(<span class="ident">id</span>, <span class="ident">swift</span>, <span class="ident">iban</span>, <span class="ident">date</span>, <span class="ident">status</span>);
-
-        <span class="kw">let</span> <span class="ident">new_swift</span>   : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;BBVAESMMXXX&quot;</span>);
-        <span class="kw">let</span> <span class="ident">bad_swift</span>   : <span class="ident">String</span>            <span class="op">=</span> <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;BVAEMMX&quot;</span>);
-
-        <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">Lib</span>::<span class="ident">check_swift</span>(<span class="ident">new_swift</span>), <span class="bool-val">true</span>);
-        <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">Lib</span>::<span class="ident">check_swift</span>(<span class="ident">bad_swift</span>), <span class="bool-val">false</span>);
-        <span class="comment">// assert_eq!(acc.check_valid_swift(new_swift), true);</span>
-        <span class="comment">// assert_eq!(acc.check_valid_swift(String::from(&quot;BBEMXX&quot;)), false);</span>
-    }
 }</pre></div>
 </section><section id="search" class="content hidden"></section><section class="footer"></section><script>window.rootPath = "../../../";window.currentCrate = "CloudBanking";</script><script src="../../../main.js"></script><script src="../../../source-script.js"></script><script src="../../../source-files.js"></script><script defer src="../../../search-index.js"></script></body></html>
