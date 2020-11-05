@@ -1,0 +1,11 @@
+name: "Check existing cc.yaml"
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - 'cc.yaml'
+  pull_request:
+    branches: [ master ]
+    paths:
+      - 'cc.yaml'
