@@ -31,4 +31,10 @@ jobs:
         uses: ibiqlik/action-yamllint@v2.0.0
         with:
           file_or_dir: "cc.yaml"
-        
+          
+      - name: Check -entidad- existence
+        id: counter-entidad
+        # If grep | wc -l != 0 -> Exist this word in file, 
+        run: echo ::set-output name=entidad::$(grep "entidad" cc.yaml | wc -l)
+        shell: bash
+        if: steps.counter-entidad.entidad == '1'
