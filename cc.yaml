@@ -7,4 +7,3 @@ entidad:
  - src/paymentgroup/model.rs
  - src/savinggroup/model.rs
  - src/user/model.rs
-
