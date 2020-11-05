@@ -1,4 +1,5 @@
 [tasks.clean]
+description = "Clean proyect"
 command = "cargo"
 args = ["clean"]
 
