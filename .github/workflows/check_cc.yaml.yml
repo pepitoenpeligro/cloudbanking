@@ -37,4 +37,4 @@ jobs:
         # If grep | wc -l != 0 -> Exist this word in file, 
         run: echo ::set-output name=entidad::$(grep "entidad" cc.yaml | wc -l)
         shell: bash
-        if: steps.counter-entidad.entidad == '1'
+        if: steps.counter-entidad.entidad == '0'
