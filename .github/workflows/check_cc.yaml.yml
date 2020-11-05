@@ -37,8 +37,4 @@ jobs:
         run: |
           grep -c "entidad" cc.yaml
           
-      - name: Check -entidades- existence
-        id: counter-entidades
-        run: |
-          grep -c "entidades" cc.yaml
 
