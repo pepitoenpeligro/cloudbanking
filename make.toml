@@ -1,0 +1,28 @@
+[tasks.clean]
+command = "cargo"
+args = ["clean"]
+
+
+[tasks.build]
+command = "cargo"
+args = ["build"]
+dependencies = ["clean"]
+
+
+[tasks.test]
+command = "cargo"
+args = ["test"]
+dependencies = ["clean"]
+
+
+[tasks.doc]
+command = "cargo"
+args = ["doc","--document-private-items"]
+
+
+[tasks.doccopy]
+script = [
+    "echo $PWD",
+    "cp -rf target/doc/ docs/documentation" 
+]
+dependencies = ["clean"]

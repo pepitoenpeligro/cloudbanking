@@ -202,6 +202,7 @@
             <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">created_at</span>
         }
 
+
         <span class="doccomment">/// Getter (inmutable) for bank_accounts private attribute.</span>
         <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_bank_accounts</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="ident">HashMap</span><span class="op">&lt;</span><span class="ident">String</span>,<span class="ident">Account</span><span class="op">&gt;</span>{
             <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">bank_accounts</span>
@@ -213,7 +214,6 @@
             <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">bank_accounts</span>.<span class="ident">insert</span>(<span class="ident">String</span>::<span class="ident">from</span>(<span class="ident">account</span>.<span class="ident">get_id</span>()), <span class="ident">account</span>);
             <span class="self">self</span>.<span class="ident">bank_accounts</span>.<span class="ident">len</span>()
         }
-
 
     
         <span class="doccomment">/// Scenario HU4</span>
