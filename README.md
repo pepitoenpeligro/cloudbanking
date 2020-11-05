@@ -2,6 +2,9 @@
 
 ![icon](docs/img/icon.png)
 
+![Rust](https://github.com/pepitoenpeligro/CloudBanking/workflows/Rust/badge.svg)
+![Check cc.yaml file](https://github.com/pepitoenpeligro/CloudBanking/workflows/Check%20cc.yaml%20file/badge.svg)
+
 
 :warning: **The development of the project is under construction**
 
