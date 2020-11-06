@@ -1,5 +1,7 @@
 # Choice and justification of the assertion library used
 
+The __assertion libraries__ for my project are:
+
 * Assertion Macros from Rust
 * Galvanic-Assert
 
