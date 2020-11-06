@@ -32,9 +32,19 @@ jobs:
         with:
           file_or_dir: "cc.yaml"
           
-      - name: Check -entidad- existence
-        id: counter-entidad
+      - name: Check -lenguaje- existence
+        id: check-entidad-cc-yaml
         run: |
-          grep -c "entidad" cc.yaml
+          grep -c "lenguaje" cc.yaml
+          
+      - name: Check -test- existence
+        id: check-test-cc-yaml
+        run: |
+          grep -c "test" cc.yaml
+          
+      - name: Check -fichero_tareas- existence
+        id: check-fichero_tareas-cc-yaml
+        run: |
+          grep -c "fichero_tareas" cc.yaml
           
 
