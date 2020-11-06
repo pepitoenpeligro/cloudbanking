@@ -10,11 +10,11 @@ The task managers __available__ for my project are:
 
 The advantages of `make` are:
 
-* It's portable 
-* It's native supported in all unix system (=> cloud is 99% unix)
-* Focused in target not in methods
-* Cross dependeces resolvers
-* Easy to use
+* It's **portable**
+* It's **native supported** in all unix system (=> cloud is 99% unix)
+* Focused in **target** not in methods
+* **Cross dependeces** resolvers
+* **Easy** to use
 
 
 An example of using `make` for this project can be found in [commit #b16fe7f](https://github.com/pepitoenpeligro/CloudBanking/blob/master/makefile). Now it's not used, so it was erased. 
@@ -23,10 +23,10 @@ An example of using `make` for this project can be found in [commit #b16fe7f](ht
 ---
 
 The advantages of `cargo-make` are:
-* It's portable
-* It's not native but is supported in all unix system
-* Based in make tool.
-* It's support Cross Platform Shell
+* It's **portable**
+* It's not native but is **supported in all unix** system if you install rust compiler (needed)
+* **Based** in **make** tool.
+* It's support **Cross Platform Shell**
 ```toml
 [tasks.copyshell]
 script_runner = "@shell"
@@ -36,7 +36,7 @@ script = [
     '''
 ]
 ```
-* It's support multiple language inline-script
+* It's support **multiple language inline-script**
 ```toml
 [tasks.perl]
 script_runner = "perl"
@@ -56,11 +56,11 @@ script = [
     '''
 ]
 ```
-* It's supports parallel task
+* It's supports **parallel task**
 ```toml
 tarea = {name = ["A"], parallel = true }
 ```
-* It's supports inline scripts
+* It's supports **inline scripts**
 ```toml
 [tasks.hi]
 script = [
@@ -68,16 +68,16 @@ script = [
     "echo \"Hi again\"",
 ]
 ```
-* It's support extern scripts
+* It's support **extern scripts**
 ```toml
 [tasks.hi-externs]
 script = { file = "${MY_PATH}/my_script.sh", absolute_path = true }
 ```
-* It's extendable by other makefiles.toml
+* It's **extendable** by **other makefiles.toml**
 ```toml
 extend = { path = "othermake.toml", optional = true }
 ```
-* It's support environment variables
+* It's support **environment variables**
 ```toml
 RUST_BACKTRACE = 1
 TEST = "testA"
