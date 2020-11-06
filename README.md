@@ -11,7 +11,7 @@
 
 ----
 
-:bookmark_tabs: Source Code Documentation of this proyect is available in [CloudBankingDocs](https://htmlpreview.github.io/?https://github.com/pepitoenpeligro/CloudBanking/blob/master/docs/documentation/CloudBanking/index.html)
+:bookmark_tabs: Source Code Documentation of this proyect is available in [CloudBankingDocs](https://rawcdn.githack.com/pepitoenpeligro/CloudBanking/master/docs/documentation/CloudBanking/index.html)
 
 ----
 
@@ -39,9 +39,6 @@
 ## Project Structure
 
 ![Dirtree](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/img/dirtree.png)
-
-A interactive map about project structure here: 
-[Interactive Dirtree](https://htmlpreview.github.io/?https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/dirtree.html)
 
 
 
