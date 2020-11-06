@@ -10,7 +10,7 @@ The test framework __availables__ for my project are:
 ----
 
 
-Core Cargo Test
+**Core Cargo Test**
 
 👍 : It's native from Rust
 👍 : It's easy to use
@@ -22,13 +22,13 @@ cargo test
 ```
 👍 : It's really fast and indicate time dedicated in each target (benchmark of test native).
 👍 : It's allow standard output messages
-```cargo test -- --nocapture 
-```
-👍 :
+```cargo test -- --nocapture ```
 
 
+---
 
-Stainless
+
+**Stainless**
 
 
 
