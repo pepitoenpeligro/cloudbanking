@@ -28,13 +28,13 @@ The advantages of `cargo-make` are:
 * Based in make tool.
 * It's support Cross Platform Shell
 ```toml
-    [tasks.copyshell]
-    script_runner = "@shell"
-    script = [
-        '''
-        cp -rf target/doc/ docs/documentation" 
-        '''
-        ]
+[tasks.copyshell]
+script_runner = "@shell"
+script = [
+    '''
+    cp -rf target/doc/ docs/documentation" 
+    '''
+]
 ```
 * It's support multiple language inline-script
 ```toml
@@ -42,18 +42,18 @@ The advantages of `cargo-make` are:
 script_runner = "perl"
 script_extension = "pl"
 script = [
-'''
-print "Hi!";
-'''
+    '''
+    print "Hi!";
+    '''
 ]
 
 [tasks.javascript]
 script_runner = "node"
 script_extension = "js"
 script = [
-'''
-console.log('Hi!');
-'''
+    '''
+    console.log('Hi!');
+    '''
 ]
 ```
 * It's supports parallel task
@@ -66,7 +66,7 @@ tarea = {name = ["A"], parallel = true })
 script = [
     "echo hi...",
     "echo \"Hi again\"",
- ]
+]
 ```
 * It's support extern scripts
 ```toml
