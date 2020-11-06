@@ -58,7 +58,7 @@ script = [
 ```
 * It's supports parallel task
 ```toml
-tarea = {name = ["A"], parallel = true })
+tarea = {name = ["A"], parallel = true }
 ```
 * It's supports inline scripts
 ```toml
