@@ -38,6 +38,14 @@
 
 ---
 
+## Direct access to the sections
+
+* R1. [Configuration of the task manager and its justification](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/2/task_manager_justification.md)
+* R2. [Choice and justification of the assertion library used](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/2/assertion_library_justification.md)
+* R3. [Choice and justification of the test frame used](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/2/test_frame_justification.md)
+* R4. [Relationship between code advance (including tests) and HUs](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/2/hu_advance.md)
+* R5. [Testing and/or advancement of the project itself beyond the basics, including suggestions made in corrections and evaluations of previous milestones](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/2/test_files_and_enhacements.md)
+
 
 
 ## References :books:
