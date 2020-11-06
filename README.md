@@ -34,6 +34,15 @@
 
 :bookmark_tabs: The list of tasks and the status of the project can be found at [Project Plan](https://github.com/pepitoenpeligro/CloudBanking/projects/1)
 
+---
+
+## Project Structure
+
+![Dirtree](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/img/dirtree.png)
+
+A interactive map about project structure here: 
+[Interactive Dirtree](https://htmlpreview.github.io/?https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/dirtree.html)
+
 
 
 ---

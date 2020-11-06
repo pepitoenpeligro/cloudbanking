@@ -27,3 +27,9 @@ script = [
     "cp -rf target/doc/ docs/documentation" 
 ]
 dependencies = ["clean"]
+
+
+[tasks.dirtree]
+script = [
+    "find Gemfile README.md cc.yaml  make.toml LICENSE _config.yml src install makefile .github/workflows .gitignore .travis.yml  -type f |  cut -d/ -f-4 | uniq  |  dirtree -o docs/dirtree.html"
+]
