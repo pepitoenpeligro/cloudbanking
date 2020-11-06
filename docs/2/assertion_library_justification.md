@@ -14,7 +14,6 @@ The advantages of **Assertion Macros from Rust** are:
 * It's native 
 * It's simple
 
-
 An example of using `Assertion Macros from Rust` for this project can be found in each *submodule/test/test* for example: [test.rs](https://github.com/pepitoenpeligro/CloudBanking/blob/master/src/bankaccount/test.rs) added in [commit #57aaec1](https://github.com/pepitoenpeligro/CloudBanking/commit/3c99ae17ad243a9c31496c395886cb273caf155c#diff-25ffd7e3123f833506863ad8729b4cdf543d74c9a067f06bc788d7c8bfa6b245)
 
 
