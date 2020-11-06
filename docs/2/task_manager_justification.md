@@ -93,6 +93,9 @@ Our project has the aspiration to be executed in the cloud, so, although the def
 
 Finally it will be used: **cargo-make**
 
+:warning: The stable version of Rust does NOT allow you to check the syntax of a file. To do this, we would need to update to the *nightly* version and run `rustc --Zparse-only src/*`. In our case, we are not going to use the *nightly* version and we demonstrate that the files are syntactically correct by compiling, so the task in the task manager that demonstrates the syntax is: build and can be launched in the console as `cargo make --makefile make.toml build`
+
+
 ---
 
 You can see the issues related to this study:
