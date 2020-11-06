@@ -39,6 +39,7 @@ src
 
 :surfer: The project can __be compiled__ without errors as indicate the badges: 
 ![Rust](https://github.com/pepitoenpeligro/CloudBanking/workflows/Rust/badge.svg)
+[![Build Status](https://travis-ci.com/pepitoenpeligro/CloudBanking.svg?branch=master)](https://travis-ci.com/pepitoenpeligro/CloudBanking)
 
 
 ```

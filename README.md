@@ -4,6 +4,7 @@
 
 ![Rust](https://github.com/pepitoenpeligro/CloudBanking/workflows/Rust/badge.svg)
 ![Check cc.yaml file](https://github.com/pepitoenpeligro/CloudBanking/workflows/Check%20cc.yaml%20file/badge.svg)
+[![Build Status](https://travis-ci.com/pepitoenpeligro/CloudBanking.svg?branch=master)](https://travis-ci.com/pepitoenpeligro/CloudBanking)
 
 
 :warning: **The development of the project is under construction**
