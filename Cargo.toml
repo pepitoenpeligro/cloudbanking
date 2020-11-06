@@ -4,6 +4,7 @@ version = "0.3.0"
 authors = ["José Antonio Córdoba Gómez <joseinn@correo.ugr.es> @pepitoenpeligro"]
 edition = "2018"
 
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
