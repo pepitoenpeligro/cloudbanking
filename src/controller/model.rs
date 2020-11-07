@@ -1,19 +1,26 @@
-use parking_lot::RwLock;
-use std::sync::Arc;
+use std::sync::{Arc,Mutex, RwLock};
 
 use crate::user::model::User::User;
 use crate::bankaccount::model::bankaccount::*;
+use std::collections::HashMap;
 use crate::bankcard::model::{Card};
 use crate::bankfund::model::{Fund};
 use crate::savinggroup::model::{Savinggroup};
 use crate::paymentgroup::model::{Paymentgroup};
 
+
 pub struct CloudBankingController{
-    users: Arc<RwLock<User>>
+    users: Arc<RwLock<HashMap<String,User>>>
 }
 
 
 impl CloudBankingController{
+
+    pub fn new() ->  CloudBankingController {
+        CloudBankingController {
+            users: Arc::new(RwLock::new(HashMap::new()))
+        }
+    }
 
     // Scenario HU 11
     fn create_alert_trigger_bank_account(){
