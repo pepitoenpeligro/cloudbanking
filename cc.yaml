@@ -1,4 +1,14 @@
 ---
+entidad:
+  - src/bankaccount/model.rs
+  - src/bankcard/model.rs
+  - src/bankfund/model.rs
+  - src/controller/model.rs
+  - src/paymentgroup/model.rs
+  - src/savinggroup/model.rs
+  - src/user/model.rs
+  - src/utils/model.rs
+
 lenguaje:
   - rust
 
