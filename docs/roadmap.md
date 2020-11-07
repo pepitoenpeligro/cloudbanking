@@ -5,6 +5,7 @@
 
 In a __first phase__ I want to achieve a minimum viable product. In a first phase I want to achieve a minimum viable product (**MVP**) like: __bank account__ and __bank card__ .On the other hand, we should be able to create an account as a client user and be able to log in.
 * [(HU1) Add bank account as customer user](https://github.com/pepitoenpeligro/CloudBanking/issues/13) :heavy_check_mark:
+* [(HU4) Delete bank account as customer user](https://github.com/pepitoenpeligro/CloudBanking/issues/16) :heavy_check_mark:
 * [(HU2) Add bank-card as customer user](https://github.com/pepitoenpeligro/CloudBanking/issues/14) :pencil:
 * [(HU14) Create user](https://github.com/pepitoenpeligro/CloudBanking/issues/26) :heavy_check_mark:
 
@@ -18,7 +19,6 @@ In a __third phase__ it would be ideal to be able to carry out a minimal managem
 * [(H18) Enable disabled account](https://github.com/pepitoenpeligro/CloudBanking/issues/30)
 
 In a __fourth phase__ of development it would be necessary to enable the ability to remove financial products from the user account, thus covering the following user stories
-* [(HU4) Delete bank account as customer user](https://github.com/pepitoenpeligro/CloudBanking/issues/16)
 * [(HU5) Delete bank card as customer user](https://github.com/pepitoenpeligro/CloudBanking/issues/17)
 * [(HU6) Delete fund investment as customer user](https://github.com/pepitoenpeligro/CloudBanking/issues/18)
 * [(HU8) Exit from saving-group](https://github.com/pepitoenpeligro/CloudBanking/issues/20)

@@ -102,8 +102,8 @@ pub mod bankaccount{
         pub fn to_json(&self)->String {
             serde_json::to_string_pretty(&self).unwrap()
         }
-    }
 
+    }
 
     /// The fmt method allows display all atributes of an Account
     impl fmt::Display for Account{
