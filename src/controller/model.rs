@@ -45,7 +45,8 @@ impl CloudBankingController{
 
 
     // Scenario HU 16
-    pub fn erase_account(){
+    pub fn erase_account(&mut self, userId: String){
+        &self.users.write().unwrap().remove(&userId.clone());
 
     }
 
@@ -57,6 +58,10 @@ impl CloudBankingController{
     // Scenario HU 18
     pub fn enable_disabled_account(){
 
+    }
+
+    pub fn get_users(&self) -> &Arc<RwLock<HashMap<String,User>>> {
+        return &self.users;
     }
 
     /// The to_json method allows to account to produce it own JSON serialization
