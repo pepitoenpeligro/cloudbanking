@@ -24,7 +24,7 @@ mod test_galvanic_utils{
         let german_iban   : String         = String::from("DE63250500000201414513");
         let bad_iban   : String            = String::from("XXX632505000002014145");
 
-        assert_that!(&Lib::check_iban(new_iban), is(eq(true)));
+        assert_that!(&Lib::check_iban(new_iban.clone()), is(eq(true)));
         assert_that!(&Lib::check_iban(german_iban), is(eq(true)));
         assert_that!(&Lib::check_iban(bad_iban), is(eq(false)));
 
