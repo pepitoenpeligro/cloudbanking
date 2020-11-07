@@ -8,6 +8,7 @@ implementors["digest"] = [{"text":"impl Display for InvalidOutputSize","syntheti
 implementors["futures_channel"] = [{"text":"impl Display for SendError","synthetic":false,"types":[]},{"text":"impl&lt;T&gt; Display for TrySendError&lt;T&gt;","synthetic":false,"types":[]},{"text":"impl Display for TryRecvError","synthetic":false,"types":[]},{"text":"impl Display for Canceled","synthetic":false,"types":[]}];
 implementors["futures_task"] = [{"text":"impl Display for SpawnError","synthetic":false,"types":[]}];
 implementors["futures_util"] = [{"text":"impl Display for Aborted","synthetic":false,"types":[]},{"text":"impl&lt;T, Item&gt; Display for ReuniteError&lt;T, Item&gt;","synthetic":false,"types":[]}];
+implementors["galvanic_assert"] = [{"text":"impl Display for Expectation","synthetic":false,"types":[]}];
 implementors["getrandom"] = [{"text":"impl Display for Error","synthetic":false,"types":[]}];
 implementors["h2"] = [{"text":"impl Display for Error","synthetic":false,"types":[]},{"text":"impl Display for Reason","synthetic":false,"types":[]}];
 implementors["headers"] = [{"text":"impl Display for ContentType","synthetic":false,"types":[]},{"text":"impl Display for Host","synthetic":false,"types":[]},{"text":"impl Display for Origin","synthetic":false,"types":[]},{"text":"impl Display for Server","synthetic":false,"types":[]},{"text":"impl Display for UserAgent","synthetic":false,"types":[]}];

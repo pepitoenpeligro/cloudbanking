@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["maybe_err","Matches the contents of a `Result` if it is `Err` againts a passed `Matcher`."],["maybe_ok","Matches the contents of a `Result` if it is `Ok` againts a passed `Matcher`."],["maybe_some","Matches the contents of an `Option` againts a passed `Matcher`."]]});
