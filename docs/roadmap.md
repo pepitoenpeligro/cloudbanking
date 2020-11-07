@@ -3,25 +3,27 @@
 
 ### Development
 
-In a __first phase__ I want to achieve a minimum viable product. In a first phase I want to achieve a minimum viable product (**MVP**) like: __bank account__ and __bank card__ .On the other hand, we should be able to create an account as a client user and be able to log in.
+In a __first phase__ I want to achieve a minimum viable product. In a first phase I want to achieve a minimum viable product (**MVP**) like: __bank account__ and __bank card__. On the other hand, we should be able to create an account as a client user and be able to log in.
 * [(HU1) Add bank account as customer user](https://github.com/pepitoenpeligro/CloudBanking/issues/13) :heavy_check_mark:
 * [(HU4) Delete bank account as customer user](https://github.com/pepitoenpeligro/CloudBanking/issues/16) :heavy_check_mark:
-* [(HU5) Delete bank card as customer user](https://github.com/pepitoenpeligro/CloudBanking/issues/17) :heavy_check_mark:
 * [(HU16) Erase Account](https://github.com/pepitoenpeligro/CloudBanking/issues/28) :heavy_check_mark:
 * [(HU14) Create user](https://github.com/pepitoenpeligro/CloudBanking/issues/26) :heavy_check_mark:
 
 In a __second phase__, I would develop additional functionalities with non-core entities such as __fund investment__, __payment group__ and __saving group__. 
 * [(HU2) Add bank-card as customer user](https://github.com/pepitoenpeligro/CloudBanking/issues/14) :pencil:
+* [(HU5) Delete bank card as customer user](https://github.com/pepitoenpeligro/CloudBanking/issues/17) :pencil:
 * [(HU3) Add investment fund as customer user](https://github.com/pepitoenpeligro/CloudBanking/issues/15) :pencil:
+* [(HU6) Delete fund investment as customer user](https://github.com/pepitoenpeligro/CloudBanking/issues/18) :pencil:
+
+
+In a __third phase__ it would be ideal to be able to carry out a minimal management with an administrator user. So the following user stories would be covered:
+* [(H17) Disable account](https://github.com/pepitoenpeligro/CloudBanking/issues/29) :pencil:
+* [(H18) Enable disabled account](https://github.com/pepitoenpeligro/CloudBanking/issues/30) :pencil:
 * [(HU7) Create saving-group](https://github.com/pepitoenpeligro/CloudBanking/issues/19) :pencil:
 * [(HU9) Create a payment-group](https://github.com/pepitoenpeligro/CloudBanking/issues/21) :pencil:
 
-In a __third phase__ it would be ideal to be able to carry out a minimal management with an administrator user. So the following user stories would be covered:
-* [(H17) Disable account](https://github.com/pepitoenpeligro/CloudBanking/issues/29)
-* [(H18) Enable disabled account](https://github.com/pepitoenpeligro/CloudBanking/issues/30)
-
 In a __fourth phase__ of development it would be necessary to enable the ability to remove financial products from the user account, thus covering the following user stories
-* [(HU6) Delete fund investment as customer user](https://github.com/pepitoenpeligro/CloudBanking/issues/18)
+
 * [(HU8) Exit from saving-group](https://github.com/pepitoenpeligro/CloudBanking/issues/20)
 * [(HU10) Exit from payment-group](https://github.com/pepitoenpeligro/CloudBanking/issues/22)
 

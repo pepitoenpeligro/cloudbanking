@@ -10,6 +10,7 @@ mod test_galvanic_utils{
     use crate::utils::model::{Lib};
 
     #[test]
+    /// Scenario HU1
     /// Test add_bank_account
     /// Check if a bank_account is added to bank_accounts Collection
     fn test_add_bank_account(){
@@ -40,6 +41,7 @@ mod test_galvanic_utils{
 
 
     #[test]
+    /// Scenario HU5
     /// Test delete_bank_account
     /// Check if a bank_account is removed from bank_accounts Collection
     fn test_delete_bank_account(){
