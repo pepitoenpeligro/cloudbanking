@@ -4,9 +4,9 @@
 ### Development
 
 In a __first phase__ I want to achieve a minimum viable product. In a first phase I want to achieve a minimum viable product like: __bank account__ and __bank card__ .On the other hand, we should be able to create an account as a client user and be able to log in.
-* [(HU1) Add bank account as customer user](https://github.com/pepitoenpeligro/CloudBanking/issues/13)
+* [(HU1) Add bank account as customer user](https://github.com/pepitoenpeligro/CloudBanking/issues/13) :heavy_check_mark:
 * [(HU2) Add bank-card as customer user](https://github.com/pepitoenpeligro/CloudBanking/issues/14)
-* [(HU14) Create user](https://github.com/pepitoenpeligro/CloudBanking/issues/26)
+* [(HU14) Create user](https://github.com/pepitoenpeligro/CloudBanking/issues/26) :heavy_check_mark:
 
 In a __second phase__, I would develop additional functionalities with non-core entities such as __fund investment__, __payment group__ and __saving group__. 
 * [(HU3) Add investment fund as customer user](https://github.com/pepitoenpeligro/CloudBanking/issues/15)
