@@ -1,5 +1,3 @@
-
-
 pub mod User{
 
     use chrono::{NaiveDateTime};
@@ -10,7 +8,7 @@ pub mod User{
 
     use crate::bankaccount::model::bankaccount::{Account};
 
-    #[derive(Serialize, Deserialize, Debug)]
+    #[derive(Serialize, Deserialize, Debug, Clone)]
     pub struct User{
         id: String,
         email: String,

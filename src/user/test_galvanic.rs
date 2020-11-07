@@ -1,12 +1,12 @@
-mod test_user{
-    use super::*;
-    use std::collections::HashMap;
+mod test_galvanic_utils{
+    use galvanic_assert::*;
+    use galvanic_assert::matchers::*;
+
+    use chrono::{NaiveDate, NaiveDateTime};
+    use crate::bankaccount::model::bankaccount::*;
+    use crate::user::model::User::User;
+    use crate::bankcard::model::{Card};
     use crate::utils::model::{Lib};
-    use chrono::{NaiveDateTime,NaiveDate};
-    use crate::bankaccount::model::bankaccount::{Account};
-    use crate::user::model::User::{User};
-
-
 
     #[test]
     /// Test add_bank_account
@@ -23,16 +23,24 @@ mod test_user{
         let email_user          : String                    = String::from("j.cordoba@ostfalia.de");
         let hash_password_use   : String                    = String::from("aa4234bdsfasf");
         let date_user           : NaiveDateTime             = NaiveDate::from_ymd(2020, 7, 8).and_hms(22, 18, 0);
-        let mut user                : User                      = User::new(id_user,email_user,hash_password_use,date_user);
+        let mut user            : User                      = User::new(id_user,email_user,hash_password_use,date_user);
 
 
-        assert_eq!(user.get_bank_accounts().len(),0);
-        assert_eq!(user.get_bank_accounts().contains_key("507f1f77bcf86cd799439011"), false);
+        assert_that!(&acc,is_variant!(Account));
+        assert_that!(&user, is_variant!(User));
+
+        assert_that!(&(user.get_bank_accounts().len() as i32) ,is(eq(0 as i32)));
+        assert_that!(&user.get_bank_accounts().contains_key("507f1f77bcf86cd799439011"), is(eq(false)));
         
         user.add_bank_account(acc);
 
-        assert_eq!(user.get_bank_accounts().contains_key("507f1f77bcf86cd799439011"), true);
-        assert_eq!(user.get_bank_accounts().len(),1);
+        assert_that!(&user.get_bank_accounts().contains_key("507f1f77bcf86cd799439011"), is(eq(true)));
+        assert_that!(&(user.get_bank_accounts().len() as i32) ,is(eq(1 as i32)));
     }
 
+
 }
+
+
+
+
