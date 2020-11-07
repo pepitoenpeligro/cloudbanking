@@ -12,18 +12,16 @@ pub mod User{
     pub struct User{
         id: String,
         email: String,
-        hash_password:String,
         created_at: NaiveDateTime,
         bank_accounts: HashMap<String,Account>,
     
     }
     impl User {
 
-        pub fn new(new_id: String, new_email: String, new_hash_password: String, new_created_at: NaiveDateTime) ->  User {
+        pub fn new(new_id: String, new_email: String, new_created_at: NaiveDateTime) ->  User {
             User {
                 id: new_id,
                 email: new_email,
-                hash_password: new_hash_password,
                 created_at: new_created_at,
                 bank_accounts: HashMap::new()
             }
@@ -45,16 +43,6 @@ pub mod User{
             &self.email
         }
 
-        /// Getter (inmutable) for hash_password private attribute.
-        pub fn get_hash_password(&self) -> &String{
-            &self.hash_password
-        }
-
-        /// Muttable access for hash_password private attribute
-        pub fn set_hash_password(&mut self, new_hash_password: String) -> &String{
-            self.hash_password=new_hash_password;
-            &self.hash_password
-        }
 
         /// Getter (inmutable) for hash_password private attribute.
         pub fn get_date(&self) -> &NaiveDateTime{
@@ -129,7 +117,7 @@ pub mod User{
     /// The fmt method allows display all atributes of an Account
     impl fmt::Display for User{
         fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-            write!(f, "({}, {}, {}, {}, {:?})", self.id, self.email, self.hash_password, self.created_at, self.bank_accounts)
+            write!(f, "({}, {}, {}, {:?})", self.id, self.email, self.created_at, self.bank_accounts)
         }
     }
 }

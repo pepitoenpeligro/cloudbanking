@@ -21,9 +21,8 @@ mod test_galvanic_utils{
 
         let id_user             : String                    = String::from("999f7f66abf88ee70243988");
         let email_user          : String                    = String::from("j.cordoba@ostfalia.de");
-        let hash_password_use   : String                    = String::from("aa4234bdsfasf");
         let date_user           : NaiveDateTime             = NaiveDate::from_ymd(2020, 7, 8).and_hms(22, 18, 0);
-        let mut user            : User                      = User::new(id_user,email_user,hash_password_use,date_user);
+        let mut user            : User                      = User::new(id_user,email_user,date_user);
 
 
         assert_that!(&acc,is_variant!(Account));
