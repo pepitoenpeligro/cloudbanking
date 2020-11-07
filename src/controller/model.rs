@@ -24,42 +24,42 @@ impl CloudBankingController{
     }
 
     // Scenario HU 11
-    fn create_alert_trigger_bank_account(){
+    pub fn create_alert_trigger_bank_account(){
 
     }
 
     // Scenario HU 12
-    fn create_alert_trigger_bank_card(){
+    pub fn create_alert_trigger_bank_card(){
         
     }
 
     // Scenario HU 13
-    fn create_alert_trigger_bank_fund(){
+    pub fn create_alert_trigger_bank_fund(){
         
     }
 
     // Scenario HU 14
-    fn register_new_user(){
-
+    pub fn register_new_user(&mut self, user: User){
+        &self.users.write().unwrap().insert(user.get_id().clone(), user);
     }
 
     // Scenario HU 15
-    fn login_user(){
+    pub fn login_user(){
 
     }
 
     // Scenario HU 16
-    fn erase_account(){
+    pub fn erase_account(){
 
     }
 
     // Scenario HU 17
-    fn disable_account(){
+    pub fn disable_account(){
 
     }
 
     // Scenario HU 18
-    fn enable_disabled_account(){
+    pub fn enable_disabled_account(){
 
     }
 
