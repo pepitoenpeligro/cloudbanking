@@ -41,7 +41,7 @@ fn main() {
     let mut controller: CloudBankingController = CloudBankingController::new();
     println!("Hi, controller was created OK {}", controller.to_json());
 
-    controller.register_new_user(user);
+    controller.create_new_user(user);
 
     println!("We had added a user in system: {}", controller.to_json());
 

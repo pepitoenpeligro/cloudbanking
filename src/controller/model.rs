@@ -39,14 +39,10 @@ impl CloudBankingController{
     }
 
     // Scenario HU 14
-    pub fn register_new_user(&mut self, user: User){
+    pub fn create_new_user(&mut self, user: User){
         &self.users.write().unwrap().insert(user.get_id().clone(), user);
     }
 
-    // Scenario HU 15
-    pub fn login_user(){
-
-    }
 
     // Scenario HU 16
     pub fn erase_account(){
