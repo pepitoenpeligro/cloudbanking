@@ -7,8 +7,9 @@ use crate::bankcard::model::{Card};
 use crate::bankfund::model::{Fund};
 use crate::savinggroup::model::{Savinggroup};
 use crate::paymentgroup::model::{Paymentgroup};
+use serde::{Serialize,Deserialize};
 
-
+#[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct CloudBankingController{
     users: Arc<RwLock<HashMap<String,User>>>
 }
@@ -60,5 +61,10 @@ impl CloudBankingController{
     // Scenario HU 18
     fn enable_disabled_account(){
 
+    }
+
+    /// The to_json method allows to account to produce it own JSON serialization
+    pub fn to_json(&self)->String {
+        serde_json::to_string_pretty(&self).unwrap()
     }
 }
