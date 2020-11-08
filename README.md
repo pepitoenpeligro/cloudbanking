@@ -47,7 +47,6 @@
 
 * R1. [Configuration of the task manager and its justification](https://pepitoenpeligro.github.io/CloudBanking/docs/2/task_manager_justification)
 * R2. [Choice and justification of the assertion library used](https://pepitoenpeligro.github.io/CloudBanking/docs/2/assertion_library_justification)
-* 
 * R3. [Choice and justification of the test frame used](https://pepitoenpeligro.github.io/CloudBanking/docs/2/test_frame_justification)
 * R4. [Relationship between code advance (including tests) and HUs](https://pepitoenpeligro.github.io/CloudBanking/docs/2/hu_advance)
 * R5. [Testing and/or advancement of the project itself beyond the basics, including suggestions made in corrections and evaluations of previous milestones](https://pepitoenpeligro.github.io/CloudBanking/docs/2/test_files_and_enhacements)
