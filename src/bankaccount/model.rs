@@ -3,6 +3,7 @@ pub mod bankaccount{
     use chrono::{NaiveDateTime};
     use std::fmt;
     use serde::{Serialize,Deserialize};
+    use crate::utils::model::{Lib};
 
     extern crate regex;
     extern crate serde;
@@ -61,7 +62,10 @@ pub mod bankaccount{
 
         /// Muttable access for swift private attribute
         pub fn set_swift(&mut self, new_swift: String) -> &String{
-            self.swift=new_swift;
+            if(Lib::check_swift(new_swift.clone())){
+                self.swift=new_swift;
+            }
+            
             &self.swift
         }
 
@@ -73,7 +77,9 @@ pub mod bankaccount{
         /// Muttable access for swift private attribute
         /// A bank could be fusioned with other bank and change a iban code
         pub fn set_iban(&mut self, new_iban: String) -> &String{
-            self.iban=new_iban;
+            if(Lib::check_iban(new_iban.clone())){
+                self.iban=new_iban;
+            }
             &self.iban
         }
 
