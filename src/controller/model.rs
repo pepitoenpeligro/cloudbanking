@@ -8,6 +8,7 @@ use crate::bankfund::model::{Fund};
 use crate::savinggroup::model::{Savinggroup};
 use crate::paymentgroup::model::{Paymentgroup};
 use serde::{Serialize,Deserialize};
+use std::fmt;
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct CloudBankingController{
@@ -67,5 +68,12 @@ impl CloudBankingController{
     /// The to_json method allows to account to produce it own JSON serialization
     pub fn to_json(&self)->String {
         serde_json::to_string_pretty(&self).unwrap()
+    }
+}
+
+/// The fmt method allows display all atributes of an CloudBankingController
+impl fmt::Display for CloudBankingController{
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "({:?})", self.users)
     }
 }
