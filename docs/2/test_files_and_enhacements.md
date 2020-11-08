@@ -11,4 +11,4 @@ Suggestions
 
 
 
-![Work Story](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/img/2/work.png)
+![Work Story](docs/img/2/work.png)
