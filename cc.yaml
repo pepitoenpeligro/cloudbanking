@@ -9,9 +9,6 @@ entidad:
   - src/user/model.rs
   - src/utils/model.rs
 
-lenguaje:
-  - rust
-
 test:
   - src/bankaccount/test.rs
   - src/bankcard/test.rs
@@ -21,6 +18,9 @@ test:
   - src/savinggroup/test.rs
   - src/user/test.rs
   - src/utils/test.rs
+
+lenguaje:
+  - rust
 
 fichero_tareas:
   - make.toml
