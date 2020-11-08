@@ -38,7 +38,7 @@ jobs:
           grep -c "entidad" cc.yaml
           
       - name: Check -lenguaje- existence
-        id: check-entidad-cc-yaml
+        id: check-lenguaje-cc-yaml
         run: |
           grep -c "lenguaje" cc.yaml
           
