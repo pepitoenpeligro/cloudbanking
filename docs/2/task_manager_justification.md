@@ -37,6 +37,7 @@ script = [
     '''
 ]
 ```
+
 * It's support **multiple language inline script**
 
 ```toml
@@ -58,11 +59,13 @@ script = [
     '''
 ]
 ```
+
 * It's supports **parallel task**
 
 ```toml
 tarea = {name = ["A"], parallel = true }
 ```
+
 * It's supports **inline scripts**
 
 ```toml
@@ -72,17 +75,20 @@ script = [
     "echo \"Hi again\"",
 ]
 ```
+
 * It's support **extern scripts**
 
 ```toml
 [tasks.hi-externs]
 script = { file = "${MY_PATH}/my_script.sh", absolute_path = true }
 ```
+
 * It's **extendable** by **other makefiles.toml**
 
 ```toml
 extend = { path = "othermake.toml", optional = true }
 ```
+
 * It's support **environment variables**
 
 ```toml
