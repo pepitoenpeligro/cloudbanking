@@ -31,6 +31,11 @@ jobs:
         uses: ibiqlik/action-yamllint@v2.0.0
         with:
           file_or_dir: "cc.yaml"
+      
+      - name: Check -entidad- existence
+        id: check-entidad-cc-yaml
+        run: |
+          grep -c "entidad" cc.yaml
           
       - name: Check -lenguaje- existence
         id: check-entidad-cc-yaml
