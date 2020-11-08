@@ -23,6 +23,9 @@ args = ["run"]
 command = "cargo"
 args = ["doc","--document-private-items"]
 
+[tasks.release]
+command = "cargo"
+args = ["build", "--release", "--bin", "CloudBanking"]
 
 [tasks.doccopy]
 script = [
