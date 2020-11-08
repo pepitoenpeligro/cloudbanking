@@ -16,21 +16,20 @@
 ----
 
 
-:notebook: A description of the basic structure of this proyect can be found at [Basic Structure](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/proyect_structure.md)
+:notebook: A description of the basic structure of this proyect can be found at [Basic Structure](https://pepitoenpeligro.github.io/CloudBanking/docs/proyect_structure)
 
-:oncoming_bus: A Roadmap can be found at [Roadmap](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/roadmap.md)
-
-
-:mag_right: The description of the problem can be found in [Problem-Description](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/problem-description.md)
-
-:factory: A description of the architecture can be found at [Architecture Description](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/tecnology-architecture-description.md)
-
-:checkered_flag: A technological feasibility study and the argument of the technologies finally proposed to be used in the project can be consulted at [Feasibility Study](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/feasibility-study.md)
+:oncoming_bus: A Roadmap can be found at [Roadmap](https://pepitoenpeligro.github.io/CloudBanking/docs/roadmap)
 
 
-:rocket: A initial setup of project in Rust can be found at [Project Rust Init](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/project-rust-setup.md)
+:mag_right: The description of the problem can be found in [Problem-Description](https://pepitoenpeligro.github.io/CloudBanking/docs/problem-description)
 
-:hammer: Initial Setup of Git and GitHub [Initial Configuration](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/environmentConfiguration.md)
+:factory: A description of the architecture can be found at [Architecture Description](https://pepitoenpeligro.github.io/CloudBanking/docs/tecnology-architecture-description)
+
+:checkered_flag: A technological feasibility study and the argument of the technologies finally proposed to be used in the project can be consulted at [Feasibility Study](https://pepitoenpeligro.github.io/CloudBanking/docs/feasibility-study)
+
+
+:rocket: A initial setup of project in Rust can be found at [Project Rust Init](https://pepitoenpeligro.github.io/CloudBanking/docs/project-rust-setup)
+
 
 :bookmark_tabs: The list of tasks and the status of the project can be found at [Project Plan](https://github.com/pepitoenpeligro/CloudBanking/projects/1)
 
@@ -38,7 +37,7 @@
 
 ## Project Structure
 
-![Dirtree](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/img/dirtree.png)
+![Dirtree](https://pepitoenpeligro.github.io/CloudBanking/docs/img/dirtree.png)
 
 
 
@@ -46,11 +45,12 @@
 
 ## Direct access to the sections
 
-* R1. [Configuration of the task manager and its justification](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/2/task_manager_justification.md)
-* R2. [Choice and justification of the assertion library used](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/2/assertion_library_justification.md)
-* R3. [Choice and justification of the test frame used](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/2/test_frame_justification.md)
-* R4. [Relationship between code advance (including tests) and HUs](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/2/hu_advance.md)
-* R5. [Testing and/or advancement of the project itself beyond the basics, including suggestions made in corrections and evaluations of previous milestones](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/2/test_files_and_enhacements.md)
+* R1. [Configuration of the task manager and its justification](https://pepitoenpeligro.github.io/CloudBanking/docs/2/task_manager_justification)
+* R2. [Choice and justification of the assertion library used](https://pepitoenpeligro.github.io/CloudBanking/docs/2/assertion_library_justification)
+* 
+* R3. [Choice and justification of the test frame used](https://pepitoenpeligro.github.io/CloudBanking/docs/2/test_frame_justification)
+* R4. [Relationship between code advance (including tests) and HUs](https://pepitoenpeligro.github.io/CloudBanking/docs/2/hu_advance)
+* R5. [Testing and/or advancement of the project itself beyond the basics, including suggestions made in corrections and evaluations of previous milestones](https://pepitoenpeligro.github.io/CloudBanking/docs/2/test_files_and_enhacements)
 
 
 

@@ -3,23 +3,23 @@
 
 ## Github Profile Config
 
-![Profile Config](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/img/profile-config.png)
+![Profile Config](docs/img/profile-config.png)
 
 ## Git Global Config
 
-![Git Config](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/img/git-config.png)
+![Git Config](docs/img/git-config.png)
 
 
 ## Two Factor Authentication
 
-![Two Factor Authentication Enabled](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/img/two-factor-auth-enabled.png)
+![Two Factor Authentication Enabled](docs/img/two-factor-auth-enabled.png)
 
 
 ## Adding SSH-Key
 
-![Adding SSH-Key](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/img/ssh-key-add.png)
+![Adding SSH-Key](docs/img/ssh-key-add.png)
 
-![SSH-Key Added](https://github.com/pepitoenpeligro/CC-Project/blob/master/docs/img/ssh-key-added.png)
+![SSH-Key Added](docs/img/ssh-key-added.png)
 
 
 
