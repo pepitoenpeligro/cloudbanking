@@ -24,6 +24,7 @@ The advantages of **Galvanic** are:
 
 
 * It's **natural description friendly**:
+
 ```rust
 // Check id is equal
 assert_that!(acc.get_id(), eq(String::from("507f1f77bcf86cd799439011")));
@@ -47,9 +48,12 @@ assert_that!(&a, is_variant!(Account));
 
 ```
 * It's **support error messages**:
+
 ```rust
 assert_that!(user.get_bank_accounts().len != 0, otherwise "user should have at least one bank account");
+
 ```
+
 ---
 
 
