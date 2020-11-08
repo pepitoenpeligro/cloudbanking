@@ -28,8 +28,6 @@
 :checkered_flag: A technological feasibility study and the argument of the technologies finally proposed to be used in the project can be consulted at [Feasibility Study](https://pepitoenpeligro.github.io/CloudBanking/docs/feasibility-study)
 
 
-:rocket: A initial setup of project in Rust can be found at [Project Rust Init](https://pepitoenpeligro.github.io/CloudBanking/docs/project-rust-setup)
-
 
 :bookmark_tabs: The list of tasks and the status of the project can be found at [Project Plan](https://github.com/pepitoenpeligro/CloudBanking/projects/1)
 
