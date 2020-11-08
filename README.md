@@ -37,7 +37,7 @@
 
 ## Project Structure
 
-![Dirtree](https://pepitoenpeligro.github.io/CloudBanking/docs/img/dirtree.png)
+![Dirtree](docs/img/dirtree.png)
 
 
 
