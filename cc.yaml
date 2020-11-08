@@ -10,14 +10,14 @@ entidad:
   - src/utils/model.rs
 
 test:
-  - src/bankaccount/test.rs
+  - src/bankaccount/test_galvanic.rs
   - src/bankcard/test.rs
   - src/bankfund/test.rs
   - src/controller/test.rs
   - src/paymentgroup/test.rs
   - src/savinggroup/test.rs
-  - src/user/test.rs
-  - src/utils/test.rs
+  - src/user/test_galvanic.rs
+  - src/utils/test_galvanic.rs
 
 lenguaje:
   - rust
