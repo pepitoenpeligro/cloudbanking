@@ -21,7 +21,7 @@ cargo test <moduleToTest>
 cargo test
 ```
 👍 : It's really fast and indicate time dedicated in each target (benchmark of test native).
-👍 : It's allow standard output messages
+👍 : It allows standard output messages
 ```cargo test -- --nocapture ```
 
 
@@ -32,7 +32,7 @@ cargo test
 
 
 
-👍 : allows you to quickly *generate complex testing hierarchies*
+👍 : It allows you to quickly *generate complex testing hierarchies*
 
 👎 : requires the *nightly* version of the Rust compiler!
 👎 : is *not possible* to put *use statements inside the describe! blocks*. (Bad practice)
