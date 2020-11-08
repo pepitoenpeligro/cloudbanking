@@ -1,3 +1,5 @@
+/// Module test_galvanic_utils
+/// Check all functionality of CloudBankingController
 mod test_galvanic_utils{
     use galvanic_assert::*;
     use galvanic_assert::matchers::*;
