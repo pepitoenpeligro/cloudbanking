@@ -50,6 +50,19 @@
 * R5. [Testing and/or advancement of the project itself beyond the basics, including suggestions made in corrections and evaluations of previous milestones](https://pepitoenpeligro.github.io/CloudBanking/docs/2/test_files_and_enhacements)
 
 
+## Compile project and run
+
+:surfer: The project can __be compiled__ without errors as indicate the badges: 
+![Rust](https://github.com/pepitoenpeligro/CloudBanking/workflows/Rust/badge.svg)
+[![Build Status](https://travis-ci.com/pepitoenpeligro/CloudBanking.svg?branch=master)](https://travis-ci.com/pepitoenpeligro/CloudBanking)
+
+
+```
+cargo build
+cargo run
+```
+
+
 
 ## References :books:
 * [Rust](https://www.rust-lang.org)
