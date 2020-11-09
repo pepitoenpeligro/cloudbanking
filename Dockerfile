@@ -19,18 +19,7 @@ FROM alpine:3.12.1
 LABEL pepitoenpeligro.CloudBanking.version="0.4.0"
 LABEL pepitoenpeligro.CloudBanking.release-date="2020-11-09"
 
-ENV alpine_repo = https://alpine.global.ssl.fastly.net/alpine/v3.12
-
-
-RUN echo $alpine_repo:/main >> /etc/apk/repositories
-RUN echo $alpine_repo:/community >> /etc/apk/repositories
-RUN for i in rust cargo; do apk add "$i"; done
-
-
-
-
-
-
+ENV alpine_repo=https://alpine.global.ssl.fastly.net/alpine/v3.12
 
 
 # Layer Run
@@ -39,10 +28,31 @@ RUN for i in rust cargo; do apk add "$i"; done
 # similar a Shell Script
 
 
+
+RUN echo $alpine_repo:/main >> /etc/apk/repositories
+RUN echo $alpine_repo:/community >> /etc/apk/repositories
+RUN for i in openssl-dev e2fsprogs rust cargo; do apk add "$i"; done
+
+USER root
+RUN addgroup -g 1000 -S cbgroup && adduser -u 1000 -S cbuser -G cbgroup -D -g ''   -h /home/cbuser -s /sbin/nologin
+# -s /bin/bash
+# RUN chattr -Ri  /home/cbuser/
+RUN chown -Rv cbuser:cbgroup /home/cbuser/
+
+
+
+WORKDIR /home/cbuser
+
+
 # Layer Copy
 # It makes possible to copy files inside Docker image.
 # It's similar to ADD layer, but more secure.
 # Syntax COPY origin destination
+COPY . /home/cbuser/CloudBanking
+RUN chown -Rv cbuser:cbgroup /home/cbuser/
+# RUN cargo install --force cargo-make
+
+
 
 
 
@@ -57,9 +67,13 @@ RUN for i in rust cargo; do apk add "$i"; done
 EXPOSE 8001
 
 
+
+USER cbuser
+WORKDIR /home/cbuser/CloudBanking
+RUN cargo build --release --bin CloudBanking
+
+
 # Layer CMD
 # It makes posible to run process inside Docker Container.
 # It defines what happens when Docker container has started.
-
-CMD ["/bin/sh"]
-
+CMD ["/home/cbuser/CloudBanking/target/release/CloudBanking"]
