@@ -18,6 +18,10 @@ FROM alpine:3.12.1
 
 LABEL pepitoenpeligro.CloudBanking.version="0.4.0"
 LABEL pepitoenpeligro.CloudBanking.release-date="2020-11-09"
+LABEL mantainer="https://github.com/pepitoenpeligro"
+LABEL pepitoenpeligro.label-CloudBanking.usage="https://pepitoenpeligro.github.io/CloudBanking/"
+LABEL pepitoenpeligro.CloudBanking.url="https://hub.docker.com/r/pepitoenpeligro/cloudbanking/"
+LABEL pepitoenpeligro.CloudBanking.description="Docker Alpine with CloudBanking"
 
 ENV alpine_repo=https://alpine.global.ssl.fastly.net/alpine/v3.12
 
@@ -31,16 +35,14 @@ ENV alpine_repo=https://alpine.global.ssl.fastly.net/alpine/v3.12
 
 RUN echo $alpine_repo:/main >> /etc/apk/repositories
 RUN echo $alpine_repo:/community >> /etc/apk/repositories
-RUN for i in openssl-dev e2fsprogs rust cargo; do apk add "$i"; done
+RUN apk -U upgrade -a 
+
+
+RUN for i in openssl-dev gcc musl-dev rust cargo; do apk add "$i"; done
 
 USER root
 RUN addgroup -g 1000 -S cbgroup && adduser -u 1000 -S cbuser -G cbgroup -D -g ''   -h /home/cbuser -s /sbin/nologin
-# -s /bin/bash
-# RUN chattr -Ri  /home/cbuser/
 RUN chown -Rv cbuser:cbgroup /home/cbuser/
-
-
-
 WORKDIR /home/cbuser
 
 
@@ -70,10 +72,11 @@ EXPOSE 8001
 
 USER cbuser
 WORKDIR /home/cbuser/CloudBanking
-RUN cargo build --release --bin CloudBanking
+# RUN cargo build --release --bin CloudBanking
 
 
 # Layer CMD
 # It makes posible to run process inside Docker Container.
 # It defines what happens when Docker container has started.
-CMD ["/home/cbuser/CloudBanking/target/release/CloudBanking"]
+# CMD ["/home/cbuser/CloudBanking/target/release/CloudBanking"]
+CMD /bin/sh
