@@ -46,8 +46,8 @@ impl CloudBankingController{
 
 
     // Scenario HU 16
-    pub fn erase_account(&mut self, userId: String){
-        &self.users.write().unwrap().remove(&userId.clone());
+    pub fn erase_account(&mut self, user_id: String){
+        &self.users.write().unwrap().remove(&user_id.clone());
 
     }
 

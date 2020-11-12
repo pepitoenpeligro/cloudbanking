@@ -64,8 +64,8 @@ pub mod user{
 
     
         /// Scenario HU4
-        pub fn delete_bank_account(&mut self, accountID: String) -> usize{
-            &self.bank_accounts.remove(&accountID.clone());
+        pub fn delete_bank_account(&mut self, account_id: String) -> usize{
+            &self.bank_accounts.remove(&account_id.clone());
             self.bank_accounts.len()
         }
 
