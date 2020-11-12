@@ -1,4 +1,4 @@
-# Feature request | Bug report | Other to CloudBanking
+# Feature request | Other to CloudBanking
 
 ## First of all
 - [] I promise to be patient
