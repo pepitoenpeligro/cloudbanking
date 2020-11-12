@@ -1,4 +1,4 @@
-pub mod User{
+pub mod user{
 
     use chrono::{NaiveDateTime};
     use std::fmt;

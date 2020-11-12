@@ -5,7 +5,7 @@ mod test_galvanic_controller{
 
     use chrono::{NaiveDate, NaiveDateTime};
     use crate::bankaccount::model::bankaccount::*;
-    use crate::user::model::User::User;
+    use crate::user::model::user::User;
     use crate::bankcard::model::{Card};
     use crate::utils::model::{Lib};
     use crate::controller::model::{CloudBankingController};

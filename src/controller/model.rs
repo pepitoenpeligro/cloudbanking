@@ -1,6 +1,6 @@
 use std::sync::{Arc,Mutex, RwLock};
 
-use crate::user::model::User::User;
+use crate::user::model::user::User;
 use crate::bankaccount::model::bankaccount::*;
 use std::collections::HashMap;
 use crate::bankcard::model::{Card};

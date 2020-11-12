@@ -8,7 +8,7 @@ mod test_galvanic_user{
 
     use chrono::{NaiveDate, NaiveDateTime};
     use crate::bankaccount::model::bankaccount::*;
-    use crate::user::model::User::User;
+    use crate::user::model::user::User;
     use crate::bankcard::model::{Card};
     use crate::utils::model::{Lib};
 

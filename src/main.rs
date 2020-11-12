@@ -18,7 +18,7 @@ use crate::bankcard::model::{Card};
 use crate::bankfund::model::{Fund};
 use crate::savinggroup::model::{Savinggroup};
 use crate::paymentgroup::model::{Paymentgroup};
-use crate::user::model::User::User;
+use crate::user::model::user::User;
 use crate::utils::model::{Lib};
 use crate::controller::model::{CloudBankingController};
 
