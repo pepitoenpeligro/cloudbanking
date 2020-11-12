@@ -5,7 +5,7 @@ mod test_galvanic_controller{
 
     use chrono::{NaiveDate, NaiveDateTime};
     use crate::bankaccount::model::bankaccount::*;
-    use crate::user::model::User::User;
+    use crate::user::model::user::User;
     use crate::bankcard::model::{Card};
     use crate::utils::model::{Lib};
     use crate::controller::model::{CloudBankingController};
@@ -24,7 +24,7 @@ mod test_galvanic_controller{
         let id_user             : String                    = String::from("999f7f66abf88ee70243988");
         let email_user          : String                    = String::from("j.cordoba@ostfalia.de");
         let date_user           : NaiveDateTime             = NaiveDate::from_ymd(2020, 7, 8).and_hms(22, 18, 0);
-        let mut user            : User                      = User::new(id_user,email_user,date_user);
+        let user                : User                      = User::new(id_user,email_user,date_user);
 
         let mut controller: CloudBankingController = CloudBankingController::new();
 
@@ -53,7 +53,7 @@ mod test_galvanic_controller{
         let id_user             : String                    = String::from("999f7f66abf88ee70243988");
         let email_user          : String                    = String::from("j.cordoba@ostfalia.de");
         let date_user           : NaiveDateTime             = NaiveDate::from_ymd(2020, 7, 8).and_hms(22, 18, 0);
-        let mut user            : User                      = User::new(id_user,email_user,date_user);
+        let user                : User                      = User::new(id_user,email_user,date_user);
 
         let mut controller: CloudBankingController = CloudBankingController::new();
         // At this point we don't expect found this user

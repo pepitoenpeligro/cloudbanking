@@ -1,6 +1,6 @@
 use std::sync::{Arc,Mutex, RwLock};
 
-use crate::user::model::User::User;
+use crate::user::model::user::User;
 use crate::bankaccount::model::bankaccount::*;
 use std::collections::HashMap;
 use crate::bankcard::model::{Card};
@@ -41,13 +41,13 @@ impl CloudBankingController{
 
     // Scenario HU 14
     pub fn create_new_user(&mut self, user: User){
-        &self.users.write().unwrap().insert(user.get_id().clone(), user);
+        self.users.write().unwrap().insert(user.get_id().clone(), user);
     }
 
 
     // Scenario HU 16
-    pub fn erase_account(&mut self, userId: String){
-        &self.users.write().unwrap().remove(&userId.clone());
+    pub fn erase_account(&mut self, user_id: String){
+        self.users.write().unwrap().remove(&user_id);
 
     }
 
@@ -62,7 +62,7 @@ impl CloudBankingController{
     }
 
     pub fn get_users(&self) -> &Arc<RwLock<HashMap<String,User>>> {
-        return &self.users;
+        &self.users
     }
 
     /// The to_json method allows to account to produce it own JSON serialization

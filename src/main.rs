@@ -1,3 +1,4 @@
+#![allow(unused_imports, dead_code, unused_variables)]
 mod user;
 mod bankaccount;
 mod bankcard;
@@ -18,11 +19,11 @@ use crate::bankcard::model::{Card};
 use crate::bankfund::model::{Fund};
 use crate::savinggroup::model::{Savinggroup};
 use crate::paymentgroup::model::{Paymentgroup};
-use crate::user::model::User::User;
+use crate::user::model::user::User;
 use crate::utils::model::{Lib};
 use crate::controller::model::{CloudBankingController};
 
-const VERSION_ENV: &'static str = env!("CARGO_PKG_VERSION");
+const VERSION_ENV: &str = env!("CARGO_PKG_VERSION");
 
 
 fn main() {
@@ -36,7 +37,7 @@ fn main() {
     let id_user             : String                    = String::from("999f7f66abf88ee70243988");
     let email_user          : String                    = String::from("j.cordoba@ostfalia.de");
     let date_user           : NaiveDateTime             = NaiveDate::from_ymd(2020, 7, 8).and_hms(22, 18, 0);
-    let mut user            : User                      = User::new(id_user,email_user,date_user);
+    let user                : User                      = User::new(id_user,email_user,date_user);
 
     println! ("HU covered in this release ({}):", VERSION_ENV);
     println! ("\t -[x] HU1 Add bank account as customer user");

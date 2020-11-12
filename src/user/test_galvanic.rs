@@ -8,7 +8,7 @@ mod test_galvanic_user{
 
     use chrono::{NaiveDate, NaiveDateTime};
     use crate::bankaccount::model::bankaccount::*;
-    use crate::user::model::User::User;
+    use crate::user::model::user::User;
     use crate::bankcard::model::{Card};
     use crate::utils::model::{Lib};
 
@@ -53,7 +53,7 @@ mod test_galvanic_user{
         let iban    : String            = String::from("ES32668805111122223334");
         let date    : NaiveDateTime     = NaiveDate::from_ymd(2020, 7, 8).and_hms(22, 18, 0);
         let status  : bool              = true;
-        let mut acc     : Account           = Account::new(id, swift, iban, date, status);
+        let acc     : Account           = Account::new(id, swift, iban, date, status);
 
         let id_user             : String                    = String::from("999f7f66abf88ee70243988");
         let email_user          : String                    = String::from("j.cordoba@ostfalia.de");
