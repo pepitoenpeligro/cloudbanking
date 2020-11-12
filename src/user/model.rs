@@ -58,14 +58,14 @@ pub mod user{
     
         /// Scenario HU1
         pub fn add_bank_account(&mut self, account: Account) -> usize{
-            &self.bank_accounts.insert(String::from(account.get_id()), account);
+            self.bank_accounts.insert(String::from(account.get_id()), account);
             self.bank_accounts.len()
         }
 
     
         /// Scenario HU4
         pub fn delete_bank_account(&mut self, account_id: String) -> usize{
-            &self.bank_accounts.remove(&account_id.clone());
+            self.bank_accounts.remove(&account_id.clone());
             self.bank_accounts.len()
         }
 
