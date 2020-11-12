@@ -62,7 +62,7 @@ impl CloudBankingController{
     }
 
     pub fn get_users(&self) -> &Arc<RwLock<HashMap<String,User>>> {
-        return &self.users;
+        &self.users
     }
 
     /// The to_json method allows to account to produce it own JSON serialization
