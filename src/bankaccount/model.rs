@@ -95,12 +95,12 @@ pub mod bankaccount{
         }
 
         /// Enables an account
-        fn enable(&mut self) -> (){
+        fn enable(&mut self) {
             self.status = true
         }
 
         /// Disables an account
-        fn disable(&mut self) -> (){
+        fn disable(&mut self) {
             self.status = false
         }
 
