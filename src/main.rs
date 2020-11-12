@@ -23,7 +23,7 @@ use crate::user::model::user::User;
 use crate::utils::model::{Lib};
 use crate::controller::model::{CloudBankingController};
 
-const VERSION_ENV: &'static str = env!("CARGO_PKG_VERSION");
+const VERSION_ENV: &str = env!("CARGO_PKG_VERSION");
 
 
 fn main() {
