@@ -37,7 +37,7 @@ fn main() {
     let id_user             : String                    = String::from("999f7f66abf88ee70243988");
     let email_user          : String                    = String::from("j.cordoba@ostfalia.de");
     let date_user           : NaiveDateTime             = NaiveDate::from_ymd(2020, 7, 8).and_hms(22, 18, 0);
-    let mut user            : User                      = User::new(id_user,email_user,date_user);
+    let user                : User                      = User::new(id_user,email_user,date_user);
 
     println! ("HU covered in this release ({}):", VERSION_ENV);
     println! ("\t -[x] HU1 Add bank account as customer user");
