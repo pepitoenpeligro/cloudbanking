@@ -1,3 +1,5 @@
+<link rel="shortcut icon" type="image/x-icon" href="docs/img/imgfavicon.ico">
+
 # Cloud Banking :euro:
 
 ![icon](docs/img/icon.png)
@@ -31,7 +33,11 @@
 
 ## Direct access to the sections
 
-* [x] R1. [Base Image. Election and Justification](https://pepitoenpeligro.github.io/CloudBanking/docs/3/r1)
+* R1. [Base Image. Election and Justification](https://pepitoenpeligro.github.io/CloudBanking/docs/3/r1)
+* R2. [Dockerfile](https://pepitoenpeligro.github.io/CloudBanking/docs/3/r2)
+* R3. [DockerHub. Automate Publish](https://pepitoenpeligro.github.io/CloudBanking/docs/3/r3)
+* R4. [Alternative Containers Registry](https://pepitoenpeligro.github.io/CloudBanking/docs/3/r4)
+* R5. [Originality, Completion, Amount of work invested](https://pepitoenpeligro.github.io/CloudBanking/docs/3/r4)
 
 
 
