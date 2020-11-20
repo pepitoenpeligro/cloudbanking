@@ -31,7 +31,7 @@
 
 ## Direct access to the sections
 
-* R1. [Base Image. Election and Justification](https://pepitoenpeligro.github.io/CloudBanking/docs/3/r1)
+* [x] R1. [Base Image. Election and Justification](https://pepitoenpeligro.github.io/CloudBanking/docs/3/r1)
 
 
 
@@ -57,13 +57,13 @@ cargo run
 * [Emojis](https://gist.github.com/rxaviers/7360908)
 
 
-## Previous work done
+
+## Previous work done
 
 :checkered_flag: A technological feasibility study and the argument of the technologies finally proposed to be used in the project can be consulted at [Feasibility Study](https://pepitoenpeligro.github.io/CloudBanking/docs/feasibility-study)
+
 :notebook: A description of the basic structure of this proyect can be found at [Basic Structure](https://pepitoenpeligro.github.io/CloudBanking/docs/proyect_structure)
+
 :mag_right: The description of the problem can be found in [Problem-Description](https://pepitoenpeligro.github.io/CloudBanking/docs/problem-description)
+
 :factory: A description of the architecture can be found at [Architecture Description](https://pepitoenpeligro.github.io/CloudBanking/docs/tecnology-architecture-description)
-
-
-
-
