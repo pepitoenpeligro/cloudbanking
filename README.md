@@ -1,7 +1,7 @@
 
   <head>
 <link rel="shortcut icon" type="image/png" 
-      href="{{ "docs/img/favicon.ico"  | absolute_url }}">
+      href="{{ "docs/img/favicon.ico"  | "https://raw.githubusercontent.com/pepitoenpeligro/CloudBanking/master/docs/img/favicon.ico" }}">
  </head>
 
 # Cloud Banking :euro:
