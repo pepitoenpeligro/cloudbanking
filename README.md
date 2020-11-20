@@ -1,4 +1,8 @@
-<link rel="shortcut icon" type="image/x-icon" href="docs/img/imgfavicon.ico">
+
+  <head>
+<link rel="shortcut icon" type="image/png" 
+      href="{{ "docs/img/favicon.ico"  | absolute_url }}">
+ </head>
 
 # Cloud Banking :euro:
 
