@@ -70,7 +70,6 @@ RUN wget https://github.com/sagiegurari/cargo-make/releases/download/0.32.9/carg
 RUN unzip cargo-make-v0.32.9-x86_64-unknown-linux-musl.zip
 RUN cp cargo-make-v0.32.9-x86_64-unknown-linux-musl/cargo-make /usr/local/cargo/bin
 RUN rm -rf cargo-make-v0.32.9-x86_64-unknown-linux-musl*
-USER cbuser
 WORKDIR /app/test
 
 # We don't need
@@ -82,9 +81,4 @@ WORKDIR /app/test
 # It defines what happens when Docker container has started.
 # CMD ["/home/cbuser/CloudBanking/target/release/CloudBanking"]
 # CMD cargo test
-
-# CMD cargo make --makefile make.toml test
-
-CMD chown -R cbuser:cbgroup /app/test
-CMD chown -R cbuser:cbgroup /app
-CMD chown -R cbuser:cbgroup /app/test && cargo make --makefile make.toml test
+CMD chown -R cbuser:cbgroup /app/test && su cbuser && cargo make --makefile make.toml test
