@@ -65,7 +65,7 @@ RUN mkdir -p /app/test \
     && unzip cargo-make-v0.32.9-x86_64-unknown-linux-musl.zip \
     && cp cargo-make-v0.32.9-x86_64-unknown-linux-musl/cargo-make /usr/local/cargo/bin \
     && rm -rf cargo-make-v0.32.9-x86_64-unknown-linux-musl* \
-    && apk del wget \
+    && apk del wget
 
 # Changing our work directory
 WORKDIR /app/test
