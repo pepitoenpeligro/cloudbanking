@@ -87,4 +87,4 @@ WORKDIR /app/test
 
 CMD chown -R cbuser:cbgroup /app/test
 CMD chown -R cbuser:cbgroup /app
-CMD cargo make --makefile make.toml test
+CMD chown -R cbuser:cbgroup /app/test && cargo make --makefile make.toml test
