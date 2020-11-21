@@ -24,7 +24,12 @@ LABEL pepitoenpeligro.CloudBanking.url="https://hub.docker.com/r/pepitoenpeligro
 LABEL pepitoenpeligro.CloudBanking.description="Docker Alpine with CloudBanking"
 
 ENV alpine_repo=https://alpine.global.ssl.fastly.net/alpine/v3.12
-
+ENV RUSTUP_HOME=/usr/local/rustup
+ENV CARGO_HOME=/usr/local/cargo
+ENV CARGO_MAKE_HOME=/usr/local/cargo_make
+ENV PATH=/usr/local/cargo/bin:$PATH
+ENV OPENSSL_INCLUDE_DIR=/usr/include/openssl
+ENV OPENSSL_LIB_DIR=/usr/lib64
 
 # Layer Run
 # It makes possible to execute commands inside the Docker image
@@ -32,51 +37,54 @@ ENV alpine_repo=https://alpine.global.ssl.fastly.net/alpine/v3.12
 # similar a Shell Script
 
 
+USER root
+
+
+RUN mkdir -p /app/test
+RUN chmod -R o+xwr /app
+RUN chmod -R o+xwr /app/test
+RUN addgroup -g 1000 -S cbgroup && adduser -u 1000 -S cbuser -G cbgroup -D -g ''   -h /app/test -s /bin/sh
+RUN chown -R cbuser:cbgroup /app/test
+RUN chown -R cbuser:cbgroup /app
+
+
+
 
 RUN echo $alpine_repo:/main >> /etc/apk/repositories
 RUN echo $alpine_repo:/community >> /etc/apk/repositories
-RUN apk -U upgrade -a 
-
-
-RUN for i in openssl-dev gcc musl-dev rust cargo; do apk add "$i"; done
-
-USER root
-RUN addgroup -g 1000 -S cbgroup && adduser -u 1000 -S cbuser -G cbgroup -D -g ''   -h /home/cbuser -s /sbin/nologin
-RUN chown -Rv cbuser:cbgroup /home/cbuser/
-WORKDIR /home/cbuser
-
-
-# Layer Copy
-# It makes possible to copy files inside Docker image.
-# It's similar to ADD layer, but more secure.
-# Syntax COPY origin destination
-COPY . /home/cbuser/CloudBanking
-RUN chown -Rv cbuser:cbgroup /home/cbuser/
-# RUN cargo install --force cargo-make
+RUN apk -U upgrade -a -q
+RUN for i in openssl openssl-dev wget ca-certificates gcc musl-dev pkgconfig; do apk add -q --no-cache "$i" ; done
 
 
 
 
 
-# Layer Expose
-# Expose. It makes a port available to the outside
-# Under this port, CloudBankingApp will be available, and 
-# container will provide only this port on the internal 
-# Docker network. Access from outside will be only possible
-# if Expose is defined correctly.
-# We should indicate the port to redirect when we build it
-# docker run -p INTERNAL_PORT_EXPOSED:DESIRED_PORT CloudBanking
-EXPOSE 8001
 
+RUN wget https://static.rust-lang.org/rustup/archive/1.22.1/x86_64-unknown-linux-musl/rustup-init
+RUN chmod +x rustup-init
+RUN ./rustup-init -y --no-modify-path --profile minimal --default-toolchain 1.48.0 --default-host x86_64-unknown-linux-musl
+RUN chmod -R a+w $RUSTUP_HOME $CARGO_HOME
+RUN rm -f rustup-init
 
-
+RUN wget https://github.com/sagiegurari/cargo-make/releases/download/0.32.9/cargo-make-v0.32.9-x86_64-unknown-linux-musl.zip
+RUN unzip cargo-make-v0.32.9-x86_64-unknown-linux-musl.zip
+RUN cp cargo-make-v0.32.9-x86_64-unknown-linux-musl/cargo-make /usr/local/cargo/bin
+RUN rm -rf cargo-make-v0.32.9-x86_64-unknown-linux-musl*
 USER cbuser
-WORKDIR /home/cbuser/CloudBanking
-# RUN cargo build --release --bin CloudBanking
+WORKDIR /app/test
+
+# We don't need
+# ENV $HOME/.cargo/bin
 
 
 # Layer CMD
 # It makes posible to run process inside Docker Container.
 # It defines what happens when Docker container has started.
 # CMD ["/home/cbuser/CloudBanking/target/release/CloudBanking"]
-CMD /bin/sh
+# CMD cargo test
+
+# CMD cargo make --makefile make.toml test
+
+CMD chown -R cbuser:cbgroup /app/test
+CMD chown -R cbuser:cbgroup /app
+CMD cargo make --makefile make.toml test

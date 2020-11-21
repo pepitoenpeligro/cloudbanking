@@ -16,5 +16,3 @@ regex = "1.4.1"
 tokio = { version = "0.2.22", features = ["macros"] }
 chrono = { version = "0.4.6", features = ["serde"] }
 galvanic-assert = "0.8.7"
-openssl-sys = "0.9"
-openssl = { version = "0.10", features = ["vendored"] }
