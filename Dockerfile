@@ -16,7 +16,7 @@
 FROM alpine:3.12.1
 
 
-LABEL pepitoenpeligro.CloudBanking.version="0.4.0"
+LABEL pepitoenpeligro.CloudBanking.version="0.4.1"
 LABEL pepitoenpeligro.CloudBanking.release-date="2020-11-09"
 LABEL mantainer="https://github.com/pepitoenpeligro"
 LABEL pepitoenpeligro.label-CloudBanking.usage="https://pepitoenpeligro.github.io/CloudBanking/"
@@ -82,3 +82,4 @@ CMD chown -R cbuser:cbgroup /app/test && su cbuser -c 'cargo make --makefile mak
 
 # docker build  --no-cache -t pepitoenpeligro/cloudbanking .
 # docker run -it -v `pwd`:/app/test -t pepitoenpeligro/cloudbanking
+# docker run -t -v `pwd`:/app/test -t pepitoenpeligro/cloudbanking
