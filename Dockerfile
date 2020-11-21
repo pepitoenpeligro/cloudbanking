@@ -77,4 +77,8 @@ WORKDIR /app/test
 # 1. (As root) we change ownership of /ap/test to cbuser
 # 2. (As root) we change user to cbuser
 # 3. (As cbuser - non superprivileges) we run our test target (with task runner)
-CMD chown -R cbuser:cbgroup /app/test && su cbuser && cargo make --makefile make.toml test
+CMD chown -R cbuser:cbgroup /app/test && su cbuser -c 'cargo make --makefile make.toml test'
+
+
+# docker build  --no-cache -t pepitoenpeligro/cloudbanking .
+# docker run -it -v `pwd`:/app/test -t pepitoenpeligro/cloudbanking
