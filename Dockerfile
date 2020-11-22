@@ -19,9 +19,10 @@ FROM alpine:3.12.1
 LABEL pepitoenpeligro.CloudBanking.version="0.4.1"
 LABEL pepitoenpeligro.CloudBanking.release-date="2020-11-09"
 LABEL mantainer="https://github.com/pepitoenpeligro"
-LABEL pepitoenpeligro.label-CloudBanking.usage="https://pepitoenpeligro.github.io/CloudBanking/"
+LABEL pepitoenpeligro.label-CloudBanking.usage="https://github.com/pepitoenpeligro/cloudbanking"
 LABEL pepitoenpeligro.CloudBanking.url="https://hub.docker.com/r/pepitoenpeligro/cloudbanking/"
 LABEL pepitoenpeligro.CloudBanking.description="Docker Alpine with CloudBanking"
+LABEL org.opencontainers.image.source https://github.com/pepitoenpeligro/cloudbanking
 
 # Repo for wget, openssl and openssl-dev
 ENV alpine_repo=https://alpine.global.ssl.fastly.net/alpine/v3.12
