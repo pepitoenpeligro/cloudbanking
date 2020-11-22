@@ -19,20 +19,27 @@ args = ["test"]
 command = "cargo"
 args = ["run"]
 
-[tasks.doc]
+[tasks.docgenerate]
 command = "cargo"
-args = ["doc","--document-private-items"]
+args = ["doc","-p","cloudbanking", "--no-deps"]
 
 [tasks.release]
 command = "cargo"
 args = ["build", "--release", "--bin", "CloudBanking"]
 
-[tasks.doccopy]
+[tasks.doc]
 script = [
     "echo $PWD",
-    "cp -rf target/doc/ docs/documentation" 
+    "cp -rf target/doc/cloudbanking docs/documentation/cloudbanking",
+    "cp target/doc/*.woff docs/documentation/",
+    "cp target/doc/settings.html docs/documentation/",
+    "cp target/doc/*.css docs/documentation/",
+    "cp target/doc/*.ico docs/documentation/",
+    "cp target/doc/*.png docs/documentation/",
+    "cp target/doc/*.js docs/documentation/",
+    "cp target/doc/*.svg docs/documentation/",
 ]
-dependencies = ["clean"]
+dependencies = ["docgenerate"]
 
 
 [tasks.dirtree]

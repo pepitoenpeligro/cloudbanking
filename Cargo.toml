@@ -1,5 +1,5 @@
 [package]
-name = "cloud_banking"
+name = "cloudbanking"
 version = "0.3.0"
 authors = ["José Antonio Córdoba Gómez <joseinn@correo.ugr.es> @pepitoenpeligro"]
 edition = "2018"
