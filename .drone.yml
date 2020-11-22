@@ -1,0 +1,14 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: listversion
+  image: rust:1.48
+  commands: 
+  - cargo --version && rustc --version
+
+- name: test
+  image: rust:1.48
+  commands:
+  - cargo test -- --nocapture   
