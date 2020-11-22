@@ -9,7 +9,7 @@ In a __first phase__ I want to achieve a minimum viable product. In a first phas
 * [(HU16) Erase Account](https://github.com/pepitoenpeligro/CloudBanking/issues/28) :heavy_check_mark:
 * [(HU14) Create user](https://github.com/pepitoenpeligro/CloudBanking/issues/26) :heavy_check_mark:
 
-In a __second phase__, I would develop additional functionalities with non-core entities such as __fund investment__, __payment group__ and __saving group__. 
+In a __second phase__, I would develop more about core functionality as bank_card and utils to check numbers, cvc... 
 * [(HU2) Add bank-card as customer user](https://github.com/pepitoenpeligro/CloudBanking/issues/14) :heavy_check_mark:
 * [(HU5) Delete bank card as customer user](https://github.com/pepitoenpeligro/CloudBanking/issues/17) :heavy_check_mark:
 
