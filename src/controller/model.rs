@@ -3,7 +3,7 @@ use std::sync::{Arc,Mutex, RwLock};
 use crate::user::model::user::User;
 use crate::bankaccount::model::bankaccount::*;
 use std::collections::HashMap;
-use crate::bankcard::model::{Card};
+use crate::bankcard::model::bankcard::*;
 use crate::bankfund::model::{Fund};
 use crate::savinggroup::model::{Savinggroup};
 use crate::paymentgroup::model::{Paymentgroup};

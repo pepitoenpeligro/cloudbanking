@@ -5,7 +5,7 @@ mod test_bankaccount_galvanic{
 
     use chrono::{NaiveDate, NaiveDateTime};
     use crate::bankaccount::model::bankaccount::*;
-    use crate::bankcard::model::{Card};
+
 
     #[test]
     /// Test if constructor is correct

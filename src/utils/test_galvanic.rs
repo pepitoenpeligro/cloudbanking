@@ -4,7 +4,7 @@ mod test_galvanic_utils{
 
     use chrono::{NaiveDate, NaiveDateTime};
     use crate::bankaccount::model::bankaccount::*;
-    use crate::bankcard::model::{Card};
+
     use crate::utils::model::{Lib};
 
     #[test]

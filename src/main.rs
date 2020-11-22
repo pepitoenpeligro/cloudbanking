@@ -15,7 +15,7 @@ extern crate serde_json;
 
 
 use crate::bankaccount::model::bankaccount::*;
-use crate::bankcard::model::{Card};
+use crate::bankcard::model::bankcard::*;
 use crate::bankfund::model::{Fund};
 use crate::savinggroup::model::{Savinggroup};
 use crate::paymentgroup::model::{Paymentgroup};
