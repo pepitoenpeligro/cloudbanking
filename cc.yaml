@@ -11,7 +11,7 @@ entidad:
 
 test:
   - src/bankaccount/test_galvanic.rs
-  - src/bankcard/test.rs
+  - src/bankcard/test_galvanic.rs
   - src/bankfund/test.rs
   - src/controller/test.rs
   - src/paymentgroup/test.rs

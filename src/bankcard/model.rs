@@ -85,7 +85,7 @@ pub mod bankcard{
         }
 
         /// Inmutable access to check the status of the card
-        pub fn isActive(&self) -> bool {
+        pub fn is_active(&self) -> bool {
             self.status
         }
 
@@ -100,7 +100,7 @@ pub mod bankcard{
         }
 
     }
-    
+
     /// The fmt method allows display all atributes of an Card
     impl fmt::Display for Card{
         fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
