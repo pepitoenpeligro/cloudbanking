@@ -100,4 +100,11 @@ pub mod bankcard{
         }
 
     }
+    
+    /// The fmt method allows display all atributes of an Card
+    impl fmt::Display for Card{
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+            write!(f, "({}, {}, {}, {}, {})", self.id, self.number, self.cvc, self.date_limit, self.status)
+        }
+    }
 }
