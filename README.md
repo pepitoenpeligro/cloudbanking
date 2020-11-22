@@ -17,7 +17,7 @@
 
 ----
 
-:bookmark_tabs: Source Code Documentation of this proyect is available in [cloudbankingDocs](https://rawcdn.githack.com/pepitoenpeligro/cloudbanking/master/docs/documentation/cloudbanking/index.html)
+:bookmark_tabs: Source Code Documentation of this proyect is available in [cloudbanking Docs](https://rawcdn.githack.com/pepitoenpeligro/cloudbanking/master/docs/documentation/cloudbanking/index.html)
 
 ----
 
