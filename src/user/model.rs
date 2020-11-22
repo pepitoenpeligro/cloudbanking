@@ -57,6 +57,12 @@ pub mod user{
         pub fn get_bank_accounts(&self) -> &HashMap<String,Account>{
             &self.bank_accounts
         }
+
+
+        /// Getter (inmutable) for bank_cards private attribute.
+        pub fn get_bank_cards(&self) -> &HashMap<String,Card>{
+            &self.bank_cards
+        }
         
     
         /// Scenario HU1

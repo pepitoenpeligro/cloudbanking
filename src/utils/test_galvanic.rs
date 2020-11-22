@@ -30,6 +30,17 @@ mod test_galvanic_utils{
 
     }
 
+
+    #[test]
+    /// Test if a card number is valid or not
+    fn test_check_valid_card_number(){
+        let new_card  : String            = String::from("5500000000000004");
+        let bad_card  : String            = String::from("1111222200000002");
+
+        assert_that!(&Lib::check_number(new_card), is(eq(true)));
+        assert_that!(&Lib::check_number(bad_card), is(eq(false)));
+    }
+
 }
 
 
