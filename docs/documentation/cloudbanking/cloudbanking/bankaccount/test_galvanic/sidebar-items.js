@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["test_bankaccount_galvanic",""]]});
