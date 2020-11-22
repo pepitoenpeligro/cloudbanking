@@ -7,6 +7,7 @@ pub mod user{
 
 
     use crate::bankaccount::model::bankaccount::{Account};
+    use crate::bankcard::model::bankcard::{Card};
 
     #[derive(Serialize, Deserialize, Debug, Clone)]
     pub struct User{
@@ -14,6 +15,7 @@ pub mod user{
         email: String,
         created_at: NaiveDateTime,
         bank_accounts: HashMap<String,Account>,
+        bank_cards: HashMap<String,Card>,
     
     }
     impl User {
@@ -23,7 +25,8 @@ pub mod user{
                 id: new_id,
                 email: new_email,
                 created_at: new_created_at,
-                bank_accounts: HashMap::new()
+                bank_accounts: HashMap::new(),
+                bank_cards: HashMap::new()
             }
         }
 
@@ -71,13 +74,15 @@ pub mod user{
 
         
         /// Scenario HU2
-        pub fn add_bank_card(){
-    
+        pub fn add_bank_card(&mut self, card: Card) -> usize{
+            self.bank_cards.insert(String::from(card.get_id()), card);
+            self.bank_cards.len()
         }
         
         /// Scenario HU5
-        pub fn delete_bank_card(){
-    
+        pub fn delete_bank_card(&mut self, card_id:String) -> usize{
+            self.bank_cards.remove(&card_id);
+            self.bank_cards.len()
         }
     
         /// Scenario HU3
