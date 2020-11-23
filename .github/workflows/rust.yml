@@ -2,7 +2,9 @@ name: Rust
 
 on:
   push:
-    branches: [ master ]
+    branches: 
+      - 'master'
+      - 'hito*'
   pull_request:
     branches: [ master ]
 
