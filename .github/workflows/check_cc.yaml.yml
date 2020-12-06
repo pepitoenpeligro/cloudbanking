@@ -5,8 +5,12 @@ name: "Check cc.yaml file"
 on:
   push:
     branches: [ master ]
+    paths:
+      - 'cc.yaml'
   pull_request:
     branches: [ master ]
+    paths:
+      - 'cc.yaml'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -20,44 +24,15 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Yamllint check form @Carlosma7 in MedAuth repo. Merged from issue from @JJ. You can check the story here: 
-      # https://github.com/Carlosma7/MedAuth/commit/118f249fa6b8a84feaa810890a61dd5fcaf21656
-      - name: "Check syntax of cc.yaml with yamllint"
-        id: check_yamllint
-        run: |
-          yamllint cc.yaml
-
-
-      # Runs a single command using the runners shell
-      - name: Check file existence
-        id: check_files
-        uses: andstor/file-existence-action@v1
-        with:
-          files: "cc.yaml"
-
+      # Esto fallará si no existe
       - name: YAML Lint
-        uses: ibiqlik/action-yamllint@v2.0.0
-        with:
-          file_or_dir: "cc.yaml"
-      
+        run: yamllint cc.yaml
+
       - name: Check -entidad- existence
         id: check-entidad-cc-yaml
         run: |
-          grep -c "entidad" cc.yaml
-          
-      - name: Check -lenguaje- existence
-        id: check-lenguaje-cc-yaml
-        run: |
-          grep -c "lenguaje" cc.yaml
-          
-      - name: Check -test- existence
-        id: check-test-cc-yaml
-        run: |
-          grep -c "test" cc.yaml
-          
-      - name: Check -fichero_tareas- existence
-        id: check-fichero_tareas-cc-yaml
-        run: |
-          grep -c "fichero_tareas" cc.yaml
-          
+          for s in entidad lenguaje test fichero_tareas
+          do
+              grep -c ${s} cc.yaml
+
 
