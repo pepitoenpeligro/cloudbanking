@@ -16,18 +16,7 @@ pipeline {
       steps {
         sh 'cargo test'
       }
-    }
-
-
-      stage('EZPZ Updates') {
-      steps {
-          gitStatusWrapper(credentialsId: '55e0da58a952da11a338cbb088c960566d994584', gitHubContext: 'Status', description: 'Validating') {
-              sh 'cargo test'
-          }
-      }
-    }
-
-    
+    }  
 
   }
 }

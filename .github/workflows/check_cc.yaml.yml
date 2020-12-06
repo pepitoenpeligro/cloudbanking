@@ -20,6 +20,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: "Check syntax of cc.yaml with yamllint"
+        id: check_yamllint
+        run: |
+          yamllint cc.yaml
+
+
       # Runs a single command using the runners shell
       - name: Check file existence
         id: check_files
