@@ -1,0 +1,27 @@
+name: "Crea artefacto con configuración"
+on:
+  workflow_run:
+    workflows: ["Check cc.yaml file"]
+    types: completed
+
+jobs:
+  extrae_usuario_repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descarga contenidos
+        uses: actions/checkout@v2
+      - name: Descarga ysh
+        run: curl -s https://get.yaml.sh | sh
+      - name: Procesa fichero
+        run: |
+          cc=$(ysh -f cc.yaml)
+          lenguaje=$(ysh -T $cc -q "lenguaje")
+          fichero_tareas=$(ysh -T $cc -q "fichero_tareas")
+          echo "CC_LENGUAJE=$lenguaje" >> CC_CONFIG
+          echo "CC_FICHERO_TAREAS=$fichero_tareas" >> CC_CONFIG
+      - name: "Sube el fichero"
+        uses: actions/upload-artifact@v2
+        with:
+          name: cc-config
+          path: CC_CONFIG
+
