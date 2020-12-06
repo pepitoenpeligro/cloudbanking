@@ -22,3 +22,5 @@ test:
 lenguaje: rust
 
 fichero_tareas: make.toml
+
+foo: bar

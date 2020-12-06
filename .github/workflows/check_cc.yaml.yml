@@ -33,6 +33,6 @@ jobs:
         run: |
           for s in entidad lenguaje test fichero_tareas
           do
-              grep -c ${s} cc.yaml || echo "No está ${s} en cc.yaml" && exit 1
+              grep -c ${s} cc.yaml || ( echo "No está ${s} en cc.yaml" && exit 1 )
           done
 
