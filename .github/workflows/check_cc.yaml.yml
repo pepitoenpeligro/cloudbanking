@@ -34,5 +34,5 @@ jobs:
           for s in entidad lenguaje test fichero_tareas
           do
               grep -c ${s} cc.yaml
-
+          done
 
