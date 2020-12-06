@@ -14,7 +14,7 @@ jobs:
         run: |
           sudo curl -s -L https://raw.githubusercontent.com/azohra/yaml.sh/v0.2.0/ysh --output /usr/bin/ysh
           sudo chmod +x /usr/bin/ysh
-          ysh --help
+          ysh -v
       - name: Procesa fichero
         run: |
           ysh -f cc.yaml
