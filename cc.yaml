@@ -19,7 +19,7 @@ test:
   - src/user/test_galvanic.rs
   - src/utils/test_galvanic.rs
 
-lenguaje: rust
+lenguaje: rust 
 
 fichero_tareas:
   - make.toml
