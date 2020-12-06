@@ -12,7 +12,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Descarga ysh
         run: |
-          curl -s https://get.yaml.sh | sh
+          curl -s -L https://raw.githubusercontent.com/azohra/yaml.sh/v0.2.0/ysh --output /usr/bin/ysh
+          chmod u+x /usr/bin/ysh 
       - name: Procesa fichero
         run: |
           cc=$(ysh -f cc.yaml)
