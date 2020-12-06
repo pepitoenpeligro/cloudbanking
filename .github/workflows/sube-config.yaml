@@ -5,13 +5,14 @@ on:
     types: completed
 
 jobs:
-  extrae_usuario_repo:
+  sube_config:
     runs-on: ubuntu-latest
     steps:
       - name: Descarga contenidos
         uses: actions/checkout@v2
       - name: Descarga ysh
-        run: curl -s https://get.yaml.sh | sh
+        run: |
+          curl -s https://get.yaml.sh | sh
       - name: Procesa fichero
         run: |
           cc=$(ysh -f cc.yaml)
