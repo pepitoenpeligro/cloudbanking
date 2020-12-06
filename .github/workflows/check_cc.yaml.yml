@@ -20,6 +20,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      # Yamllint check form @Carlosma7 in MedAuth repo. Merged from issue from @JJ. You can check the story here: 
+      # https://github.com/Carlosma7/MedAuth/commit/118f249fa6b8a84feaa810890a61dd5fcaf21656
       - name: "Check syntax of cc.yaml with yamllint"
         id: check_yamllint
         run: |
