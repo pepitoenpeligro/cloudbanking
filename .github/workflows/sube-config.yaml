@@ -18,9 +18,8 @@ jobs:
       - name: Procesa fichero
         run: |
           echo "Procesando fichero cc.yaml"
-          ysh -f cc.yaml
           cc=$(ysh -f cc.yaml)
-          echo $cc
+          ysh -T $cc -q "lenguaje"
           lenguaje=$(ysh -T $cc -q "lenguaje")
           echo $lenguaje
           fichero_tareas=$(ysh -T $cc -q "fichero_tareas")
