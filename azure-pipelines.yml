@@ -10,7 +10,7 @@ pool:
   vmImage: 'ubuntu-18.04'
 
 container:
-  image: pepitoenpeligro/cloudbanking:thethinnest
+  image: pepitoenpeligro/cloudbanking
 
 steps:
 - script: docker run -t -v `pwd`:/app/test pepitoenpeligro/cloudbanking cargo test
