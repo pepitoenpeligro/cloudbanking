@@ -9,9 +9,8 @@ trigger:
 pool:
   vmImage: 'ubuntu-18.04'
 
-container:
-  image: pepitoenpeligro/cloudbanking
+container: 'rust:latest'
 
 steps:
-- script: docker run -t -v `pwd`:/app/test pepitoenpeligro/cloudbanking cargo test
+- script: cargo test
   displayName: 'Run test with cargo'
