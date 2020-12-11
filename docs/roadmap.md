@@ -14,10 +14,10 @@ In a __second phase__, I would develop more about core functionality as bank_car
 * [(HU5) Delete bank card as customer user](https://github.com/pepitoenpeligro/CloudBanking/issues/17) :heavy_check_mark:
 
 
-In a __third phase__ it would be ideal to be able to carry out a minimal management with an administrator user. So the following user stories would be covered:
+In a __third phase__ it would be ideal to be able to carry out about investments:
 
-* [(HU3) Add investment fund as customer user](https://github.com/pepitoenpeligro/CloudBanking/issues/15) :pencil:
-* [(HU6) Delete fund investment as customer user](https://github.com/pepitoenpeligro/CloudBanking/issues/18) :pencil:
+* [(HU3) Add investment fund as customer user](https://github.com/pepitoenpeligro/CloudBanking/issues/15) :heavy_check_mark:
+* [(HU6) Delete fund investment as customer user](https://github.com/pepitoenpeligro/CloudBanking/issues/18) :heavy_check_mark:
 
 
 In a __fourth phase__ of development it would be necessary to enable the ability to remove financial products from the user account, thus covering the following user stories
