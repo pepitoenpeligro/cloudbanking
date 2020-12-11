@@ -33,17 +33,3 @@ In a __fifth phase__ of development it would be ideal to implement the functiona
 * [(HU13) Create alert-trigger for fund investment movement](https://github.com/pepitoenpeligro/CloudBanking/issues/25)
 
 The implementation of the respective __system logs__ would be transversal to the whole project
-
-### Testing
-
-
-### Encapsulation in containers
-
-
-### Evaluation and Acquisition of the virtual infrastructure
-
-
-### Measurement and Estimation of Costs and Performance
-
-
-### Software Deployment and Orchestration
