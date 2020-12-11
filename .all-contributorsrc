@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "arturocs",
+      "name": "Arturo Cortés Sánchez",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/23533371?v=4",
+      "profile": "https://github.com/arturocs",
+      "contributions": [
+        "test",
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "cloudbanking",
+  "projectOwner": "pepitoenpeligro",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
