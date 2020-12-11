@@ -106,7 +106,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
+
     <td align="center"><a href="https://github.com/arturocs"><img src="https://avatars1.githubusercontent.com/u/23533371?v=4" width="100px;" alt=""/><br /><sub><b>Arturo Cortés Sánchez</b></sub></a><br /><a href="https://github.com/pepitoenpeligro/cloudbanking/commits?author=arturocs" title="Tests">⚠️</a> <a href="https://github.com/pepitoenpeligro/cloudbanking/commits?author=arturocs" title="Code">💻</a></td>
+    <td align="center"><a href="http://goo.gl/IlWG8U"><img src="https://avatars3.githubusercontent.com/u/500?v=4" width="100px;" alt=""/><br /><sub><b>Juan Julián Merelo Guervós</b></sub></a><br /><a href="https://github.com/pepitoenpeligro/cloudbanking/commits?author=JJ" title="Tests">⚠️</a></td>
+
   </tr>
 </table>
 
