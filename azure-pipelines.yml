@@ -15,5 +15,5 @@ steps:
 - script: cargo install --force cargo-make
   displayName: 'Install task runner -> cargo make'
   # https://github.com/sagiegurari/cargo-make
-- script: cargo test
+- script: cargo make --makefile make.toml test
   displayName: 'Run test with cargo'
