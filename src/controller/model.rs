@@ -4,7 +4,7 @@ use crate::user::model::user::User;
 use crate::bankaccount::model::bankaccount::*;
 use std::collections::HashMap;
 use crate::bankcard::model::bankcard::*;
-use crate::bankfund::model::{Fund};
+use crate::bankfund::model::bankfund::*;
 use crate::savinggroup::model::{Savinggroup};
 use crate::paymentgroup::model::{Paymentgroup};
 use serde::{Serialize,Deserialize};
