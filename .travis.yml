@@ -11,5 +11,8 @@ branches:
 rust:
   - 1.47.0
 
+install:
+  - cargo install --force cargo-make
+
 script:
   cargo test
