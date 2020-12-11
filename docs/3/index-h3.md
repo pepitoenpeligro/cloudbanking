@@ -53,11 +53,11 @@
 
 ## Direct access to the sections
 
-* R1. [Why CI?. Travis](https://pepitoenpeligro.github.io/cloudbanking/docs/4/r1)
-* R2. [Other CI systems](https://pepitoenpeligro.github.io/cloudbanking/docs/4/r2)
-* R3. [Using Tasks Manager in CI](https://pepitoenpeligro.github.io/cloudbanking/docs/4/r3)
-* R4. [Using Docker Image in CI](https://pepitoenpeligro.github.io/cloudbanking/docs/4/r4)
-* R5. [Code and Test advance. Other additional work](https://pepitoenpeligro.github.io/cloudbanking/docs/4/r4)
+* R1. [Base Image. Election and Justification](https://pepitoenpeligro.github.io/cloudbanking/docs/3/r1)
+* R2. [Dockerfile](https://pepitoenpeligro.github.io/cloudbanking/docs/3/r2)
+* R3. [DockerHub. Automate Publish](https://pepitoenpeligro.github.io/cloudbanking/docs/3/r3)
+* R4. [Alternative Containers Registry](https://pepitoenpeligro.github.io/cloudbanking/docs/3/r4)
+* R5. [Originality, Completion, Amount of work invested](https://pepitoenpeligro.github.io/cloudbanking/docs/3/r5)
 
 
 
@@ -93,5 +93,3 @@ cargo run
 :mag_right: The description of the problem can be found in [Problem-Description](https://pepitoenpeligro.github.io/cloudbanking/docs/problem-description)
 
 :factory: A description of the architecture can be found at [Architecture Description](https://pepitoenpeligro.github.io/cloudbanking/docs/tecnology-architecture-description)
-
-:warning: The previous step could be found in [H3](https://pepitoenpeligro.github.io/cloudbanking/docs/3/index-h3.md)
