@@ -1,0 +1,17 @@
+- pipeline: "TestInDocker"
+  trigger_mode: "ON_EVERY_PUSH"
+  ref_name: "master"
+  ref_type: "BRANCH"
+  priority: "NORMAL"
+  fail_on_prepare_env_warning: true
+  trigger_condition: "ALWAYS"
+  actions:
+  - action: "Run Docker Image"
+    type: "RUN_DOCKER_CONTAINER"
+    docker_image_name: "pepitoenpeligro/cloudbanking"
+    docker_image_tag: "latest"
+    volume_mappings:
+    - "/:/app/test"
+    trigger_condition: "ALWAYS"
+    ignore_image_pull_failures: true
+    shell: "SH"
