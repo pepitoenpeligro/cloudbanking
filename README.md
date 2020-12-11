@@ -8,16 +8,16 @@
 
 ![icon](docs/img/icon.png)
 
-![Rust](https://github.com/pepitoenpeligro/cloudbanking/workflows/Rust/badge.svg)
-![Check cc.yaml file](https://github.com/pepitoenpeligro/cloudbanking/workflows/Check%20cc.yaml%20file/badge.svg)
-[![Build Status](https://travis-ci.com/pepitoenpeligro/cloudbanking.svg?branch=master)](https://travis-ci.com/pepitoenpeligro/cloudbanking)
+*GitHubAction - Test*: ![Rust](https://github.com/pepitoenpeligro/cloudbanking/workflows/Rust/badge.svg)
+*GitHubAction - cc.yaml*: ![Check cc.yaml file](https://github.com/pepitoenpeligro/cloudbanking/workflows/Check%20cc.yaml%20file/badge.svg)
 
-[![Build Status](https://cloud.drone.io/api/badges/pepitoenpeligro/cloudbanking/status.svg)](https://cloud.drone.io/pepitoenpeligro/cloudbanking)
+*Travis*: [![Build Status](https://travis-ci.com/pepitoenpeligro/cloudbanking.svg?branch=master)](https://travis-ci.com/pepitoenpeligro/cloudbanking)
 
-[![buddy pipeline](https://app.buddy.works/pepitoenpeligro/cloudbanking/pipelines/pipeline/296654/badge.svg?token=2f146eecf3ada34ddaa38d6b04f28a1e74f73c7d1e0e3a645f055396c4898e4d "buddy pipeline")](https://app.buddy.works/pepitoenpeligro/cloudbanking/pipelines/pipeline/296654)
+*Drone.io*: [![Build Status](https://cloud.drone.io/api/badges/pepitoenpeligro/cloudbanking/status.svg)](https://cloud.drone.io/pepitoenpeligro/cloudbanking)
 
+*Buddy*: [![buddy pipeline](https://app.buddy.works/pepitoenpeligro/cloudbanking/pipelines/pipeline/296654/badge.svg?token=2f146eecf3ada34ddaa38d6b04f28a1e74f73c7d1e0e3a645f055396c4898e4d "buddy pipeline")](https://app.buddy.works/pepitoenpeligro/cloudbanking/pipelines/pipeline/296654)
 
-[![Build Status](https://dev.azure.com/joseantcg/cloudbanking/_apis/build/status/pepitoenpeligro.cloudbanking?branchName=master)](https://dev.azure.com/joseantcg/cloudbanking/_build/latest?definitionId=1&branchName=master)
+*Azure Pipelines*: [![Build Status](https://dev.azure.com/joseantcg/cloudbanking/_apis/build/status/pepitoenpeligro.cloudbanking?branchName=master)](https://dev.azure.com/joseantcg/cloudbanking/_build/latest?definitionId=1&branchName=master)
 
 
 :warning: **The development of the project is under construction**
