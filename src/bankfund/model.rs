@@ -9,6 +9,7 @@ pub mod bankfund{
     extern crate serde_json;
 
     /// Bank Fund model
+    #[derive(Serialize, Deserialize, Debug, Clone)]
     pub struct Fund{
         /// Identification of the bank fund, it should be an identification intern of app that it's consistent with database identificator
         id: String,

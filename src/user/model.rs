@@ -8,6 +8,7 @@ pub mod user{
 
     use crate::bankaccount::model::bankaccount::{Account};
     use crate::bankcard::model::bankcard::{Card};
+    use crate::bankfund::model::bankfund::{Fund};
 
     #[derive(Serialize, Deserialize, Debug, Clone)]
     pub struct User{
@@ -16,6 +17,7 @@ pub mod user{
         created_at: NaiveDateTime,
         bank_accounts: HashMap<String,Account>,
         bank_cards: HashMap<String,Card>,
+        bank_funds: HashMap<String,Fund>
     
     }
     impl User {
@@ -26,7 +28,8 @@ pub mod user{
                 email: new_email,
                 created_at: new_created_at,
                 bank_accounts: HashMap::new(),
-                bank_cards: HashMap::new()
+                bank_cards: HashMap::new(),
+                bank_funds: HashMap::new()
             }
         }
 
@@ -63,6 +66,13 @@ pub mod user{
         pub fn get_bank_cards(&self) -> &HashMap<String,Card>{
             &self.bank_cards
         }
+
+        /// Getter (inmutable) for bank_funds private attribute.
+        pub fn get_bank_funds(&self) -> &HashMap<String,Fund>{
+            &self.bank_funds
+        }
+
+
         
     
         /// Scenario HU1
@@ -92,13 +102,15 @@ pub mod user{
         }
     
         /// Scenario HU3
-        pub fn add_fund_investment(){
-    
+        pub fn add_fund_investment(&mut self, fund: Fund) -> usize{
+            self.bank_funds.insert(String::from(fund.get_id()), fund);
+            self.bank_funds.len()
         }
     
         /// Scenario HU6
-        pub fn delete_fund_investment(){
-            
+        pub fn delete_fund_investment(&mut self, fund_id: String) -> usize{
+            self.bank_funds.remove(&fund_id);
+            self.bank_funds.len()
         }
     
         /// Scenario HU7
