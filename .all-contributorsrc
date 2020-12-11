@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "JJ",
+      "name": "Juan Julián Merelo Guervós",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/500?v=4",
+      "profile": "http://goo.gl/IlWG8U",
+      "contributions": [
+        "test"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "cloudbanking",
+  "projectOwner": "pepitoenpeligro",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
