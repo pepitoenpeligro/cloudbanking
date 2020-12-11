@@ -1,1 +1,1 @@
-initSidebarItems({});
+initSidebarItems({"fn":[["test_add_bank_fund","Scenario HU3 Test add_bank_fund Check if a bank_fund is added to bank_funds Collection"],["test_delete_bank_fund","Scenario HU6 Test erase_bank_fund Check if a bank_fund is removed from bank_funds Collection"]]});

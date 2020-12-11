@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["model",""],["test",""]]});
+initSidebarItems({"mod":[["model",""],["test_galvanic",""]]});

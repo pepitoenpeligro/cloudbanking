@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["Fund",""]]});
+initSidebarItems({"mod":[["bankfund",""]]});
