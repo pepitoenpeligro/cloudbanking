@@ -46,6 +46,16 @@ fn main() {
     let date_user           : NaiveDateTime             = NaiveDate::from_ymd(2020, 7, 8).and_hms(22, 18, 0);
     let mut user                : User                      = User::new(id_user,email_user,date_user);
 
+
+
+    let id          : String            = String::from("507f1f77bcf86cd799439011");
+    let amount      : f64               = 534.4;
+    let date_start  : NaiveDateTime     = NaiveDate::from_ymd(2025, 7, 8).and_hms(22, 18, 0);
+    let date_finish : NaiveDateTime     = NaiveDate::from_ymd(2022, 7, 8).and_hms(22, 18, 0);
+    let status      : bool              = true;
+
+    let bf          : Fund                = Fund::new(id, amount,date_start,date_finish,status);
+
     println! ("HU covered in this release ({}):", VERSION_ENV);
     println! ("\t -[x] HU1 Add bank account as customer user");
     println! ("\t -[x] HU4 Delete bank account as customer user ");
@@ -54,6 +64,9 @@ fn main() {
 
     println! ("\t -[x] HU2 Add bank-card as customer user");
     println! ("\t -[x] HU5 Delete bank card as customer user");
+
+    println! ("\t -[x] HU3 Add investment fund");
+    println! ("\t -[x] HU6 Delete investment fund");
     println!("\n\n\n");
     
     let mut controller: CloudBankingController = CloudBankingController::new();
@@ -69,6 +82,11 @@ fn main() {
     println!("Removing Card from User:");
     user.delete_bank_card(String::from("507f1f77bcf86cd799439011"));
     println!("Now Card is removed from user {}", user.to_json());
+    println!("Adding bank fund {}", bf);
+    user.add_fund_investment(bf.clone());
+
+    println!("Erasing bank fund {}", bf);
+    user.delete_fund_investment(bf.get_id().clone());
 
     
 
