@@ -3,6 +3,7 @@
   ref_name: "master"
   ref_type: "BRANCH"
   priority: "NORMAL"
+  fetch_all_refs: true
   fail_on_prepare_env_warning: true
   trigger_condition: "ALWAYS"
   actions:
@@ -15,3 +16,14 @@
     trigger_condition: "ALWAYS"
     ignore_image_pull_failures: true
     shell: "SH"
+  - action: "Build Docker image"
+    type: "DOCKERFILE"
+    dockerfile_path: "Dockerfile"
+    trigger_condition: "ALWAYS"
+  - action: "Push Docker image"
+    type: "DOCKER_PUSH"
+    login: "pepitoenpeligro"
+    password: "secure!RROQErbo/bNw0Ls8xyuEwg==.iJizlgqQlqNtn5th2tyMcQ=="
+    docker_image_tag: "latest"
+    repository: "pepitoenpeligro/cloudbanking"
+    trigger_condition: "ALWAYS"
