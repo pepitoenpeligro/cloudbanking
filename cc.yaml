@@ -13,7 +13,7 @@ test:
   - src/bankaccount/test_galvanic.rs
   - src/bankcard/test_galvanic.rs
   - src/bankfund/test_galvanic.rs
-  - src/controller/test.rs
+  - src/controller/test_galvanic.rs
   - src/paymentgroup/test.rs
   - src/savinggroup/test.rs
   - src/user/test_galvanic.rs
