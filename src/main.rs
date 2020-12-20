@@ -89,9 +89,10 @@ async fn main() -> std::io::Result<()> {
             .route("/users", web::post().to(add_user))
 
             // route GET /api/users/{id}
-            //.route("/users/{id}", web::get().to(get_user_by_id))
             .route("/users/{id}", web::get().to(get_user_by_id))
 
+            // route DELETE /api/users/{id}
+            .route("/users/{id}", web::delete().to(delete_user_by_id))
 
             .route(
                 "/no",web::method(http::Method::HEAD)
