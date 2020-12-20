@@ -21,6 +21,7 @@ use std::sync::{Arc,Mutex, RwLock};
 use log::{debug, error, log_enabled, info, Level};
 use env_logger::Env;
 
+use actix_web::http::ContentEncoding;
 
 use crate::bankaccount::model::bankaccount::*;
 use crate::bankcard::model::bankcard::*;
@@ -64,7 +65,7 @@ async fn main() -> std::io::Result<()> {
         .wrap(middleware::Logger::default())
 
         // Defining default Compress level for data exchange
-        .wrap(middleware::Compress::default())
+        .wrap(middleware::Compress::new(ContentEncoding::Gzip))
         // /api/users
         .service(web::scope("/api")
 

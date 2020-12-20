@@ -10,6 +10,8 @@ use std::sync::{Arc,Mutex, RwLock};
 use log::{debug, error, log_enabled, info, Level};
 use actix_web::*;
 
+use super::middleware::CheckIdUserService;
+
 
 pub async fn not_responding(req: HttpRequest) -> Result<HttpResponse, Error> {
     log::info!("Received request from uri: {}", req.uri());
@@ -42,7 +44,7 @@ pub async fn get_users(cbc: web::Data<Arc<RwLock<CloudBankingController>>>, req:
     
 }
 
-pub async fn get_user_by_id(req: HttpRequest) -> Result<HttpResponse, Error> {
+pub async fn get_user_by_id(_: CheckIdUserService, req: HttpRequest) -> Result<HttpResponse, Error> {
     log::info!("Received request from uri: {}", req.uri());
     return Ok(HttpResponse::Ok().json("Implementing"));
 }
