@@ -7,15 +7,19 @@ mod paymentgroup;
 mod savinggroup;
 mod controller;
 mod utils;
-
 mod json;
 
-use warp::*;
-
-use chrono::{NaiveDate, NaiveDateTime};
+extern crate dotenv;
 extern crate serde_json;
 
-
+use chrono::{NaiveDate, NaiveDateTime};
+use actix::prelude::*;
+use actix_web::{get, web,http, App, HttpServer, Responder, middleware, HttpResponse};
+use std::{env, io};
+use dotenv::dotenv;
+use std::sync::{Arc,Mutex, RwLock};
+use log::{debug, error, log_enabled, info, Level};
+use env_logger::Env;
 
 
 use crate::bankaccount::model::bankaccount::*;
@@ -27,49 +31,67 @@ use crate::user::model::user::*;
 use crate::utils::model::*;
 use crate::controller::model::*;
 use crate::json::helpers::*;
-
-
-use crate::controller::handler::*;
-use std::net::{SocketAddr,IpAddr,Ipv4Addr};
+use crate::controller::routes_handlers::*;
 
 
 
-
-
+// Better with ETCD3 client
 const VERSION_ENV: &str = env!("CARGO_PKG_VERSION");
-const PORT : u16 = 3030;
 
 
+#[actix_web::main]
+async fn main() -> std::io::Result<()> {
+    // std::env::set_var("RUST_LOG", "actix_web=debug");
+    dotenv().ok();
+
+    let port = env::var("PORT").expect("PORT must be set");
+    let host = env::var("HOST").expect("HOST must be set");
+
+    let binding_uri = format!("{}:{}",host, port);
+    // env_logger::init();
+    env_logger::Builder::from_env(Env::default().default_filter_or("info")).init();
+
+    // Mutex over Controller Object
+    let cbc :Arc<RwLock<CloudBankingController>>  = Arc::new(RwLock::new(CloudBankingController::new()));
+
+    let server = HttpServer::new(move   | | {
+        App::new()
+
+        // Injecting controller to service
+        .data(cbc.clone())
+
+        // Defining Logger as middleware {INFO, DEBUG and ERROR} for actix-web logs
+        .wrap(middleware::Logger::default())
+
+        // Defining default Compress level for data exchange
+        .wrap(middleware::Compress::default())
+        // /api/users
+        .service(web::scope("/api")
+
+            // route GET /api/users
+            .route("/users", web::get().to(get_users))
+            // route POST /api/users
+            .route("/users", web::post().to(add_user))
+
+            // route GET /api/users/{id}
+            .route("/users/{id}", web::get().to(get_user_by_id))
 
 
+            .route(
+                "/no",web::method(http::Method::HEAD)
+                    .to(not_responding),
+            )
 
-
-
-#[tokio::main]
-async fn main() {
-    let mut cbc :CloudBankingController  = CloudBankingController::new();
-    let cbc_filter = warp::any().map(move || cbc.clone());
-    
-    let socket : SocketAddr = SocketAddr::new(IpAddr::V4(Ipv4Addr::new(127, 0, 0, 1)), PORT);
-
-
-
-    let get_users = warp::get()
-    .and(warp::path("users"))
-    .and(warp::path::end())
-    .and(cbc_filter.clone())
-    .and_then(get_users_handler);
-
-
-    let post_user = warp::post()
-        .and(warp::path("users"))
-        .and(warp::path::end()).and(post_json())
-        .and(cbc_filter.clone())
-        .and_then(post_user_handler);
-
-    let routes = get_users.or(post_user);
-
-    println!("Server started in {}",socket);
-    warp::serve(routes).run(socket).await;
-    
+        )
+        // /_ We can let it for static files
+        .service(web::scope("/")
+            .route("/healthcheck", web::get().to(healthcheck))
+    )
+        
+    });
+    println!("Server is listening in {}", binding_uri);
+    server.bind(binding_uri)
+        .expect("Cannot bind to port")
+        .run()
+        .await
 }
