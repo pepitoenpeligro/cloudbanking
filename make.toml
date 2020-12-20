@@ -42,6 +42,15 @@ script = [
 dependencies = ["docgenerate"]
 
 
+[tasks.start]
+command = "cargo"
+args = ["run"]
+
+[tasks.watch]
+command = "cargo"
+args = ["watch"]
+
+
 [tasks.dirtree]
 script = [
     "find *.yml Gemfile README.md Dockerfile cc.yaml  make.toml LICENSE _config.yml src install makefile .github/workflows .gitignore .travis.yml  -type f |  cut -d/ -f-4 | uniq  |  dirtree -o docs/dirtree.html"
