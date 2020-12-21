@@ -14,17 +14,22 @@ use actix_web::*;
 
 
 use super::middleware::*;
+use crate::controller::message::*;
 
 
 pub async fn not_responding(req: HttpRequest) -> Result<HttpResponse, Error> {
     log::info!("Received request from uri: {}", req.uri());
-    return Ok(HttpResponse::BadRequest().json("You are not allowed to be here"));
+    let mut mesg = Msg::new();
+    mesg.msg = String::from("You are not allowed to be here");
+    return Ok(HttpResponse::BadRequest().json(mesg));
 }
 
 
 pub async fn healthcheck(req: HttpRequest) -> Result<HttpResponse, Error> {
     log::info!("Received request from uri: {}", req.uri());
-    return Ok(HttpResponse::Ok().json("I am alive"));
+    let mut mesg = Msg::new();
+    mesg.msg = String::from("I am alive");
+    return Ok(HttpResponse::Ok().json(mesg));
 }
 
 
@@ -61,7 +66,9 @@ pub async fn get_user_by_id(_: CheckIdUserService, cbc: web::Data<Arc<RwLock<Clo
     if users.contains_key(user_id.as_str()) {
         return Ok(HttpResponse::Ok().json(users.get(user_id.as_str())));
     }
-    return Ok(HttpResponse::NotFound().json("user id not found. Please create user before search"));
+    let mut mesg = Msg::new();
+    mesg.msg = String::from("user id not found. Please create user before search");
+    return Ok(HttpResponse::NotFound().json(mesg));
 }
 
 pub async fn delete_user_by_id(_: CheckIdUserService, cbc: web::Data<Arc<RwLock<CloudBankingController>>>, req: HttpRequest, user_id: web::Path<String>) -> Result<HttpResponse, Error> {
@@ -76,12 +83,16 @@ pub async fn delete_user_by_id(_: CheckIdUserService, cbc: web::Data<Arc<RwLock<
         log::info!("id is in system");    
         cbc.write().unwrap().erase_account(String::from(user_id_key));
         log::info!("user {} erased sucessfully", user_id_key);
-        return Ok(HttpResponse::Ok().json("user deleted"));
+        let mut mesg = Msg::new();
+        mesg.msg = String::from("user deleted");
+        return Ok(HttpResponse::Ok().json(mesg));
 
     }
     log::info!("user id is not in controller. Not possible to erase");
     //return Ok(HttpResponse::NoContent().json("It's not possible to erase user. User id not found. Please create user before search"));
-    return Ok(HttpResponse::NotFound().json("It's not possible to erase user. User id not found. Please create user before search"));
+    let mut mesg = Msg::new();
+    mesg.msg = String::from("It's not possible to erase user. User id not found. Please create user before search");
+    return Ok(HttpResponse::NotFound().json(mesg));
     
 }
 
@@ -100,11 +111,17 @@ pub async fn update_user_by_id(_: CheckIdUserService, cbc: web::Data<Arc<RwLock<
         // Updating the key user_id_key 
         cbc.write().unwrap().create_new_user(user.to_owned());
         log::info!("user {} updated sucessfully", user_id_key);
-        return Ok(HttpResponse::Ok().json("user updated"));
+
+        let mut mesg = Msg::new();
+        mesg.msg = String::from("user updated");
+        return Ok(HttpResponse::Created().json(mesg));
     }
 
     log::info!("user id is not in controller. Not possible to update");
-    return Ok(HttpResponse::NoContent().json("It's not possible to update user. User id not found. Please create user before search"));
+
+    let mut mesg = Msg::new();
+    mesg.msg = String::from("It's not possible to update user. User id not found. Please create user before search");
+    return Ok(HttpResponse::NoContent().json(mesg));
 
 
 
@@ -114,7 +131,11 @@ pub async fn add_user(cbc: web::Data<Arc<RwLock<CloudBankingController>>> , requ
     log::info!("Received request from uri: {}", req.uri());
     let user :User = request.to_owned();
     cbc.write().unwrap().create_new_user(user);
-    return Ok(HttpResponse::Ok().json("user saved"));
+
+    let mut mesg = Msg::new();
+    mesg.msg = String::from("user saved");
+    // return 201
+    return Ok(HttpResponse::Created().json(mesg));
 }
 
     
