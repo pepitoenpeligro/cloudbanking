@@ -125,6 +125,9 @@ async fn main() -> std::io::Result<()> {
 
         // What type of content and origin we will allo.
         .wrap(middleware::DefaultHeaders::new().header("Content-Security-Policy","script-src 'self'"))
+
+        // Preventing CSRF attacks
+        .wrap(middleware::DefaultHeaders::new().header("Access-Control-Allow-Headers", "X-Requested-Width"))
         // For restrict client with mandatory use of HTTPS 
         // .wrap(middleware::DefaultHeaders::new().header("Strict-Transport-Security","max-age=31536000; includeSubDomains"))
 
