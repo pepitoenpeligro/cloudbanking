@@ -15,6 +15,12 @@ command = "cargo"
 args = ["test"]
 
 
+[tasks.devtest]
+script = [
+    "cargo test -- --nocapture"
+]
+
+
 [tasks.run]
 command = "cargo"
 args = ["run"]

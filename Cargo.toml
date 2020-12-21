@@ -30,6 +30,8 @@ openssl = { version = "0.10", features = ["v110"] }
 
 etcd-client = "0.5"
 
+hyper = "0.13.9"
+
 
 env_logger = "0.8.2"
 log = { version = "0.4", features = ["std", "serde"] }

@@ -2,11 +2,21 @@
 
 #[cfg(test)]
 mod web_actix_test {
+
+    extern crate actix_web;
+    extern crate serde_json;
+    extern crate actix_rt;
+    extern crate hyper;
+
     use super::*;
     use actix_web::http::{header, StatusCode};
-    use actix_web::{test, web, App, http, HttpServer, Responder, middleware, HttpResponse, HttpRequest,  HttpMessage};
+    use actix_web::{test, web, App, http, HttpServer, Responder, middleware, HttpResponse, HttpMessage};
+    use hyper::Request;
     use std::sync::{Arc,Mutex, RwLock};
     use actix_web::http::ContentEncoding;
+
+    use serde_json::{Value, json};
+    use actix_web::test::TestRequest;
 
 
     use galvanic_assert::*;
@@ -90,6 +100,79 @@ mod web_actix_test {
     }
 
 
+    /// POST /api/users
+    /// Testing add user in system 
+    /// [HU 14] Create account in system
+    #[actix_rt::test]
+    async fn test_add_user(){
+
+        
+        let id_user             : String                    = String::from("999f7f66abf88ee70243988");
+        let email_user          : String                    = String::from("test_add_user@ostfalia.de");
+        let date_user           : NaiveDateTime             = NaiveDate::from_ymd(2020, 7, 8).and_hms(22, 18, 0);
+        let mut user            : User                      = User::new(id_user,email_user,date_user);
+
+        let req = test::TestRequest::post().uri("/api/users").set_json(&user).to_request();
+
+        let cbc :Arc<RwLock<CloudBankingController>>  = Arc::new(RwLock::new(CloudBankingController::new()));
+
+        let mut app = test::init_service(
+            App::new()
     
+            // Injecting controller to service (api calls)
+            .data(cbc.clone())
+    
+            // Defining Logger as middleware {INFO, DEBUG and ERROR} for actix-web logs
+            .wrap(middleware::Logger::default())
+    
+            // Defining default Compress level for data exchange
+            .wrap(middleware::Compress::new(ContentEncoding::Gzip))
+    
+            // Only accept GET, PUT, POST and DELETE verbs
+            .wrap(middleware::DefaultHeaders::new().header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE"))
+    
+            // No access the site if detected XSS attempt. Not used now. WebBrowser needed
+            .wrap(middleware::DefaultHeaders::new().header("X-XSS-Protection", "1; mode=block"))
+    
+            // We expect data exchange in only json format
+            .wrap(middleware::DefaultHeaders::new().header("Content-Type", "application/json"))
+    
+            // Preventing to any website from embedding. Not used now. WebBrowser needed
+            .wrap(middleware::DefaultHeaders::new().header("X-Frame-Options","Deny"))
+    
+            // What type of content and origin we will allo.
+            .wrap(middleware::DefaultHeaders::new().header("Content-Security-Policy","script-src 'self'"))
+            // For restrict client with mandatory use of HTTPS 
+            // .wrap(middleware::DefaultHeaders::new().header("Strict-Transport-Security","max-age=31536000; includeSubDomains"))
+    
+            // /api/users
+            .service(web::scope("/api")
+    
+                // route GET /api/users
+                .route("/users", web::get().to(get_users))
+    
+                // route POST /api/users
+                .route("/users", web::post().to(add_user))
+    
+                // route GET /api/users/{id}
+                .route("/users/{id}", web::get().to(get_user_by_id))
+    
+                // route DELETE /api/users/{id}
+                .route("/users/{id}", web::delete().to(delete_user_by_id))
+                
+                // route PUT /api/users/{id}
+                .route("/users/{id}",  web::put().to(update_user_by_id))
+    
+            )
+            // /_ We can let it for static files
+            .service(web::scope("/")
+                .route("/healthcheck", web::get().to(healthcheck))
+            )
+        ).await;
+
+        let resp = test::call_service(& mut app, req).await;
+        println!("response from add user: {:?}", resp);
+        assert!(resp.status().is_success());
+    }
 
 }
