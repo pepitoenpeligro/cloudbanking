@@ -11,8 +11,10 @@ branches:
 rust:
   - 1.47.0
 
-install:
-  - cargo install --force cargo-make
+#install:
+  # - cargo install --force cargo-make
 
 script:
-  cargo make --makefile make.toml test
+  #cargo make --makefile make.toml test
+  # To improve our cache
+  cargo test
