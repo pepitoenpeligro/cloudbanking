@@ -33,9 +33,7 @@ args = ["run"]
 command = "cargo"
 args = ["doc","-p","cloudbanking", "--no-deps"]
 
-[tasks.release]
-command = "cargo"
-args = ["build", "--release", "--bin", "CloudBanking"]
+
 
 [tasks.doc]
 script = [
