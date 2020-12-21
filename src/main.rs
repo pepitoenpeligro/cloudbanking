@@ -1,4 +1,4 @@
-#![allow(unused_imports, dead_code, unused_variables, unused_comparisons)]
+#![allow(unused_imports, dead_code, unused_variables, unused_comparisons, unused_assignments)]
 mod user;
 mod bankaccount;
 mod bankcard;
@@ -17,6 +17,7 @@ use actix::prelude::*;
 use actix_web::{get, web,http, App, HttpServer, Responder, middleware, HttpResponse};
 use controller::middleware::{CheckIdUserService};
 use std::{env, io};
+
 use dotenv::dotenv;
 use std::sync::{Arc,Mutex, RwLock};
 use log::{debug, error, log_enabled, info, Level};
@@ -25,6 +26,8 @@ use std::io::Write;
 
 use actix_web::http::ContentEncoding;
 use openssl::ssl::{SslAcceptor, SslFiletype, SslMethod};
+
+use etcd_client::{Client, Error};
 
 use crate::bankaccount::model::bankaccount::*;
 use crate::bankcard::model::bankcard::*;
@@ -39,20 +42,14 @@ use crate::controller::routes_handlers::*;
 
 
 
-// Better with ETCD3 client
+
 const VERSION_ENV: &str = env!("CARGO_PKG_VERSION");
 
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     // std::env::set_var("RUST_LOG", "actix_web=debug");
-    dotenv().ok();
 
-    let port = env::var("PORT").expect("PORT must be set");
-    let host = env::var("HOST").expect("HOST must be set");
-
-    let binding_uri = format!("{}:{}",host, port);
-    // env_logger::init();
     env_logger::Builder::from_env(Env::default().default_filter_or("info").write_style_or("auto", "always"))
     .format(|buf, record| {
         writeln!(
@@ -66,6 +63,39 @@ async fn main() -> std::io::Result<()> {
     })
     .init();
 
+
+    // By default. Only if:
+    // 1. ETCD is not avaible
+    // 2. .env file is not reachable or defined
+
+    let mut port: String = String::from("3030");
+    let mut host: String = String::from("127.0.0.1");
+    
+    let client_etcd = Client::connect(["localhost:2379"], None).await;
+
+    if client_etcd.is_ok(){
+        let mut client_unwrap = client_etcd.unwrap();
+        let resp_etc_host = client_unwrap.get("HOST", None).await;
+        let resp_etc_port = client_unwrap.get("PORT", None).await;
+
+        host = String::from(resp_etc_host.unwrap().kvs().first().unwrap().value_str().unwrap().to_string().as_str());
+        port = String::from(resp_etc_port.unwrap().kvs().first().unwrap().value_str().unwrap().to_string().as_str());
+
+        log::info!("Host from etcd: {:?}", host);
+        log::info!("Port from etcd: {:?}", port);
+    }else{
+        log::info!("No client etc, we will use .env");
+    }
+    
+    
+    
+    dotenv().ok();
+
+    port = env::var("PORT").expect("PORT must be set");
+    host = env::var("HOST").expect("HOST must be set");
+
+    let binding_uri = format!("{}:{}",host, port);
+    
     // Mutex over Controller Object
     let cbc :Arc<RwLock<CloudBankingController>>  = Arc::new(RwLock::new(CloudBankingController::new()));
 
@@ -114,7 +144,7 @@ async fn main() -> std::io::Result<()> {
     builder
         .set_private_key_file("key.pem", SslFiletype::PEM).unwrap();
     builder.set_certificate_chain_file("cert.pem").unwrap();*/
-
+    log::info!("Welcome to cloudbanking API {}", VERSION_ENV);
     log::info!("Server is listening in {}", binding_uri);
     //server.bind_openssl(binding_uri, builder)
     server.bind(binding_uri)
