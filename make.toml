@@ -51,6 +51,18 @@ command = "cargo"
 args = ["watch"]
 
 
+[tasks.certificate]
+script = [
+    "openssl req -x509 -newkey rsa:4096 -nodes -keyout key.pem -out cert.pem -days 365 -subj '/CN=localhost'"
+]
+
+
+[task.detectports]
+script = [
+    "lsof -i tcp:3030"
+]
+
+
 [tasks.dirtree]
 script = [
     "find *.yml Gemfile README.md Dockerfile cc.yaml  make.toml LICENSE _config.yml src install makefile .github/workflows .gitignore .travis.yml  -type f |  cut -d/ -f-4 | uniq  |  dirtree -o docs/dirtree.html"

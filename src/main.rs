@@ -24,6 +24,7 @@ use env_logger::Env;
 use std::io::Write;
 
 use actix_web::http::ContentEncoding;
+use openssl::ssl::{SslAcceptor, SslFiletype, SslMethod};
 
 use crate::bankaccount::model::bankaccount::*;
 use crate::bankcard::model::bankcard::*;
@@ -105,7 +106,17 @@ async fn main() -> std::io::Result<()> {
     )
         
     });
+
+    // Enables HTTP2.0
+    // It's required to request with public ssl cert
+    // Works in local
+    /*let mut builder = SslAcceptor::mozilla_intermediate(SslMethod::tls()).unwrap();
+    builder
+        .set_private_key_file("key.pem", SslFiletype::PEM).unwrap();
+    builder.set_certificate_chain_file("cert.pem").unwrap();*/
+
     log::info!("Server is listening in {}", binding_uri);
+    //server.bind_openssl(binding_uri, builder)
     server.bind(binding_uri)
         .expect("Cannot bind to port")
         .run()
