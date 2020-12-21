@@ -20,6 +20,10 @@ script = [
     "cargo test -- --nocapture"
 ]
 
+[tasks.audit]
+command = "cargo"
+args = ["audit"]
+
 
 [tasks.run]
 command = "cargo"
@@ -73,3 +77,22 @@ script = [
 script = [
     "find *.yml Gemfile README.md Dockerfile cc.yaml  make.toml LICENSE _config.yml src install makefile .github/workflows .gitignore .travis.yml  -type f |  cut -d/ -f-4 | uniq  |  dirtree -o docs/dirtree.html"
 ]
+
+[tasks.release]
+script = [
+    "cargo build --release --bin cloudbanking"
+]
+
+
+[tasks.benchwrk]
+script = '''
+cargo run --release > /dev/null 2>&1 & 
+pid_cargo=$!
+echo $pid_cargo
+while ! nc -z '127.0.0.1' 3030; do   
+    sleep 0.01
+done
+wrk -t10 -c1000 -d50s http://127.0.0.1:3030/healthcheck  -s benchmark.lua
+kill -9 $pid_cargo
+'''
+dependencies=["release"]

@@ -1,0 +1,17 @@
+execution:
+  - scenario: healthcheck
+    concurrency: 10
+    ramp-up: 5s
+    hold-for: 30s
+    steps: 5
+
+scenarios:
+  healthcheck:
+    default-address: http://docker.for.mac.host.internal:3030
+    store-cache: false
+    timeout: 3s
+    requests:
+    - url: /healthcheck
+      method: GET
+      headers:
+        Content-Type: application/json
