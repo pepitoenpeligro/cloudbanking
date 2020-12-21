@@ -111,8 +111,22 @@ async fn main() -> std::io::Result<()> {
         // Defining default Compress level for data exchange
         .wrap(middleware::Compress::new(ContentEncoding::Gzip))
 
+        // Only accept GET, PUT, POST and DELETE verbs
         .wrap(middleware::DefaultHeaders::new().header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE"))
+
+        // No access the site if detected XSS attempt. Not used now. WebBrowser needed
         .wrap(middleware::DefaultHeaders::new().header("X-XSS-Protection", "1; mode=block"))
+
+        // We expect data exchange in only json format
+        .wrap(middleware::DefaultHeaders::new().header("Content-Type", "application/json"))
+
+        // Preventing to any website from embedding. Not used now. WebBrowser needed
+        .wrap(middleware::DefaultHeaders::new().header("X-Frame-Options","Deny"))
+
+        // What type of content and origin we will allo.
+        .wrap(middleware::DefaultHeaders::new().header("Content-Security-Policy","script-src 'self'"))
+        // For restrict client with mandatory use of HTTPS 
+        // .wrap(middleware::DefaultHeaders::new().header("Strict-Transport-Security","max-age=31536000; includeSubDomains"))
 
         // /api/users
         .service(web::scope("/api")
