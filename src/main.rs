@@ -111,6 +111,9 @@ async fn main() -> std::io::Result<()> {
         // Defining default Compress level for data exchange
         .wrap(middleware::Compress::new(ContentEncoding::Gzip))
 
+        .wrap(middleware::DefaultHeaders::new().header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE"))
+        .wrap(middleware::DefaultHeaders::new().header("X-XSS-Protection", "1; mode=block"))
+
         // /api/users
         .service(web::scope("/api")
 
@@ -133,8 +136,7 @@ async fn main() -> std::io::Result<()> {
         // /_ We can let it for static files
         .service(web::scope("/")
             .route("/healthcheck", web::get().to(healthcheck))
-    )
-        
+        )
     });
 
     // Enables HTTP2.0

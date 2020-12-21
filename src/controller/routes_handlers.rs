@@ -41,7 +41,8 @@ pub async fn get_users(cbc: web::Data<Arc<RwLock<CloudBankingController>>>, req:
         return Ok(HttpResponse::Ok().json(users.to_owned()));
     }else{
         log::info!("Error getting user list {:?}", users.to_owned());
-        return Ok(HttpResponse::NoContent().json(users.to_owned()));
+        //return Ok(HttpResponse::NoContent().json(users.to_owned()));
+        return Ok(HttpResponse::NotFound().json(users.to_owned()));
     }
 
     
@@ -79,7 +80,8 @@ pub async fn delete_user_by_id(_: CheckIdUserService, cbc: web::Data<Arc<RwLock<
 
     }
     log::info!("user id is not in controller. Not possible to erase");
-    return Ok(HttpResponse::NoContent().json("It's not possible to erase user. User id not found. Please create user before search"));
+    //return Ok(HttpResponse::NoContent().json("It's not possible to erase user. User id not found. Please create user before search"));
+    return Ok(HttpResponse::NotFound().json("It's not possible to erase user. User id not found. Please create user before search"));
     
 }
 
