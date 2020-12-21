@@ -24,6 +24,7 @@ actix-cors = "0.5.3"
 actix-session = "0.4.0"
 actix = "0.10.0"
 actix-service = "1.0.5"
+actix-rt = "1.1.1"
 
 openssl = { version = "0.10", features = ["v110"] }
 
