@@ -52,7 +52,7 @@ async fn main() -> std::io::Result<()> {
 
     let binding_uri = format!("{}:{}",host, port);
     // env_logger::init();
-    env_logger::Builder::from_env(Env::default().default_filter_or("info"))
+    env_logger::Builder::from_env(Env::default().default_filter_or("info").write_style_or("auto", "always"))
     .format(|buf, record| {
         writeln!(
             buf,
@@ -85,6 +85,7 @@ async fn main() -> std::io::Result<()> {
 
             // route GET /api/users
             .route("/users", web::get().to(get_users))
+
             // route POST /api/users
             .route("/users", web::post().to(add_user))
 
@@ -93,6 +94,9 @@ async fn main() -> std::io::Result<()> {
 
             // route DELETE /api/users/{id}
             .route("/users/{id}", web::delete().to(delete_user_by_id))
+            
+            // route PUT /api/users/{id}
+            .route("/users/{id}",  web::put().to(update_user_by_id))
 
         )
         // /_ We can let it for static files
@@ -101,7 +105,7 @@ async fn main() -> std::io::Result<()> {
     )
         
     });
-    println!("Server is listening in {}", binding_uri);
+    log::info!("Server is listening in {}", binding_uri);
     server.bind(binding_uri)
         .expect("Cannot bind to port")
         .run()

@@ -12,6 +12,7 @@ use log::{debug, error, log_enabled, info, Level};
 use actix_web::*;
 
 
+
 use super::middleware::*;
 
 
@@ -80,6 +81,31 @@ pub async fn delete_user_by_id(_: CheckIdUserService, cbc: web::Data<Arc<RwLock<
     log::info!("user id is not in controller. Not possible to erase");
     return Ok(HttpResponse::NoContent().json("It's not possible to erase user. User id not found. Please create user before search"));
     
+}
+
+
+
+pub async fn update_user_by_id(_: CheckIdUserService, cbc: web::Data<Arc<RwLock<CloudBankingController>>>, user: web::Json<User>, req: HttpRequest, user_id: web::Path<String>) -> Result<HttpResponse, Error>{
+    log::info!("Received request from uri: {}", req.uri());
+
+    let users_in_system = cbc.read().unwrap().get_users().read().unwrap().to_owned();
+
+    let user_id_key = user_id.as_str();
+    println!("Searching user id in system: {} ",user_id_key );
+
+    if users_in_system.contains_key(user_id_key) {
+        log::info!("id is in system");
+        // Updating the key user_id_key 
+        cbc.write().unwrap().create_new_user(user.to_owned());
+        log::info!("user {} updated sucessfully", user_id_key);
+        return Ok(HttpResponse::Ok().json("user updated"));
+    }
+
+    log::info!("user id is not in controller. Not possible to update");
+    return Ok(HttpResponse::NoContent().json("It's not possible to update user. User id not found. Please create user before search"));
+
+
+
 }
 
 pub async fn add_user(cbc: web::Data<Arc<RwLock<CloudBankingController>>> , request: web::Json<User>, req: HttpRequest) -> Result<HttpResponse, Error> {
