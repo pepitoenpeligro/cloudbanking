@@ -11,6 +11,7 @@ use std::rc::Rc;
 use log::{debug, error, log_enabled, info, Level};
 use actix_web::*;
 
+
 use super::middleware::*;
 
 
@@ -64,25 +65,14 @@ pub async fn get_user_by_id(_: CheckIdUserService, cbc: web::Data<Arc<RwLock<Clo
 pub async fn delete_user_by_id(_: CheckIdUserService, cbc: web::Data<Arc<RwLock<CloudBankingController>>>, req: HttpRequest, user_id: web::Path<String>) -> Result<HttpResponse, Error> {
     log::info!("Received request from uri: {}", req.uri());
 
+    let users_in_system = cbc.read().unwrap().get_users().read().unwrap().to_owned();
 
-    let my_controller = cbc.read();
-    let users_lock= my_controller.unwrap();
-    let users_arc = users_lock.get_users();
-    let users = users_arc.read().unwrap().to_owned();
-    
-    println!("Lo que veo en el contendor de ususarios es: {:?}", users);
-
-    println!("Las claves que tengo: {:?} ", users.keys());
     let user_id_key = user_id.as_str();
-    println!("Lo que busco: {} ",user_id_key );
+    println!("Searching user id in system: {} ",user_id_key );
 
-
-
-
-    if users.contains_key(user_id_key) {
-        log::info!("Le pedimos al controlador que borre");
-
-        my_controller.unwrap().erase_account(String::from(user_id_key));
+    if users_in_system.contains_key(user_id_key) {
+        log::info!("id is in system");    
+        cbc.write().unwrap().erase_account(String::from(user_id_key));
         log::info!("user {} erased sucessfully", user_id_key);
         return Ok(HttpResponse::Ok().json("user deleted"));
 

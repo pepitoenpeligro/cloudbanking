@@ -71,7 +71,7 @@ async fn main() -> std::io::Result<()> {
     let server = HttpServer::new(move   | | {
         App::new()
 
-        // Injecting controller to service
+        // Injecting controller to service (api calls)
         .data(cbc.clone())
 
         // Defining Logger as middleware {INFO, DEBUG and ERROR} for actix-web logs
@@ -93,11 +93,6 @@ async fn main() -> std::io::Result<()> {
 
             // route DELETE /api/users/{id}
             .route("/users/{id}", web::delete().to(delete_user_by_id))
-
-            .route(
-                "/no",web::method(http::Method::HEAD)
-                    .to(not_responding),
-            )
 
         )
         // /_ We can let it for static files
