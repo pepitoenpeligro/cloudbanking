@@ -1,0 +1,27 @@
+# docker build  --no-cache -f Dockerfile.account -t pepitoenpeligro/cloudbanking-account  .
+# docker build -f Dockerfile.account -t pepitoenpeligro/cloudbanking-account  .
+
+# docker build  -f Dockerfile.account -t pepitoenpeligro/cloudbanking-account  .
+FROM rust:1.47.0 as builder
+
+
+WORKDIR /rust
+
+
+RUN mkdir -p /rust/app/account/src/bankaccount_module
+WORKDIR     /rust/app
+
+COPY ./account/Cargo.toml ./account
+COPY ./account/.env ./account
+COPY ./account/src ./account/src
+COPY ./account/src/bankaccount_module ./account/src/bankaccount_module
+RUN cargo build --release --manifest-path=./account/Cargo.toml --bin account
+
+
+FROM rust:1.47.0 as runner
+COPY  --from=builder /rust/app/account/target/release/account /app/account
+COPY  --from=builder /rust/app/account/.env ./app
+EXPOSE 3030 3031 3032 3033
+
+WORKDIR /app
+CMD ["./account"]

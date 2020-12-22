@@ -1,0 +1,24 @@
+# docker build  --no-cache -f Dockerfile.core -t pepitoenpeligro/cloudbanking-core  .
+# docker build -f Dockerfile.core -t pepitoenpeligro/cloudbanking-core  .
+FROM rust:1.47.0 as builder
+
+
+WORKDIR /rust
+
+
+RUN mkdir -p /rust/app/
+WORKDIR     /rust/app
+
+COPY ./Cargo.toml ./Cargo.lock ./
+COPY ./.env ./
+COPY src ./src
+RUN cargo build --release --manifest-path=./Cargo.toml --bin cloudbanking
+
+
+FROM rust:1.47.0 as runner
+COPY  --from=builder /rust/app/target/release/cloudbanking /app/core
+COPY  --from=builder /rust/app/.env ./app
+EXPOSE 3030 3031 3032 3033
+
+WORKDIR /app
+CMD ["./core"]

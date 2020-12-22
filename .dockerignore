@@ -9,7 +9,6 @@ target
 _config.yml
 .gitignore
 .github
-Cargo.lock
 Gemfile
 LICENSE
 makefile

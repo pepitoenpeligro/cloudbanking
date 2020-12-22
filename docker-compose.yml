@@ -1,0 +1,43 @@
+# docker-compose build cloudbanking-core
+# docker-compose up
+
+version: "3"
+services:
+  # Main Microservice. That expose /api
+  cloudbanking-core:
+    # Name of container to create
+    container_name: cloudbanking-core
+    # The file is in . and the dockerfile is Dockerfile.core
+    build:
+      context: .
+      dockerfile: Dockerfile.core
+    # Exposing port 3030 
+    ports:
+      - "3030:3030"
+    depends_on:
+      - cloudbanking-account
+
+    # Creating a network. It will be useful for connecting
+    # multiple microservices here
+    networks:
+      - proxynet
+    extra_hosts:
+      # To comunicate host with docker container
+      - "host.docker.internal:host-gateway"
+
+  cloudbanking-account:
+    container_name: cloudbanking-account
+    build: 
+      context: .
+      dockerfile: Dockerfile.account
+    ports:
+      - "3031:3031"
+    networks:
+      - proxynet
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+
+networks:
+  proxynet:
+    name: custom_network
