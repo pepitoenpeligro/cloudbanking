@@ -37,4 +37,5 @@ env_logger = "0.8.2"
 log = { version = "0.4", features = ["std", "serde"] }
 dotenv = "0.15.0"
 
-[profile.dev] debug = 0
+[profile.dev] 
+debug = 0

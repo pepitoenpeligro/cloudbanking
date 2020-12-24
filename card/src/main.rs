@@ -1,4 +1,4 @@
-#![allow(unused_imports, dead_code, unused_variables, unused_comparisons, unused_assignments,unused_mut)]
+#![allow(dead_code, unused_variables, unused_comparisons, unused_assignments,unused_mut)]
 mod bankcard_module;
 
 
