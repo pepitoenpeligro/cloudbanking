@@ -16,6 +16,7 @@ services:
       - "3030:3030"
     depends_on:
       - cloudbanking-account
+      - cloudbanking-card
 
     # Creating a network. It will be useful for connecting
     # multiple microservices here
@@ -32,6 +33,18 @@ services:
       dockerfile: Dockerfile.account
     ports:
       - "3031:3031"
+    networks:
+      - proxynet
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  cloudbanking-card:
+    container_name: cloudbanking-card
+    build: 
+      context: .
+      dockerfile: Dockerfile.card
+    ports:
+      - "3032:3032"
     networks:
       - proxynet
     extra_hosts:

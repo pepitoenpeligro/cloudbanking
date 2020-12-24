@@ -1,0 +1,27 @@
+# docker build  --no-cache -f Dockerfile.card -t pepitoenpeligro/cloudbanking-card  .
+# docker build -f Dockerfile.card -t pepitoenpeligro/cloudbanking-card  .
+
+# docker build  -f Dockerfile.card -t pepitoenpeligro/cloudbanking-card  .
+FROM rust:1.47.0 as builder
+
+
+WORKDIR /rust
+
+
+RUN mkdir -p /rust/app/card/src/bankaccount_module
+WORKDIR     /rust/app
+
+COPY ./card/Cargo.toml ./card
+COPY ./card/.env ./card
+COPY ./card/src ./card/src
+COPY ./card/src/bankcard_module ./card/src/bankaccount_module
+RUN cargo build --release --manifest-path=./card/Cargo.toml --bin card
+
+
+FROM rust:1.47.0 as runner
+COPY  --from=builder /rust/app/card/target/release/card /app/card
+COPY  --from=builder /rust/app/card/.env ./app
+EXPOSE 3030 3031 3032 3033
+
+WORKDIR /app
+CMD ["./card"]

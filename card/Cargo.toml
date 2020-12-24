@@ -1,9 +1,8 @@
 [package]
-name = "cloudbanking"
-version = "0.5.0"
-authors = ["José Antonio Córdoba Gómez <joseinn@correo.ugr.es> @pepitoenpeligro"]
+name = "card"
+version = "0.1.0"
+authors = ["José Antonio Córdoba Gómez <joseinn@correo.ugr.es>"]
 edition = "2018"
-
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -29,8 +28,6 @@ actix-rt = "1.1.1"
 openssl = { version = "0.10", features = ["v110"] }
 
 etcd-client = "0.5"
-
-hyper = "0.13.9"
 
 
 env_logger = "0.8.2"

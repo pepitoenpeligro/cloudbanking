@@ -94,3 +94,17 @@ wrk -t10 -c1000 -d50s http://127.0.0.1:3030/healthcheck  -s benchmark.lua
 kill -9 $pid_cargo
 '''
 dependencies=["release"]
+
+
+
+[tasks.limpiar]
+script = [
+    "cargo tree --duplicate",
+    "cargo install cargo-udeps && cargo +nightly udeps"
+]
+
+
+[tasks.tree]
+script = [
+    "cargo tree"
+]

@@ -8,3 +8,4 @@ install
 .cache/
 .env
 account/target
+card/target
