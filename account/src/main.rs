@@ -1,4 +1,4 @@
-#![allow(unused_imports, dead_code, unused_variables, unused_comparisons, unused_assignments,unused_mut)]
+#![allow(unused_imports,dead_code, unused_variables, unused_comparisons, unused_assignments,unused_mut)]
 mod bankaccount_module;
 
 
@@ -8,21 +8,22 @@ use std::path::Path;
 
 
 use chrono::{Local, NaiveDate, NaiveDateTime};
-use actix::prelude::*;
-use actix_web::{get, web,http, App, HttpServer, Responder, middleware, HttpResponse};
+
+
 // use controller::middleware::{CheckIdUserService};
 use std::{env, io};
 
 use dotenv::dotenv;
 use std::sync::{Arc,Mutex, RwLock};
-use log::{debug, error, log_enabled, info, Level};
+// use log::{debug, error, log_enabled, info, Level};
 use env_logger::Env;
 use std::io::Write;
+use std::net::{SocketAddr,IpAddr,Ipv4Addr};
+use warp::*;
+use warp::Filter;
+
 
 use crate::bankaccount_module::routes_handlers::*;
-
-use actix_web::http::ContentEncoding;
-use openssl::ssl::{SslAcceptor, SslFiletype, SslMethod};
 
 use etcd_client::{Client, Error};
 
@@ -32,30 +33,30 @@ use etcd_client::{Client, Error};
 
 const VERSION_ENV: &str = env!("CARGO_PKG_VERSION");
 
-#[actix_web::main]
-async fn main() -> std::io::Result<()> {
+#[tokio::main]
+async fn main() {
     // std::env::set_var("RUST_LOG", "actix_web=debug");
 
-    env_logger::Builder::from_env(Env::default().default_filter_or("info").write_style_or("auto", "always"))
-    .format(|buf, record| {
-        writeln!(
-            buf,
-            "{} {}: {}",
-            record.level(),
-            //Format like you want to: <-----------------
-            Local::now().format("%Y-%m-%d %H:%M:%S%.3f"),
-            record.args()
-        )
-    })
-    .init();
+    // env_logger::Builder::from_env(Env::default().default_filter_or("info").write_style_or("auto", "always"))
+    // .format(|buf, record| {
+    //     writeln!(
+    //         buf,
+    //         "{} {}: {}",
+    //         record.level(),
+    //         //Format like you want to: <-----------------
+    //         Local::now().format("%Y-%m-%d %H:%M:%S%.3f"),
+    //         record.args()
+    //     )
+    // })
+    // .init();
 
     let mut port: String = String::from("3031");
-    let mut host: String = String::from("127.0.0.1");
+    let mut host: String = String::from("0.0.0.0");
 
 
-    // @TODO Cambiar prueba por account
-    let my_path = env::current_dir()?.join("prueba/.env");
-    log::info!("Reading environment from: {:?}", my_path);
+    // @TODO Cambiar account por account
+    let my_path = env::current_dir().unwrap().join("account/.env");
+    println!("Reading environment from: {:?}", my_path);
     dotenv::from_path(my_path.as_path()).ok();
     dotenv().ok();
 
@@ -64,11 +65,9 @@ async fn main() -> std::io::Result<()> {
     port = env::var("PORT").expect("PORT must be set");
     host = env::var("HOST").expect("HOST must be set");
 
-    let binding_uri = format!("{}:{}",host, port);
+
     
-
-
-    let server = HttpServer::new(move   | | {
+    /*let server = HttpServer::new(move   | | {
         App::new()
 
         // Injecting controller to service (api calls)
@@ -107,21 +106,24 @@ async fn main() -> std::io::Result<()> {
             .route("/bank/accounts", web::get().to(get_account))
         )
 
-    });
+    });*/
+    let control : String = "".to_string();
+    let cbc_filter = warp::any().map(move | | control.clone());//|| cbc.clone());
+    let socket : SocketAddr = SocketAddr::new(IpAddr::V4(Ipv4Addr::new(0, 0, 0, 0)), port.parse::<u16>().unwrap());
 
-    // Enables HTTP2.0
-    // It's required to request with public ssl cert
-    // Works in local
-    /*let mut builder = SslAcceptor::mozilla_intermediate(SslMethod::tls()).unwrap();
-    builder
-        .set_private_key_file("key.pem", SslFiletype::PEM).unwrap();
-    builder.set_certificate_chain_file("cert.pem").unwrap();*/
-    log::info!("Welcome to bank/accounts API {}", VERSION_ENV);
-    log::info!("Server is listening in {}", binding_uri);
-    //server.bind_openssl(binding_uri, builder)
-    server.bind(binding_uri)
-        .expect("Cannot bind to port")
-        .run()
-        .await
+
+    let get_accounts = warp::get()
+    .and(warp::path("accounts"))
+    .and(warp::path::end())
+    .and(cbc_filter.clone())
+    .and_then(get_accunts_handler);
+
+    let routes = get_accounts;//.or(post_account);
+
+
+    println!("Welcome to bank/accounts API {}", VERSION_ENV);
+    println!("Server is listening in {}", socket);
+    warp::serve(routes).run(socket).await;
+
 
 }
