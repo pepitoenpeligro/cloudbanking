@@ -702,7 +702,6 @@ dependencies = [
  "galvanic-assert",
  "hyper",
  "log",
- "openssl",
  "parking_lot",
  "regex",
  "serde",

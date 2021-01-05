@@ -25,7 +25,7 @@ use env_logger::Env;
 use std::io::Write;
 
 use actix_web::http::ContentEncoding;
-use openssl::ssl::{SslAcceptor, SslFiletype, SslMethod};
+//use openssl::ssl::{SslAcceptor, SslFiletype, SslMethod};
 
 use etcd_client::{Client, Error};
 

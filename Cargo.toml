@@ -26,7 +26,7 @@ actix = "0.10.0"
 actix-service = "1.0.5"
 actix-rt = "1.1.1"
 
-openssl = { version = "0.10", features = ["v110"] }
+# openssl = { version = "0.10", features = ["v110"] }
 
 etcd-client = "0.5"
 
@@ -39,3 +39,9 @@ dotenv = "0.15.0"
 
 [profile.dev] 
 debug = 0
+
+
+# cargo +nightly build --release -Z config-profile
+
+#[profile.release]
+#opt-level = 1

@@ -17,23 +17,9 @@
 | *Circle CI*           	| [![Build Status](https://circleci.com/gh/pepitoenpeligro/cloudbanking.svg?style=shield)](https://github.com/pepitoenpeligro/cloudbanking)|
 | *GitHubAction - Test* 	| ![Rust](https://github.com/pepitoenpeligro/cloudbanking/workflows/Rust/badge.svg) |
 | *Drone.io*            	| [![Build Status](https://cloud.drone.io/api/badges/pepitoenpeligro/cloudbanking/status.svg)](https://cloud.drone.io/pepitoenpeligro/cloudbanking)|
-| *Buddy*               	| [![buddy pipeline](https://app.buddy.works/pepitoenpeligro/cloudbanking/pipelines/pipeline/296654/badge.svg?token=2f146eecf3ada34ddaa38d6b04f28a1e74f73c7d1e0e3a645f055396c4898e4d "buddy pipeline")](https://app.buddy.works/pepitoenpeligro/cloudbanking/pipelines/pipeline/296654)|
 | *Azure Pipelines*     	| [![Build Status](https://dev.azure.com/joseantcg/cloudbanking/_apis/build/status/pepitoenpeligro.cloudbanking?branchName=master)](https://dev.azure.com/joseantcg/cloudbanking/_build/latest?definitionId=1&branchName=master) |
 
 
-
-<div class="postman-run-button"
-data-postman-action="collection/import"
-data-postman-var-1="1437f6d5c4eda7205d31"></div>
-<script type="text/javascript">
-  (function (p,o,s,t,m,a,n) {
-    !p[s] && (p[s] = function () { (p[t] || (p[t] = [])).push(arguments); });
-    !o.getElementById(s+t) && o.getElementsByTagName("head")[0].appendChild((
-      (n = o.createElement("script")),
-      (n.id = s+t), (n.async = 1), (n.src = m), n
-    ));
-  }(window, document, "_pm", "PostmanRunObject", "https://run.pstmn.io/button.js"));
-</script>
 
 
 
