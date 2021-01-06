@@ -33,13 +33,12 @@ use etcd_client::{Client, Error};
 
 use warp::{Filter};
 
-pub fn post_json() -> impl Filter<Extract = (Account,), Error = warp::Rejection> + Clone {
+pub fn filter_json() -> impl Filter<Extract = (Account,), Error = warp::Rejection> + Clone {
     warp::body::content_length_limit(1024 * 16).and(warp::body::json())
 }
     
 
-// cargo build --manifest-path=prueba/Cargo.toml
-// cargo run -p prueba
+// cargo run --manifest-path=./account/Cargo.toml
 
 
 const VERSION_ENV: &str = env!("CARGO_PKG_VERSION");
@@ -48,24 +47,23 @@ const VERSION_ENV: &str = env!("CARGO_PKG_VERSION");
 async fn main() {
     // std::env::set_var("RUST_LOG", "actix_web=debug");
 
-    // env_logger::Builder::from_env(Env::default().default_filter_or("info").write_style_or("auto", "always"))
-    // .format(|buf, record| {
-    //     writeln!(
-    //         buf,
-    //         "{} {}: {}",
-    //         record.level(),
-    //         //Format like you want to: <-----------------
-    //         Local::now().format("%Y-%m-%d %H:%M:%S%.3f"),
-    //         record.args()
-    //     )
-    // })
-    // .init();
+    env_logger::Builder::from_env(Env::default().default_filter_or("info").write_style_or("auto", "always"))
+    .format(|buf, record| {
+        writeln!(
+            buf,
+            "{} {}: {}",
+            record.level(),
+            //Format like you want to: <-----------------
+            Local::now().format("%Y-%m-%d %H:%M:%S%.3f"),
+            record.args()
+        )
+    })
+    .init();
+
 
     let mut port: String = String::from("3031");
     let mut host: String = String::from("0.0.0.0");
 
-
-    // @TODO Cambiar account por account
     let my_path = env::current_dir().unwrap().join("account/.env");
     println!("Reading environment from: {:?}", my_path);
     dotenv::from_path(my_path.as_path()).ok();
@@ -77,74 +75,40 @@ async fn main() {
     host = env::var("HOST").expect("HOST must be set");
 
 
-    
-    /*let server = HttpServer::new(move   | | {
-        App::new()
-
-        // Injecting controller to service (api calls)
-        // .data(cbc.clone())
-
-        // Defining Logger as middleware {INFO, DEBUG and ERROR} for actix-web logs
-        .wrap(middleware::Logger::default())
-
-        // Defining default Compress level for data exchange
-        .wrap(middleware::Compress::new(ContentEncoding::Gzip))
-
-        // Only accept GET, PUT, POST and DELETE verbs
-        .wrap(middleware::DefaultHeaders::new().header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE"))
-
-        // No access the site if detected XSS attempt. Not used now. WebBrowser needed
-        .wrap(middleware::DefaultHeaders::new().header("X-XSS-Protection", "1; mode=block"))
-
-        // We expect data exchange in only json format
-        .wrap(middleware::DefaultHeaders::new().header("Content-Type", "application/json"))
-
-        // Preventing to any website from embedding. Not used now. WebBrowser needed
-        .wrap(middleware::DefaultHeaders::new().header("X-Frame-Options","Deny"))
-
-        // What type of content and origin we will allo.
-        .wrap(middleware::DefaultHeaders::new().header("Content-Security-Policy","script-src 'self'"))
-
-        // Preventing CSRF attacks
-        .wrap(middleware::DefaultHeaders::new().header("Access-Control-Allow-Headers", "X-Requested-Width"))
-        // For restrict client with mandatory use of HTTPS 
-        // .wrap(middleware::DefaultHeaders::new().header("Strict-Transport-Security","max-age=31536000; includeSubDomains"))
-
-        // /api/users
-        .service(web::scope("/api")
-
-            // route GET /bank/accounts
-            .route("/bank/accounts", web::get().to(get_account))
-        )
-
-    });*/
-
-
     let mut control : BankAccountController = BankAccountController::new();
     let cbc_filter = warp::any().map(move | | control.clone());
     let socket : SocketAddr = SocketAddr::new(IpAddr::V4(Ipv4Addr::new(0, 0, 0, 0)), port.parse::<u16>().unwrap());
 
 
     let get_accounts = warp::get()
-        .and(warp::path("accounts"))
+        .and(warp::path!("accounts" / String))
         .and(warp::path::end())
         .and(cbc_filter.clone())
+        //.and(warp::path::param())
         .and_then(get_accounts_handler);
 
 
+    // HU 1: Add Bank Account as customer user
     let add_accounts = warp::post()
         .and(warp::path("accounts"))
         .and(warp::path::end())
-        .and(post_json())
+        .and(filter_json())
         .and(cbc_filter.clone())
         .and_then(add_accounts_handler);
 
-    let routes = get_accounts.or(add_accounts);
+    // HU 4: Erase bank account    
+    let delete_account = warp::delete()
+        .and(warp::path!("accounts" / String))
+        .and(warp::path::end())
+        .and(cbc_filter.clone())
+        .and_then(delete_accounts_handler);
 
+    let routes = get_accounts
+                .or(add_accounts)
+                .or(delete_account);
 
     println!("Welcome to bank/accounts API {}", VERSION_ENV);
     println!("[Warp] Server is listening in {}", socket);
+    
     warp::serve(routes).run(socket).await;
-
-
 }
