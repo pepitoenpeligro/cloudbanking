@@ -61,6 +61,19 @@ router cloudbankingCardsRoutes:
       error ("Card NOT added successfully :" & ($resultOperation))
       resp(Http404,messageJson("Card NOT added successfully :" & ($resultOperation) ) , contentType="application/json")
 
+  # HU 5: Delete bank card
+  delete "/cards/@id":
+    info("[GET] /cards/{id}")
+    let paramReceived = @"id"
+    let resultOperation: bool = controller.deleteBankCard(paramReceived)
+    if resultOperation == true:
+      info("Card was deleted successfully")
+      resp(Http201, messageJson("Card was deleted successfully"), contentType="application/json")
+    else: 
+      error("Card was not found and not deleted")
+      resp(Http404, messageJson("Card was not found and not deleted  successfully"  & ($resultOperation) ), contentType="application/json")
+
+
 
 
 
