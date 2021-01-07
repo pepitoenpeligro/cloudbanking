@@ -1,0 +1,6 @@
+FROM nimlang/nim:onbuild
+
+COPY ./ ./
+CMD nimble build
+
+ENTRYPOINT ["./bin/jester_cards"]
