@@ -32,7 +32,34 @@ router cloudbankingCardsRoutes:
     resp(Http404, messageJson("Card founded: " & $(recoveredCard)), contentType="application/json")
 
 
+  # HU 2: Create bank card
+  post "/cards":
+    info ("[POST] /cards")
+    let body = try: request.body.parseJson
+               except: newJNull()
 
+    if body.isNil:
+      resp(Http400, messageJson("Invalid json"),
+        contentType="application/json")
+
+    let idjson : string = $ body["id"]
+    let numberjson  : string = $ body["number"]
+    let cvcjson : string = $body["cvc"];
+    
+
+    let newCard = Card(id: idjson,
+                       number: numberjson,
+                       cvc: cvcjson,
+                       dateLimit: $ body["date_limit"],
+                       status:  ($body["status"]).parseBool())
+
+    let resultOperation = controller.addBankCard(newCard)
+    if resultOperation:
+      info ("Card added successfully")
+      resp(Http200,messageJson("Card added successfully"), contentType="application/json")
+    else:
+      error ("Card NOT added successfully :" & ($resultOperation))
+      resp(Http404,messageJson("Card NOT added successfully :" & ($resultOperation) ) , contentType="application/json")
 
 
 
