@@ -78,9 +78,9 @@
 </p>
 
 
-* ¿Quieres saber cómo se puede interaccionar con cada uno de los microservicios ?
-* ¿Quieres saber qué rutas están disponibles? 
-* ¿Quieres saber qué parámetros y cuerpos aceptan?
+* Do you want to know how you can interact with each of the microservices?
+* Do you want to know which routes are available?
+* Do you want to know what parameters and bodies they accept?
 * Do you want to know how to deploy microservices and bring them into production?
 
 > For this, we have created a wiki section that can be consulted here: [CloudBanking Wiki](https://github.com/pepitoenpeligro/cloudbanking/wiki) or by clicking on the title of this section 
