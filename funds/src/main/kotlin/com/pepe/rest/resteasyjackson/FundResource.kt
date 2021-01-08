@@ -18,7 +18,6 @@ import javax.ws.rs.PathParam
 import javax.ws.rs.Produces
 import javax.ws.rs.core.MediaType
 
-private val logger = KotlinLogging.logger {} 
 
 // ./mvnw compile quarkus:dev
 @ApplicationScoped
@@ -41,12 +40,21 @@ class FundService {
         return funds
     }
 
+    fun deleteFund(id: String): Boolean{
+        funds.removeIf {  existingFund:    Fund -> existingFund.id!!.contentEquals(id!!) }
+        return true
+    }
+
 
 }
 
 @Path("/")
 class FundResource {
 
+    companion object {
+        private val LOG = Logger.getLogger(FundResource::class.java)
+
+    }
 
     @Inject
     @field: Default 
@@ -57,8 +65,7 @@ class FundResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/funds")
     fun list():  Set<Fund> {
-        logger.debug { "GET -> returning funds" }
-        println("GET -> returning funds")
+        LOG.info("GET -> returning funds")
         return service.getFunds()
     }
 
@@ -68,15 +75,22 @@ class FundResource {
     fun  add(f: Fund): Response {
         val result = service.addFund(f)
         if(result){
-            println("POST -> Fund was created")
+            LOG.info("POST -> Fund was created")
             var m  = Message("Created", "Fund was created");
             return Response.status(Response.Status.ACCEPTED).entity(m).build();
         }
-        println("POST -> Fund was NOT created")
+        LOG.info("POST -> Fund was NOT created")
         var m  = Message("Not Created", "Fund was not created");
         return Response.status(Response.Status.BAD_REQUEST).entity(m).build();
 
     }
 
+    // Deletes one funds
+    @DELETE
+    @Path("/funds/{id}")
+    fun delete(@PathParam("id") id: String): Boolean{
+        LOG.info("DELETE -> Fund was deleted")
+        return service.deleteFund(id)
+    }
 
 }
