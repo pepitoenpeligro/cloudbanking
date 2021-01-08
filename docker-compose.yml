@@ -17,6 +17,7 @@ services:
     depends_on:
       - cloudbanking-account
       - cloudbanking-card
+      - cloudbanking-funds
 
     # Creating a network. It will be useful for connecting
     # multiple microservices here
@@ -49,6 +50,18 @@ services:
       - proxynet
     extra_hosts:
       - "host.docker.internal:host-gateway"
+
+  cloudbanking-funds:
+    container_name: cloudbanking-funds
+    image: pepitoenpeligro/cloudbanking-funds
+    ports:
+      - 3033:3033
+    networks:
+      - proxynet
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+
 
 
 
