@@ -79,7 +79,6 @@ Do you want to see the development planning of this project with the short and l
 
 ***
 
-***
 
 <br />
 <br />
