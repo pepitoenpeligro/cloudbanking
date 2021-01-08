@@ -1,16 +1,24 @@
 
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-  <head>
+
+<head>
 <link rel="shortcut icon"
     href="https://raw.githubusercontent.com/pepitoenpeligro/cloudbanking/master/docs/img/favicon.ico">
  </head>
 
 # Cloud Banking :euro:
 
+
 ![icon](docs/img/icon.png)
 
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+<br />
+<br />
+<br />
+
+<div align="center">
 
 | CI/CD system          	| Status 	|
 |-----------------------	|-------:	|
@@ -20,15 +28,19 @@
 | *Drone.io*            	| [![Build Status](https://cloud.drone.io/api/badges/pepitoenpeligro/cloudbanking/status.svg)](https://cloud.drone.io/pepitoenpeligro/cloudbanking)|
 | *Azure Pipelines*     	| [![Build Status](https://dev.azure.com/joseantcg/cloudbanking/_apis/build/status/pepitoenpeligro.cloudbanking?branchName=master)](https://dev.azure.com/joseantcg/cloudbanking/_build/latest?definitionId=1&branchName=master) |
 
+</div>
+
+<br />
+<br />
+<br />
 
 
 
-## [Wiki Section](https://github.com/pepitoenpeligro/cloudbanking/wiki)
+## [1. Wiki Section](https://github.com/pepitoenpeligro/cloudbanking/wiki)
 
-
-
-![animation_200_kjor6fin](https://user-images.githubusercontent.com/14912971/104063148-fc82be00-51fb-11eb-89af-d6d601e31fb8.gif) 
-
+<p align="center">
+  <img width="200" height="200" src="https://user-images.githubusercontent.com/14912971/104063148-fc82be00-51fb-11eb-89af-d6d601e31fb8.gif">
+</p>
 
 
 * ¿Quieres saber cómo se puede interaccionar con cada uno de los microservicios ?
