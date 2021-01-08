@@ -31,6 +31,12 @@ class FundService {
         return "hello $name"
     }
 
+    fun addFund(f: Fund): Boolean{
+        return funds.add(f)
+
+    }
+
+
     fun getFunds(): Set<Fund>{
         return funds
     }
@@ -40,6 +46,7 @@ class FundService {
 
 @Path("/")
 class FundResource {
+
 
     @Inject
     @field: Default 
@@ -54,5 +61,22 @@ class FundResource {
         println("GET -> returning funds")
         return service.getFunds()
     }
+
+    // Creates one funds
+    @POST
+    @Path("/funds")
+    fun  add(f: Fund): Response {
+        val result = service.addFund(f)
+        if(result){
+            println("POST -> Fund was created")
+            var m  = Message("Created", "Fund was created");
+            return Response.status(Response.Status.ACCEPTED).entity(m).build();
+        }
+        println("POST -> Fund was NOT created")
+        var m  = Message("Not Created", "Fund was not created");
+        return Response.status(Response.Status.BAD_REQUEST).entity(m).build();
+
+    }
+
 
 }
