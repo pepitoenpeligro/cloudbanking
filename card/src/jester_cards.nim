@@ -28,13 +28,13 @@ router cloudbankingCardsRoutes:
       error("Card not founded")
       resp(Http200, messageJson("Card not founded" & $(recoveredCard)), contentType="application/json")
 
-    info ("Card founded")
+    info("Card founded")
     resp(Http404, messageJson("Card founded: " & $(recoveredCard)), contentType="application/json")
 
 
   # HU 2: Create bank card
   post "/cards":
-    info ("[POST] /cards")
+    info("[POST] /cards")
     let body = try: request.body.parseJson
                except: newJNull()
 
@@ -55,10 +55,10 @@ router cloudbankingCardsRoutes:
 
     let resultOperation = controller.addBankCard(newCard)
     if resultOperation:
-      info ("Card added successfully")
+      info("Card added successfully")
       resp(Http200,messageJson("Card added successfully"), contentType="application/json")
     else:
-      error ("Card NOT added successfully :" & ($resultOperation))
+      error("Card NOT added successfully :" & ($resultOperation))
       resp(Http404,messageJson("Card NOT added successfully :" & ($resultOperation) ) , contentType="application/json")
 
   # HU 5: Delete bank card

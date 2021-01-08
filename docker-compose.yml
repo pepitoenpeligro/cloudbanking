@@ -41,14 +41,17 @@ services:
   cloudbanking-card:
     container_name: cloudbanking-card
     build: 
-      context: .
-      dockerfile: Dockerfile.card
+      context: ./card
+      dockerfile: Dockerfile.cards
     ports:
       - "3032:3032"
     networks:
       - proxynet
     extra_hosts:
       - "host.docker.internal:host-gateway"
+
+
+
 
 
 networks:
