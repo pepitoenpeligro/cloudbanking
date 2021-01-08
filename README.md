@@ -24,17 +24,54 @@
 <br />
 <br />
 <br />
-<br />
+
 
 <div align="center">
 
-| CI/CD system          	| Status 	|
-|-----------------------	|-------:	|
-| *Travis*              	| [![Build Status](https://travis-ci.com/pepitoenpeligro/cloudbanking.svg?branch=master)](https://travis-ci.com/pepitoenpeligro/cloudbanking)|
-| *Circle CI*           	| [![Build Status](https://circleci.com/gh/pepitoenpeligro/cloudbanking.svg?style=shield)](https://github.com/pepitoenpeligro/cloudbanking)|
-| *GitHubAction - Test* 	| ![Rust](https://github.com/pepitoenpeligro/cloudbanking/workflows/Rust/badge.svg) |
-| *Drone.io*            	| [![Build Status](https://cloud.drone.io/api/badges/pepitoenpeligro/cloudbanking/status.svg)](https://cloud.drone.io/pepitoenpeligro/cloudbanking)|
-| *Azure Pipelines*     	| [![Build Status](https://dev.azure.com/joseantcg/cloudbanking/_apis/build/status/pepitoenpeligro.cloudbanking?branchName=master)](https://dev.azure.com/joseantcg/cloudbanking/_build/latest?definitionId=1&branchName=master) |
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-8bgf{border-color:inherit;font-style:italic;text-align:center;vertical-align:top}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-rvyq{border-color:inherit;font-style:italic;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-7btt">CI/CD System</th>
+    <th class="tg-7btt">Status</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-8bgf">Travis</td>
+    <td class="tg-rvyq"><img src="https://travis-ci.com/pepitoenpeligro/cloudbanking.svg?branch=master"></td>
+  </tr>
+  <tr>
+    <td class="tg-8bgf">Circle Ci</td>
+    <td class="tg-rvyq"><img src="https://circleci.com/gh/pepitoenpeligro/cloudbanking.svg?style=shield"></td>
+  </tr>
+  <tr>
+    <td class="tg-8bgf">GithubAction - Test</td>
+    <td class="tg-rvyq"><img src="https://github.com/pepitoenpeligro/cloudbanking/workflows/Rust/badge.svg"></td>
+  </tr>
+  <tr>
+    <td class="tg-8bgf">Drone.io</td>
+    <td class="tg-rvyq"><img src="https://cloud.drone.io/api/badges/pepitoenpeligro/cloudbanking/status.svg"></td>
+  </tr>
+  
+  <tr>
+    <td class="tg-8bgf">Azure Pipelines</td>
+    <td class="tg-rvyq">
+    <img src="https://dev.azure.com/joseantcg/cloudbanking/_apis/build/status/pepitoenpeligro.cloudbanking?branchName=master">
+    </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
