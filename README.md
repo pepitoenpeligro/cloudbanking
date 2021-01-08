@@ -131,11 +131,10 @@ Do you want to see the development planning of this project with the short and l
   <img width="200" height="200" src="https://user-images.githubusercontent.com/14912971/104067445-766a7580-5203-11eb-9c86-e410c851d705.gif">
 </p>
 
-* R1. [Why CI?. Travis](https://pepitoenpeligro.github.io/cloudbanking/docs/4/r1)
-* R2. [Other CI systems](https://pepitoenpeligro.github.io/cloudbanking/docs/4/r2)
-* R3. [Using Tasks Manager in CI](https://pepitoenpeligro.github.io/cloudbanking/docs/4/r3)
-* R4. [Using Docker Image in CI](https://pepitoenpeligro.github.io/cloudbanking/docs/4/r4)
-* R5. [Code and Test advance. Other additional work](https://pepitoenpeligro.github.io/cloudbanking/docs/4/r4)
+* R1. [Frameworks](https://pepitoenpeligro.github.io/cloudbanking/docs/5/r1)
+* R2. [Design, Routes, Testing and HU's](https://pepitoenpeligro.github.io/cloudbanking/docs/5/r2)
+* R3. [Good practices applied](https://pepitoenpeligro.github.io/cloudbanking/docs/5/r3)
+* R4 and R5. [Correctness and Additional work](https://pepitoenpeligro.github.io/cloudbanking/docs/5/r4-5)
 
 
 ***
