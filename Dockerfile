@@ -30,7 +30,8 @@ RUN mkdir -p /app/test \
 WORKDIR /app/test
 
 
-ENTRYPOINT ["cargo make --makefile make.toml test"]
+CMD cargo make --makefile make.toml test
+# ENTRYPOINT ["cargo make --makefile make.toml test"]
 
 # docker build  --no-cache -t pepitoenpeligro/cloudbanking .
 # docker run -it -v `pwd`:/app/test -t pepitoenpeligro/cloudbanking
