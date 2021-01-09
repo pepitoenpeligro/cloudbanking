@@ -29,7 +29,7 @@ actix-rt = "1.1.1"
 # openssl = { version = "0.10", features = ["v110"] }
 
 
-etcd-rs = "0.3.0"
+etcd-client = "0.5"
 
 hyper = "0.13.9"
 

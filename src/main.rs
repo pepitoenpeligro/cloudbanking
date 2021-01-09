@@ -28,7 +28,6 @@ use actix_web::http::ContentEncoding;
 //use openssl::ssl::{SslAcceptor, SslFiletype, SslMethod};
 
 // use etcd_client::{Client, Error};
-use etcd_rs::*;
 
 
 
@@ -46,30 +45,10 @@ use crate::json::helpers::*;
 use crate::controller::routes_handlers::*;
 
 
-
+use etcd_client::{Client, Error};
 
 const VERSION_ENV: &str = env!("CARGO_PKG_VERSION");
 
-async fn get_etcd(mut host: String, mut port: String) -> Result<()>{
-    let client = Client::connect(ClientConfig {
-        endpoints: vec!["localhost:2379".to_owned()],
-        auth: None,
-        tls: None,
-    }).await?;
-
-    let result_host = client.kv()
-        .range(RangeRequest::new(KeyRange::key("HOST")))
-        .await;
-
-    let result_port = client.kv()
-        .range(RangeRequest::new(KeyRange::key("PORT")))
-        .await;
-
-    log::info!("Host from etcd: {:?}", result_host);
-    log::info!("Port from etcd: {:?}", result_port);
-
-    Ok(())
-}
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
@@ -96,7 +75,21 @@ async fn main() -> std::io::Result<()> {
     let mut port: String = String::from("3030");
     let mut host: String = String::from("127.0.0.1");
     
-    get_etcd(host, port).await;
+    let client_etcd = Client::connect(["localhost:2379"], None).await;
+
+    if client_etcd.is_ok(){
+        let mut client_unwrap = client_etcd.unwrap();
+        let resp_etc_host = client_unwrap.get("HOST", None).await;
+        let resp_etc_port = client_unwrap.get("PORT", None).await;
+
+        host = String::from(resp_etc_host.unwrap().kvs().first().unwrap().value_str().unwrap().to_string().as_str());
+        port = String::from(resp_etc_port.unwrap().kvs().first().unwrap().value_str().unwrap().to_string().as_str());
+
+        log::info!("Host from etcd: {:?}", host);
+        log::info!("Port from etcd: {:?}", port);
+    }else{
+        log::info!("No client etc, we will use .env");
+    }
     
     dotenv().ok();
 
