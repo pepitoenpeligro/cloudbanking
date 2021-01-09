@@ -29,12 +29,21 @@ jobs:
         run: |
           sudo curl -s -L https://raw.githubusercontent.com/azohra/yaml.sh/v0.2.0/ysh --output /usr/bin/ysh
           sudo chmod +x /usr/bin/ysh
-          ysh -v
+      - name: Extract make key and save value in $MAKE
+        run: |
           ysh -f cc.yaml -q "make"
           MAKE=$(ysh -f cc.yaml -q "make")
           echo $MAKE
-          echo "FIN"
+      - name: Generate Docker Commands
+        run: |
+          INSTALL="${MAKE} install" 
+          BUILD="${MAKE} build"
+          TEST="${MAKE} test"
+          echo "My commands are:"
+          echo $INSTALL
+          echo $BUILD
+          echo $TEST
 
       - name: Ejecuta contenedor
         run: |
-          docker run -t -v `pwd`:/app/test pepitoenpeligro/cloudbanking sh -c "cargo make --makefile make.toml test"
+          docker run -t -v `pwd`:/app/test pepitoenpeligro/cloudbanking sh -c "$INSTALL $BUILD $TEST"
