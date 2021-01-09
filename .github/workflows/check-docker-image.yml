@@ -34,11 +34,15 @@ jobs:
           ysh -f cc.yaml -q "make"
           MAKE=$(ysh -f cc.yaml -q "make")
           echo $MAKE
+          MAKE2="${MAKE//\"}"
+          echo "Finally I will use"
+          echo $MAKE2
       - name: Generate Docker Commands
         run: |
-          INSTALL="${MAKE} install" 
-          BUILD="${MAKE} build"
-          TEST="${MAKE} test"
+          INSTALL="${MAKE2} install" 
+          BUILD="${MAKE2} build"
+          TEST="${MAKE2} test"
+          
           echo "My commands are:"
           echo $INSTALL
           echo $BUILD
@@ -46,4 +50,4 @@ jobs:
 
       - name: Ejecuta contenedor
         run: |
-          docker run -t -v `pwd`:/app/test pepitoenpeligro/cloudbanking sh -c "$INSTALL $BUILD $TEST"
+          docker run -t -v `pwd`:/app/test pepitoenpeligro/cloudbanking sh -c "$INSTALL && $BUILD && $TEST"
