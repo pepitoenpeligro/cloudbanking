@@ -38,23 +38,23 @@ jobs:
           MAKE2="${MAKE//\"}"
           echo "Finally I will use"
           echo $MAKE2
-          echo ::set-output name=make2::$(echo ${$MAKE2})
+          echo ::set-output name=makecommand::$MAKE2
       - name: Generate Docker Commands
         id: generate_actions
         run: |
-          echo "I recover ${{steps.vars.outputs.make2}}"
-          INSTALL="${steps.vars.outputs.make2} install" 
-          BUILD="${steps.vars.outputs.make2} build"
-          TEST="${steps.vars.outputs.make2} test"
+          echo "I recover ${{steps.vars.outputs.makecommand}}"
+          INSTALL="${steps.vars.outputs.makecommand} install" 
+          BUILD="${steps.vars.outputs.makecommand} build"
+          TEST="${steps.vars.outputs.makecommand} test"
           
           echo "My commands are:"
           echo ${INSTALL}
           echo ${BUILD}
           echo ${TEST}
           echo "Finally I will inject: "
-          INYECTED=echo "${INSTALL} && ${BUILD} && ${TEST}"
+          COMMAND=echo "${INSTALL} && ${BUILD} && ${TEST}"
           echo "${INSTALL} && ${BUILD} && ${TEST}"
-          echo ::set-output name=inyected::$(echo ${$INYECTED})
+          echo ::set-output name=inyected::$COMMAND
 
       - name: Ejecuta contenedor
         run: |
