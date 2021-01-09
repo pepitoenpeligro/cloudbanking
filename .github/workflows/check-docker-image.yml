@@ -47,7 +47,8 @@ jobs:
           echo $INSTALL
           echo $BUILD
           echo $TEST
+          echo "${INSTALL} && ${BUILD} && ${TEST}"
 
       - name: Ejecuta contenedor
         run: |
-          docker run -t -v `pwd`:/app/test pepitoenpeligro/cloudbanking sh -c "${INSTALL} && ${BUILD} && ${TEST}"
+          docker run -t -v `pwd`:/app/test pepitoenpeligro/cloudbanking sh -c "cargo make --makefile make.toml install && cargo make --makefile make.toml build && cargo make --makefile make.toml test"
