@@ -41,6 +41,6 @@ jobs:
           echo ${BUILD}
           echo ${TEST}
           echo "Finally I will inject: "
-          COMMAND=echo "${INSTALL} && ${BUILD} && ${TEST}"
+          # COMMAND=echo "${INSTALL} && ${BUILD} && ${TEST}"
           echo "${INSTALL} && ${BUILD} && ${TEST}"
           docker run -t -v `pwd`:/app/test pepitoenpeligro/cloudbanking sh -c " ${INSTALL} && ${BUILD} && ${TEST} "
