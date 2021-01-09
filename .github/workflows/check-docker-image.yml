@@ -50,4 +50,4 @@ jobs:
 
       - name: Ejecuta contenedor
         run: |
-          docker run -t -v `pwd`:/app/test pepitoenpeligro/cloudbanking sh -c "$INSTALL && $BUILD && $TEST"
+          docker run -t -v `pwd`:/app/test pepitoenpeligro/cloudbanking sh -c "${INSTALL} && ${BUILD} && ${TEST}"
