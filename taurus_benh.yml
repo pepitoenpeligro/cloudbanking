@@ -1,18 +1,55 @@
 # docker run -it --rm -v `pwd`:/app/test blazemeter/taurus /app/test/taurus_benh.yml -report
 execution:
-  - scenario: healthcheck
+  - scenario: users
     concurrency: 10
     ramp-up: 5s
     hold-for: 30s
     steps: 5
 
+  # - scenario: cards
+  #   concurrency: 10
+  #   ramp-up: 5s
+  #   hold-for: 30s
+  #   steps: 5
+
 scenarios:
-  healthcheck:
-    default-address: http://docker.for.mac.host.internal:3030
+  users:
+    default-address: http://0.0.0.0:3030
     store-cache: false
     timeout: 3s
     requests:
-    - url: /healthcheck
+    - url: /api/users
       method: GET
       headers:
         Content-Type: application/json
+
+  # cards:
+  #   default-address: http://docker.for.mac.host.internal:3032
+  #   store-cache: false
+  #   timeout: 3s
+  #   requests:
+  #   - url: /cards
+  #     method: GET
+  #     headers:
+  #       Content-Type: application/json
+
+# funds:
+  #   default-address: http://0.0.0.0:3033
+  #   store-cache: false
+  #   timeout: 3s
+  #   requests:
+  #   - url: /funds
+  #     method: GET
+  #     headers:
+  #       Content-Type: application/json
+
+
+  # users:
+  #   default-address: http://0.0.0.0:3030
+  #   store-cache: false
+  #   timeout: 3s
+  #   requests:
+  #   - url: /api/users
+  #     method: GET
+  #     headers:
+  #       Content-Type: application/json

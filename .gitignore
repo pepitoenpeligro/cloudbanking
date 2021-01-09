@@ -43,3 +43,6 @@ nb-configuration.xml
 # patch
 *.orig
 *.rej
+
+2021*
+jmeter*
