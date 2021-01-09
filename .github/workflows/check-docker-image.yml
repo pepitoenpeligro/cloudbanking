@@ -25,16 +25,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
       - name: Install ysh
         run: |
           sudo curl -s -L https://raw.githubusercontent.com/azohra/yaml.sh/v0.2.0/ysh --output /usr/bin/ysh
           sudo chmod +x /usr/bin/ysh
           ysh -v
-          ysh 
           ysh -f cc.yaml -q "make"
           MAKE=$(ysh -f cc.yaml -q "make")
           echo $MAKE
