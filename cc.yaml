@@ -8,7 +8,6 @@ entidad:
   - src/savinggroup/model.rs
   - src/user/model.rs
   - src/utils/model.rs
-
 test:
   - src/bankaccount/test_galvanic.rs
   - src/bankcard/test_galvanic.rs
@@ -18,11 +17,6 @@ test:
   - src/savinggroup/test.rs
   - src/user/test_galvanic.rs
   - src/utils/test_galvanic.rs
-
 lenguaje: rust
-
 fichero_tareas: make.toml
-
-
-make: 
-  - cargo make --makefile make.toml
+make: cargo make --makefile make.toml
