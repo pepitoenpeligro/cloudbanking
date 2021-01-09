@@ -31,6 +31,8 @@ jobs:
           sudo chmod +x /usr/bin/ysh
       - name: Extract make key and save value in $MAKE
         id: extract_make
+        with:
+          MAKE2: ${{ steps.vars.outputs.MAKE2 }}
         run: |
           ysh -f cc.yaml -q "make"
           MAKE=$(ysh -f cc.yaml -q "make")
@@ -38,14 +40,14 @@ jobs:
           MAKE2="${MAKE//\"}"
           echo "Finally I will use"
           echo $MAKE2
-          echo ::set-env name=MAKE2::$MAKE2
+          echo "::set-output name=MAKE2::$MAKE2"
       - name: Generate Docker Commands
         id: generate_actions
         run: |
-          echo "I recover ${MAKE2}"
-          INSTALL="${MAKE2} install" 
-          BUILD="${MAKE2} build"
-          TEST="${MAKE2} test"
+          echo "I recover ${jobs.build.steps.extract_make.outputs.MAKE2}"
+          INSTALL="${jobs.build.steps.extract_make.outputs.MAKE2} install" 
+          BUILD="${jobs.build.steps.extract_make.outputs.MAKE2} build"
+          TEST="${jobs.build.steps.extract_make.outputs.MAKE2} test"
           
           echo "My commands are:"
           echo ${INSTALL}
