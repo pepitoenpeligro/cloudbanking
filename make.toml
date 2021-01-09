@@ -14,6 +14,11 @@ args = ["build"]
 command = "cargo"
 args = ["test"]
 
+[tasks.install]
+script = [
+    "true"
+]
+
 
 [tasks.devtest]
 script = [

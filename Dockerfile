@@ -10,7 +10,7 @@
 
 # From Layer
 # Should be first, if not: failed to solve with frontend dockerfile.v0: failed to create LLB definition: No build stage in current context
-# Select image base {alpine, fedora, centos}
+# Select image base {alpine, fedora, centos}
 # We use Alpine image because is a complete Linux
 # In only 5 MB package
 FROM alpine:3.12.1
@@ -37,13 +37,13 @@ ENV PATH=/usr/local/cargo/bin:$PATH
 # Environment Variables to indicate a global installation and configuration of OpenSSL
 # Necessary for our project due to warp, parking_lot and tokio {Cargo.toml} and for cargo-make binary
 ENV OPENSSL_INCLUDE_DIR=/usr/include/openssl
-ENV OPENSSL_LIB_DIR=/usr/lib64
+ENV OPENSSL_LIB_DIR=/usr/lib
 
 
-# Explicit use of root user don't needed
+# Explicit use of root user don't needed
 #USER root
 
-# Layer Run
+# Layer Run
 # It makes possible to execute commands inside the Docker image
 # Is like a shell script that contains the desired behaviour,
 # similar a Shell Script

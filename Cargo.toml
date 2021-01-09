@@ -19,7 +19,7 @@ galvanic-assert = "0.8.7"
 
 futures = "0.3.1"
 
-actix-web = { version = "3.3.2", features = ["openssl"]}
+actix-web = { version = "3.3.2"}
 actix-cors = "0.5.3"
 actix-session = "0.4.0"
 actix = "0.10.0"
@@ -28,7 +28,10 @@ actix-rt = "1.1.1"
 
 # openssl = { version = "0.10", features = ["v110"] }
 
-etcd-client = "0.5"
+# etcd-client = "0.5"
+
+# Migrating from etcd-client to native etcd 
+etcd = "0.9.0"
 
 hyper = "0.13.9"
 

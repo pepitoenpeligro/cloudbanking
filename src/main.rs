@@ -27,7 +27,10 @@ use std::io::Write;
 use actix_web::http::ContentEncoding;
 //use openssl::ssl::{SslAcceptor, SslFiletype, SslMethod};
 
-use etcd_client::{Client, Error};
+// use etcd_client::{Client, Error};
+
+use etcd::Client;
+use etcd::kv::{self, Action};
 
 use crate::bankaccount::model::bankaccount::*;
 use crate::bankcard::model::bankcard::*;
@@ -71,7 +74,9 @@ async fn main() -> std::io::Result<()> {
     let mut port: String = String::from("3030");
     let mut host: String = String::from("127.0.0.1");
     
-    let client_etcd = Client::connect(["localhost:2379"], None).await;
+    let client_etcd = Client::new(&["localhost:2379"], None).unwrap();
+    
+    /*let client_etcd = Client::connect(["localhost:2379"], None).await;
 
     if client_etcd.is_ok(){
         let mut client_unwrap = client_etcd.unwrap();
@@ -85,7 +90,7 @@ async fn main() -> std::io::Result<()> {
         log::info!("Port from etcd: {:?}", port);
     }else{
         log::info!("No client etc, we will use .env");
-    }
+    }*/
     
     
     
