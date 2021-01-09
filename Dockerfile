@@ -24,7 +24,8 @@ LABEL org.opencontainers.image.source https://github.com/pepitoenpeligro/cloudba
 RUN mkdir -p /app/test \
     && chmod -R o+xwr /app \
     && chmod -R o+xwr /app/test \
-    && cargo install --force cargo-make
+    && cargo install --force cargo-make \
+    && rustup component add rustfmt --toolchain 1.47.0-x86_64-unknown-linux-gnu
 
 # Changing our work directory
 WORKDIR /app/test

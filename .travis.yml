@@ -11,6 +11,9 @@ branches:
 rust:
   - 1.47.0
 
+before_install:
+  - rustup component add rustfmt
+
 #install:
   # - cargo install --force cargo-make
 
