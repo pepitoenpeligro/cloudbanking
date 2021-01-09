@@ -10,19 +10,13 @@ on:
   pull_request:
     branches: [ master ]
 
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+  init:
+    runs-on: ubuntu-latest
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
       - name: Install ysh
@@ -31,8 +25,6 @@ jobs:
           sudo chmod +x /usr/bin/ysh
       - name: Extract make key and save value in $MAKE
         id: extract_make
-        with:
-          MAKE2: ${{ steps.vars.outputs.MAKE2 }}
         run: |
           ysh -f cc.yaml -q "make"
           MAKE=$(ysh -f cc.yaml -q "make")
@@ -40,15 +32,10 @@ jobs:
           MAKE2="${MAKE//\"}"
           echo "Finally I will use"
           echo $MAKE2
-          echo "::set-output name=MAKE2::$MAKE2"
-      - name: Generate Docker Commands
-        id: generate_actions
-        run: |
-          echo "I recover ${jobs.build.steps.extract_make.outputs.MAKE2}"
-          INSTALL="${jobs.build.steps.extract_make.outputs.MAKE2} install" 
-          BUILD="${jobs.build.steps.extract_make.outputs.MAKE2} build"
-          TEST="${jobs.build.steps.extract_make.outputs.MAKE2} test"
-          
+          echo "I recover ${MAKE2}"
+          INSTALL="${MAKE2} install" 
+          BUILD="${MAKE2} build"
+          TEST="${MAKE2} test"
           echo "My commands are:"
           echo ${INSTALL}
           echo ${BUILD}
@@ -56,8 +43,4 @@ jobs:
           echo "Finally I will inject: "
           COMMAND=echo "${INSTALL} && ${BUILD} && ${TEST}"
           echo "${INSTALL} && ${BUILD} && ${TEST}"
-          echo ::set-env name=COMMAND::$COMMAND
-
-      - name: Ejecuta contenedor
-        run: |
-          docker run -t -v `pwd`:/app/test pepitoenpeligro/cloudbanking sh -c " $COMMAND "
+          docker run -t -v `pwd`:/app/test pepitoenpeligro/cloudbanking sh -c " ${INSTALL} && ${BUILD} && ${TEST} "
