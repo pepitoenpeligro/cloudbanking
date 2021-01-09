@@ -24,4 +24,5 @@ lenguaje: rust
 fichero_tareas: make.toml
 
 
-make: cargo make --makefile make.toml
+make: 
+  - cargo make --makefile make.toml
