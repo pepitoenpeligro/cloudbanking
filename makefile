@@ -6,6 +6,9 @@ run:
 build: src/*
 	cargo build
 
+install:
+	echo "Installed"
+
 doc: src/*
 	cargo doc
 

@@ -18,5 +18,5 @@ test:
   - src/user/test_galvanic.rs
   - src/utils/test_galvanic.rs
 lenguaje: rust
-fichero_tareas: Makefile.toml
-make: cargo make
+fichero_tareas: makefile
+make: make
