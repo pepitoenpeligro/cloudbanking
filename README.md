@@ -116,6 +116,16 @@ Do you want to see the development planning of this project with the short and l
 </p>
 
 > If yes, you only need to click on the title of this section
+> 
+<br />
+<br />
+
+
+<p align="center">
+  <img width="200" height="200" src="https://user-images.githubusercontent.com/14912971/104124031-bbe78980-534e-11eb-8c63-f2cfb520318b.gif">
+</p>
+
+The complete documentation (online)  of API design is available on the [postman website](https://documenter.getpostman.com/view/13864499/TVzPoK3B)
 
 ***
 
@@ -210,3 +220,4 @@ List of Animations
 * https://lottiefiles.com/29693-team123
 * https://lottiefiles.com/33369-sailing-ship
 * https://lottiefiles.com/27556-african-teacher-or-instructor
+* https://lottiefiles.com/14471-postbox
