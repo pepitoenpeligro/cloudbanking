@@ -1,0 +1,115 @@
+[tasks.clean]
+description = "Clean proyect"
+command = "cargo"
+args = ["clean"]
+
+
+[tasks.build]
+command = "cargo"
+args = ["build"]
+
+
+
+[tasks.test]
+command = "cargo"
+args = ["test"]
+
+[tasks.install]
+script = [
+    "true"
+]
+
+
+[tasks.devtest]
+script = [
+    "cargo test -- --nocapture"
+]
+
+[tasks.audit]
+command = "cargo"
+args = ["audit"]
+
+
+[tasks.run]
+command = "cargo"
+args = ["run"]
+
+[tasks.docgenerate]
+command = "cargo"
+args = ["doc","-p","cloudbanking", "--no-deps"]
+
+
+
+[tasks.doc]
+script = [
+    "echo $PWD",
+    "cp -rf target/doc/cloudbanking docs/documentation/cloudbanking",
+    "cp target/doc/*.woff docs/documentation/",
+    "cp target/doc/settings.html docs/documentation/",
+    "cp target/doc/*.css docs/documentation/",
+    "cp target/doc/*.ico docs/documentation/",
+    "cp target/doc/*.png docs/documentation/",
+    "cp target/doc/*.js docs/documentation/",
+    "cp target/doc/*.svg docs/documentation/",
+]
+dependencies = ["docgenerate"]
+
+
+[tasks.start]
+command = "cargo"
+args = ["run"]
+
+[tasks.watch]
+command = "cargo"
+args = ["watch"]
+
+
+[tasks.certificate]
+script = [
+    "openssl req -x509 -newkey rsa:4096 -nodes -keyout key.pem -out cert.pem -days 365 -subj '/CN=localhost'"
+]
+
+
+[task.detectports]
+script = [
+    "lsof -i tcp:3030"
+]
+
+
+[tasks.dirtree]
+script = [
+    "find *.yml Gemfile README.md Dockerfile cc.yaml  make.toml LICENSE _config.yml src install makefile .github/workflows .gitignore .travis.yml  -type f |  cut -d/ -f-4 | uniq  |  dirtree -o docs/dirtree.html"
+]
+
+[tasks.release]
+script = [
+    "cargo build --release --bin cloudbanking"
+]
+
+
+[tasks.benchwrk]
+script = '''
+cargo run --release > /dev/null 2>&1 & 
+pid_cargo=$!
+echo $pid_cargo
+while ! nc -z '127.0.0.1' 3030; do   
+    sleep 0.01
+done
+wrk -t10 -c1000 -d50s http://127.0.0.1:3030/healthcheck  -s benchmark.lua
+kill -9 $pid_cargo
+'''
+dependencies=["release"]
+
+
+
+[tasks.limpiar]
+script = [
+    "cargo tree --duplicate",
+    "cargo install cargo-udeps && cargo +nightly udeps"
+]
+
+
+[tasks.tree]
+script = [
+    "cargo tree"
+]
