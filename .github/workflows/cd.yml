@@ -27,6 +27,9 @@ jobs:
 
       - name: Run a multi-line script
         run: |
+          echo "Installing sshpass"
           sudo apt install sshpass
-          sshpass -p ${{ secrets.SSH_SECRET }}' ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
+          echo "Connecting to remote machine"
+          sshpass -p ${{ secrets.SSH_SECRET }} ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
+          echo "Geting remote ls"
           ls -la
