@@ -30,6 +30,6 @@ jobs:
           echo "Installing sshpass"
           sudo apt install sshpass
           echo "Connecting to remote machine"
-          sshpass -p ${{ secrets.SSH_SECRET }} ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
+          sshpass -p ${{ secrets.SSH_SECRET }} ssh -t ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
           echo "Geting remote ls"
           ls -la
