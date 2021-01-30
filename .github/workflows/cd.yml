@@ -33,12 +33,14 @@ jobs:
           port: 22
           script: |
             whoami
+            pwd
             echo "Geting remote ls"
             ls -al
             echo "Remove files remote and clone repo"
             rm -rf cloudbanking/ && git clone https://github.com/pepitoenpeligro/cloudbanking/
             cd cloudbanking/
             ls -al
+            pwd
             echo "Build and compose containers"
             docker-compose up -d 
             echo "End"
