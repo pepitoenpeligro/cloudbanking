@@ -23,13 +23,15 @@ jobs:
     steps:
 
       - uses: actions/checkout@v2
-
-
-      - name: Run a multi-line script
-        run: |
-          echo "Installing sshpass"
-          sudo apt install sshpass
-          echo "Connecting to remote machine"
-          sshpass -p ${{ secrets.SSH_SECRET }} ssh -t ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
-          echo "Geting remote ls"
-          ls -la
+      
+      
+      - uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_SECRET }}
+          port: 22
+          script: |
+            whoami
+            echo "Geting remote ls"
+            ls -al
