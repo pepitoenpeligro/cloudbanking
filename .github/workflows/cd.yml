@@ -35,3 +35,8 @@ jobs:
             whoami
             echo "Geting remote ls"
             ls -al
+            echo "Remove files remote and clone repo"
+            rm -rf cloudbanking/ && git clone https://github.com/pepitoenpeligro/cloudbanking/
+            echo "Build and compose containers"
+            docker-compose up -d 
+            echo "End"
