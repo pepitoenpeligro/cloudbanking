@@ -3,3 +3,4 @@ applications:
   - name: cloudbanking-client
     memory: 1GB
     command: npm run deploy
+    buildpack: nodejs_buildpack
