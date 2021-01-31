@@ -1,25 +1,79 @@
-import logo from './logo.svg';
+import React, { Fragment } from 'react';
+import Layout from './core/Layout';
+import { isAuth } from './auth/helpers'
+
 import './App.css';
 
-function App() {
+require('dotenv').config()
+
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Layout>
+      <div className="page-header mt-4 mb-4">
+        <h1>Cloudbanking</h1>
+      </div>
+
+
+
+      {/* <div class="d-none"> */}
+      <div>
+        <div  className="card mb-5 m-5 ">
+          <div className="card-header text-center h3">Notes for the user</div>
+          <div className="card-body">
+
+            <div className="row">
+
+              <div className="col mb-4">
+
+                <ul>
+
+                  <li>AAAA</li>
+                  <li></li>
+                  <li></li>
+                </ul>
+
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+
+        <div className="card mb-5 m-5 ">
+          <div className="card-header text-center h3">Notes for the developer</div>
+          <div className="card-body">
+
+            <div className="row">
+
+              <div className="col mb-4">
+
+                <ul>
+                  <li></li>
+                  <li></li>
+                </ul>
+
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      {/* {isAuth() && welcome()} */}
+
+
+    </Layout>
+  )
 }
+
+
+
 
 export default App;

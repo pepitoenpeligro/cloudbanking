@@ -1,0 +1,54 @@
+body {
+    /* background-color: #002244; */
+    background-color: transparent;
+    font-family: 'Open Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+
+#navbar{
+    padding-bottom: 20px;
+    
+}
+.navbar-brand{
+    padding-left: 16px;
+}
+
+.nav-item{
+    padding-left: 6px;
+    padding-right: 6px;
+
+}
+.nav-item:hover{
+    opacity: 0.7;
+}
+
+.navbar-brand:hover{
+    opacity: 0.7;
+}
+
+
+
+
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:24px;
+	right:24px;
+	background-color:#FF5F00;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+	margin-top:22px;
+}
+.float:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
