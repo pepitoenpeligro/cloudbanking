@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Continuos Deploy
+name: Continuos Delivery
 
 # Controls when the action will run. 
 on:
@@ -30,7 +30,7 @@ jobs:
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PUB_KEY }}
+          key: ${{ secrets.SSH_KEY }}
           port: 22
           script: |
             whoami
