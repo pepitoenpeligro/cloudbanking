@@ -1,0 +1,35 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Continuous Delivery Client React App
+on:
+  push:
+    branches: [ master ]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download my repo
+        uses: actions/checkout@v2
+      - name: Display repo files
+        run: |
+          cd client
+          echo "This is all worflows can see:"
+          ls -la 
+      - name: Installing ibmcloud CLI
+        run: | 
+          curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+      - name: Instalo el cliente cloudfoundry de IBM
+        run: | 
+          ibmcloud cf install
+      - name: Do Login in IBMcloud account
+        run: |
+          ibmcloud login --apikey  ${{ secrets.IBM_CLOUD_API_KEY }} -r eu-gb 
+        # Se puede obtener el target con ibmcloud resource groups
+      - name: Specificating target where I deploy this repo
+        run: |
+          echo "You can see organizer email in ibmcloud portal > Manage > IAM Access > Users > CloudFoundry"
+          echo "Normally email is your email and space is dev or watever you have in your manifest.yml"
+          ibmcloud target -o ${{ secrets.IBM_USER }} -s ${{ secrets.IBM_CLOUD_PROJECT_SPACE }}
+      - name: Despliego en Cloud Foundry
+        run: |
+          ibmcloud cf push -f $(find . -name "manifest.yml" | head -1)
