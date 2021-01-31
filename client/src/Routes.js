@@ -11,6 +11,9 @@ import ProfesorRoute from './auth/ProfesorRoute'
 import Profesor from './core/Profesor'
 import StudentRoute from './auth/StudentRoute';
 import Student from './core/Student';
+import BankAccounts from './core/BankAccounts';
+import BankCards from './core/BankCards';
+import BankFunds from './core/BankFunds';
 // import Units from './core/Units';
 // import Play from './quiz/Play';
 // import QuizSummary from './quiz/QuizSummary';
@@ -21,6 +24,10 @@ const Routes = () => {
                 <Route exact path="/" component={App} />
                 {/* <Route path="/signup" component={Signup} /> */}
                 <Route path="/signin" component={Signin} />
+                <Route path="/bankaccounts" component={BankAccounts} />
+                <Route path="/bankcards" component={BankCards} />
+                <Route path="/bankfunds" component={BankFunds} />
+
                 <PrivateRoute path="/private" exact component={Private} />
                 <AdminRoute path="/admin" exact component={Admin}></AdminRoute>
                 <ProfesorRoute path="/profesor" exact component={Profesor}></ProfesorRoute>

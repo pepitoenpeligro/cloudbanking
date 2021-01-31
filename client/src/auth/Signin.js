@@ -35,7 +35,10 @@ const Signin = ({history}) => {
     const handleSubmit = event => {
         event.preventDefault()
         setValues({... values, buttonText: 'Submitting'})
-        history.push('/')
+        console.log(values);
+        authenticate({data: {user: values.email}}, () => {
+            history.push('/bankaccounts')
+        })
         /*axios({
             method: 'POST',
             url: `${process.env.REACT_APP_API}/signin`,

@@ -54,6 +54,28 @@ const Layout = ({children, match, history}) => {
             )}
 
 
+
+            { isAuth()  && (
+       
+                            <Fragment>
+                                <li className="nav-item" >
+                                    <Link to="/bankaccounts" className="nav-link" style={isActive('/bankaccounts')}>
+                                        Accounts</Link>
+                                </li>
+
+                                <li className="nav-item" >
+                                    <Link to="/bankcards" className="nav-link" style={isActive('/bankcards')}>
+                                        Cards</Link>
+                                </li>
+
+                                <li className="nav-item" >
+                                    <Link to="/bankfunds" className="nav-link" style={isActive('/bankfunds')}>
+                                        Funds</Link>
+                                </li>
+                            </Fragment>
+                        )}
+
+
             { isAuth() && isAuth().role=== 'student' && (
                 <Fragment>
                     <li className="nav-item" >
@@ -83,6 +105,10 @@ const Layout = ({children, match, history}) => {
             
 
             { isAuth() && (
+
+
+                
+
                 <Fragment>
 
                     
