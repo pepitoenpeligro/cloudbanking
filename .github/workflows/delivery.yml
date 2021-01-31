@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Continuos Deploy
 
 # Controls when the action will run. 
 on:
@@ -14,7 +14,6 @@ on:
 
 
 jobs:
-
   deploy:
 
     runs-on: ubuntu-latest
@@ -31,7 +30,7 @@ jobs:
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
-          password: ${{ secrets.SSH_SECRET }}
+          key: ${{ secrets.SSH_PUB_KEY }}
           port: 22
           script: |
             whoami
