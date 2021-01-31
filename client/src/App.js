@@ -25,13 +25,11 @@ const App = () => {
             <div className="row">
 
               <div className="col mb-4">
-
+{/* 
                 <ul>
 
                   <li>AAAA</li>
-                  <li></li>
-                  <li></li>
-                </ul>
+                </ul> */}
 
               </div>
             </div>
@@ -49,10 +47,9 @@ const App = () => {
 
               <div className="col mb-4">
 
-                <ul>
+                {/* <ul>
                   <li></li>
-                  <li></li>
-                </ul>
+                </ul> */}
 
               </div>
             </div>

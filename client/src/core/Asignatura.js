@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import { isAuth } from '../auth/helpers';
 import StudentElement from './StudentElement';
-import JitsiElement from './JitsiElement';
+// import JitsiElement from './JitsiElement';
 
 
 
@@ -127,8 +127,8 @@ const Item = (props) => {
 
     const setupJitsiEmbed = (event) => {
         return (
-
-            <JitsiElement key={key} index={props.index} token={domain} name={isAuth().name}></JitsiElement>
+            <p>JitsiEmbedd</p>
+            //<JitsiElement key={key} index={props.index} token={domain} name={isAuth().name}></JitsiElement>
  
 
         )
@@ -204,8 +204,8 @@ const Item = (props) => {
                             <div className={`${"jitsi-container-"}${props.index}`}>
                                 
                                 <p>Embbed Jitsi</p>
-                                    <button className="btn btn-primary btn-sm" onClick={() => {setValues({...values, isJitsiActive: !isJitsiActive})}} >Embed Jitsi</button>
-                                    {isJitsiActive &&  setupJitsiEmbed()}
+                                    {/* <button className="btn btn-primary btn-sm" onClick={() => {setValues({...values, isJitsiActive: !isJitsiActive})}} >Embed Jitsi</button> */}
+                                    {/* {isJitsiActive &&  setupJitsiEmbed()} */}
                                     </div>
                             </div>
                         </div>)}
