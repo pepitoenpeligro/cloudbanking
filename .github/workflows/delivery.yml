@@ -49,7 +49,7 @@ jobs:
       - name: Test Remote Docker-Compose
         run: |
           echo "Getting list of investments in Funds Microservice. Should be empty"
-          curl --location --request GET 'http://51.195.232.179:80/funds'
+          curl --location --request GET "http://51.195.232.179:80/funds"
           echo "Creating a new invertment in Funds Microservice"
           wget --no-check-certificate --quiet \
             --method POST \
@@ -64,4 +64,5 @@ jobs:
             }' \
             'http://51.195.232.179:80/funds'
           echo "Getting list of investments in Funds Microservice. Should have one with id 10 and 554.4 amount"
-          curl --location --request GET 'http://51.195.232.179:80/funds'
+          curl --location --request GET "http://51.195.232.179:80/funds"
+          echo "End Test"
