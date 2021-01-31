@@ -45,7 +45,7 @@ jobs:
             pwd
             echo "Build and compose containers"
             docker-compose up -d 
-            echo "End"
+            echo "[Delivery] END"
 
       - name: Test Remote Docker-Compose
         run: |
