@@ -32,4 +32,8 @@ jobs:
           ibmcloud target -o ${{ secrets.IBM_USER }} -s ${{ secrets.IBM_CLOUD_PROJECT_SPACE }}
       - name: Despliego en Cloud Foundry
         run: |
+          ls -la 
+          cd client
+          ls -la
+          echo "Now will be deployed"
           ibmcloud cf push -f $(find . -name "manifest.yml" | head -1)
