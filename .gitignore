@@ -8,6 +8,10 @@ install
 .cache/
 account/target
 card/target
+ovh
+ovh.pub
+.vagrant/
+
 
 #Maven
 target/

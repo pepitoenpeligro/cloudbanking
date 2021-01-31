@@ -1,0 +1,77 @@
+---
+- hosts: all
+  user: pepitoenpeligro
+  become: yes
+
+  vars:
+    - packages: ['build-essential', 'git', 'apt-transport-https', 'ca-certificates', 'curl', 'software-properties-common', 'dkms', 'wget', 'unzip']
+    - project_location: /home/pepitoenpeligro
+
+  tasks:
+  # - name: Apt update
+  #   apt: name=foobar state=installed
+  #   register: apt_status
+  #   until: apt_status is success
+  #   delay: 6
+  #   retries: 10
+
+  - name: Say hi
+    shell: echo "hi"!
+
+  - name: Remove locks
+    shell: rm -f /var/lib/apt/lists/lock && rm -f /var/lib/dpkg/lock && rm -f /var/cache/apt/archives/lock && rm -rf /var/lib/dpkg/lock-frontend
+
+
+  # - name: Remove apt lock file
+  #   file:
+  #     state: absent
+  #     path: "/var/lib/dpkg/lock" 
+
+  # - name: Remove apt lock file
+  #   file:
+  #     state: absent
+  #     path: "/var/lib/dpkg/lock-frontend" 
+
+
+  - name: Update APT Cache
+    apt:
+      update_cache: yes
+      force_apt_get: yes  
+
+  # - name: Install {{ packages }}
+  #   become: yes
+
+  #   apt:
+  #     name: "{{ packages }}"
+  #     state: present
+  #     update_cache: yes
+
+  - name: Get gpg docker.
+    shell: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+
+  - name: Add repository.
+    shell: add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" && apt update
+  
+  - name: Remove locks
+    shell: rm -f /var/lib/apt/lists/lock && rm -f /var/lib/dpkg/lock && rm -f /var/cache/apt/archives/lock && rm -rf /var/lib/dpkg/lock-frontend
+
+
+  - name: Install Docker.
+    become_user: root
+    shell: apt-get install docker-ce -y
+
+
+  - name: Make User docker
+    become_user: root
+    shell: gpasswd -a ubuntu docker
+
+  - name: Docker service start
+    service:
+      name: docker
+      state: started
+  
+  - name: Install Docker Compose
+    get_url:
+      url: https://github.com/docker/compose/releases/download/1.28.2/docker-compose-Linux-x86_64
+      dest: /usr/local/bin/docker-compose
+      mode: 0755

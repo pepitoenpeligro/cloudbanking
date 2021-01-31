@@ -1,0 +1,41 @@
+Vagrant.configure(2) do |config|
+    config.vm.box = "ubuntu/bionic64"
+    # config.vm.hostname = "ubuntu-rust"
+  
+    ssh_pub_key = File.readlines("#{Dir.home}/.ssh/id_rsa.pub").first.strip
+    config.vm.provision 'shell', inline: "echo #{ssh_pub_key} >> /home/vagrant/.ssh/authorized_keys", privileged: false
+  
+    #SSH forward port 22 -> 2222
+    config.vm.network "forwarded_port", guest: 22, host:2222, id: "ssh", auto_correct: true
+  
+    #Expose port 80 -> 8080 for web Service (future)
+    config.vm.network "forwarded_port", guest: 80, host:80, id: "web", auto_correct: true
+
+    #Expose port 80 -> 8080 for web Service (future)
+    config.vm.network "forwarded_port", guest: 443, host:443, id: "websecure", auto_correct: true
+    
+    #Expose port 3030 -> 3030 for api Service (future)
+    config.vm.network "forwarded_port", guest: 3030, host:3030, id: "service1", auto_correct: true
+  
+    #Expose port 3031 -> 3031 for api Service (future)
+    config.vm.network "forwarded_port", guest: 3031, host:3031, id: "service2", auto_correct: true
+
+    #Expose port 3032 -> 3032 for api Service (future)
+    config.vm.network "forwarded_port", guest: 3032, host:3032, id: "service3", auto_correct: true
+
+    #Expose port 3033 -> 3033 for api Service (future)
+    config.vm.network "forwarded_port", guest: 3033, host:3033, id: "service4", auto_correct: true
+  
+    config.vm.provision :ansible do |ansible|
+      ansible.limit = "all"
+      ansible.playbook = "provision.yaml"
+      # ansible.verbose = "v"
+    end
+  
+  
+    config.vm.provider "virtualbox" do |v|
+      v.memory = 1024
+
+    end
+  
+  end
