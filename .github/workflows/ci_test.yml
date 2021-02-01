@@ -21,9 +21,10 @@ jobs:
       # Smart Cache for rust
       # https://github.com/Swatinem/rust-cache
     - uses: Swatinem/rust-cache@v1
-    
+
     - name: Build
       run: cargo build --verbose
+
 
     - name: Run tests
       run: cargo test -- --nocapture
