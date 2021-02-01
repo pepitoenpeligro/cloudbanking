@@ -1,4 +1,4 @@
-name: "[Continuous Integration] Tests"
+name: "Continuous Integration Tests"
 on:
   push:
     branches: 
