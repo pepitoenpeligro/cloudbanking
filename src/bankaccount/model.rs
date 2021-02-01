@@ -31,8 +31,7 @@ pub mod bankaccount{
         status: bool,
     }
 
-    //@todo
-    // funcion para comprobar un iban valido
+
     impl Account{
         /// Allocates a Account object and initializes it so that it represent the bankaccount needed.
         /// # Usage
