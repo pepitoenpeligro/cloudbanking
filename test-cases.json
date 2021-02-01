@@ -1,0 +1,39 @@
+{
+    "name": "Cloudbanking Microservices test",
+    "testCases": {
+      "postfunds": {
+        "path": "/funds",
+        "body": {
+          
+          "id" : 9898,
+          "amount": 85,
+          "dateStart": "toady",
+          "dateEnd": "tomorrow",
+          "status": true
+        },
+        "header": {
+          "Content-Type": "application/json"
+        },
+        "method": "POST"
+      },
+  
+      "getfunds": {
+        "path": "/funds",
+        "method": "GET",
+        "description": "Get all Bank funds",
+        "expect": {
+          "body": {
+            "contains": [{
+              "id": "9898"
+            }]
+          }
+        }
+      }
+      
+  
+    },
+    "url": "51.195.232.179:80",
+    "header": {
+      "Content-Type": "application/json"
+    }
+  }

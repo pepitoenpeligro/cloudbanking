@@ -1,0 +1,42 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Test Microservices
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  workflow_run:
+    workflows: ["Continuos Delivery"]
+    branches: [master]
+    types: 
+      - completed
+
+  workflow_dispatch:
+
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+    # Timeout of 30 minutes to deploy with docker-compose
+    timeout-minutes: 30
+
+
+    steps:
+
+      - uses: actions/checkout@v2
+      
+      - name: Install jq
+        run: |
+          sudo apt-get install jq -y 
+      
+      - name: Download api-test
+        run: |
+          curl -LJO https://raw.githubusercontent.com/subeshb1/api-test/master/api-test.sh
+          chmod +x api-test.sh
+
+      - name: Test Remote Docker-Compose
+        run: |
+          echo "Running api test"
+          ./api-test.sh -f  test-cases.json describe && ./api-test.sh -f  test-cases.json run all && ./api-test.sh -f test-cases.json test all
+          echo "Api rest test finished"
