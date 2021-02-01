@@ -1,9 +1,11 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Continuous Delivery Client React App
+name: "[Continuous Delivery] Client React App"
 on:
   push:
     branches: [ master ]
+    paths:
+      - 'client'
 jobs:
   deploy:
     runs-on: ubuntu-latest

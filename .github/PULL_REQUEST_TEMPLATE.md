@@ -3,5 +3,6 @@
 ## First of all
 - [] I promise to be patient
 - [] I promise to dialogue in a respectful way
+- [] I promise to be concise
 
 ## Description

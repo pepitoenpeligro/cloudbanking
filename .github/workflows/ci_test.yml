@@ -1,5 +1,4 @@
-name: cloudbanking proyect test (ci)
-
+name: "[Continuous Integration] Tests"
 on:
   push:
     branches: 
