@@ -10,19 +10,19 @@ on:
     branches: [master]
     paths-ignore:
       - '**/README.md'
-      - '**/Vagrantfile'
-      - '**/test-cases.json'
-      - '**/taurus_benh.yml'
-      - '**/openrc.sh'
-      - '**/local.provision'
       - '**/LICENSE'
-      - '**/cc.yaml'
-      - '**/buddy.yml'
-      - '**/benchmark.lua'
-      - '**/.env.example'
-      - '**/.all-contributorsrc'
-      - '**/_config.yml'
-      - '**/client'
+      - '**/Vagrantfile'
+      - './test-cases.json'
+      - './taurus_benh.yml'
+      - './openrc.sh'
+      - './local.provision'
+      - './cc.yaml'
+      - './buddy.yml'
+      - './benchmark.lua'
+      - './.env.example'
+      - './.all-contributorsrc'
+      - './_config.yml'
+      - './client'
     types: 
       - completed
 
