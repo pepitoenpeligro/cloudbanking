@@ -6,6 +6,21 @@ on:
       - 'hito*'
   pull_request:
     branches: [ master ]
+    paths-ignore:
+      - '**/README.md'
+      - '**/Vagrantfile'
+      - '**/test-cases.json'
+      - '**/taurus_benh.yml'
+      - '**/openrc.sh'
+      - '**/local.provision'
+      - '**/LICENSE'
+      - '**/cc.yaml'
+      - '**/buddy.yml'
+      - '**/benchmark.lua'
+      - '**/.env.example'
+      - '**/.all-contributorsrc'
+      - '**/_config.yml'
+      - '**/client'
 
 env:
   CARGO_TERM_COLOR: always

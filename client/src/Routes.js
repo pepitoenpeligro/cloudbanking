@@ -14,6 +14,7 @@ import Student from './core/Student';
 import BankAccounts from './core/BankAccounts';
 import BankCards from './core/BankCards';
 import BankFunds from './core/BankFunds';
+import BankLoans from './core/BankLoans';
 // import Units from './core/Units';
 // import Play from './quiz/Play';
 // import QuizSummary from './quiz/QuizSummary';
@@ -27,6 +28,7 @@ const Routes = () => {
                 <Route path="/bankaccounts" component={BankAccounts} />
                 <Route path="/bankcards" component={BankCards} />
                 <Route path="/bankfunds" component={BankFunds} />
+                <Route path="/bankloans" component={BankLoans} />
 
                 <PrivateRoute path="/private" exact component={Private} />
                 <AdminRoute path="/admin" exact component={Admin}></AdminRoute>

@@ -72,6 +72,11 @@ const Layout = ({children, match, history}) => {
                                     <Link to="/bankfunds" className="nav-link" style={isActive('/bankfunds')}>
                                         Funds</Link>
                                 </li>
+
+                                <li className="nav-item" >
+                                    <Link to="/bankloans" className="nav-link" style={isActive('/bankloans')}>
+                                        Loans</Link>
+                                </li>
                             </Fragment>
                         )}
 
