@@ -62,8 +62,39 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
+  cloudbanking-loans:
+    container_name: cloudbanking-loans
+    build: 
+      context: ./loans
+      dockerfile: loans.Dockerfile
+    ports:
+      - "3034:3034"
+    networks:
+      - proxynet
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
 
+  database:
+    image: mongo:3.2
+    container_name: mongo
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      MONGODB_USER: pepito
+      MONGODB_PASS: pepitopass
+      MONGO_INITDB_ROOT_USERNAME: pepito
+      MONGO_INITDB_ROOT_PASSWORD: pepitopass
+      MONGODB_DATABASE: loans
+      MONGODB_PORT_NUMBER: 27017
+    ports:
+      - "27017:27017"
+    # volumes:
+    #   - ./:/data/db
+    networks:
+      - proxynet
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
 
   nginx:
