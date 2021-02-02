@@ -45,7 +45,8 @@ jobs:
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
+          password: ${{ secrets.SSH_SECRET }}
+          #key: ${{ secrets.SSH_KEY }}
           port: 22
           script: |
             whoami
@@ -53,7 +54,7 @@ jobs:
             echo "Geting remote ls"
             ls -al
             echo "Remove files remote and clone repo"
-            rm -rf cloudbanking/ && git clone https://github.com/pepitoenpeligro/cloudbanking/
+            docker-compose down -v && rm -rf cloudbanking/ && git clone https://github.com/pepitoenpeligro/cloudbanking/
             cd cloudbanking/
             ls -al
             pwd
@@ -61,20 +62,20 @@ jobs:
             docker-compose up -d 
             echo "[Delivery] END"
 
-      - name: Test Remote Docker-Compose
-        run: |
-          echo "Getting list of investments in Funds Microservice. Should be empty"
-          curl --location --request GET "http://51.195.232.179:80/funds"
-          echo "Creating a new invertment in Funds Microservice"
-          curl --location --request POST "http://51.195.232.179:80/funds" \
-          --header 'Content-Type: application/json' \
-          --data-raw '{ \
-              "id" : 10, \
-              "amount": 544.4, \
-              "dateStart": "toady", \
-              "dateEnd": "tomorrow", \
-              "status": true \
-          }' 
-          echo "Getting list of investments in Funds Microservice. Should have one with id 10 and 554.4 amount"
-          curl --location --request GET "http://51.195.232.179:80/funds"
-          echo "End Test"
+      # - name: Test Remote Docker-Compose
+      #   run: |
+      #     echo "Getting list of investments in Funds Microservice. Should be empty"
+      #     curl --location --request GET "http://pepecordoba.site:80/funds"
+      #     echo "Creating a new invertment in Funds Microservice"
+      #     curl --location --request POST "http://pepecordoba.site:80/funds" \
+      #     --header 'Content-Type: application/json' \
+      #     --data-raw '{ \
+      #         "id" : 10, \
+      #         "amount": 544.4, \
+      #         "dateStart": "toady", \
+      #         "dateEnd": "tomorrow", \
+      #         "status": true \
+      #     }' 
+      #     echo "Getting list of investments in Funds Microservice. Should have one with id 10 and 554.4 amount"
+      #     curl --location --request GET "http://pepecordoba.site:80/funds"
+      #     echo "End Test"

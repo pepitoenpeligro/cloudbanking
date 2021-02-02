@@ -7,10 +7,10 @@ Vagrant.configure('2') do |config|
   config.vm.network "forwarded_port", guest: 22, host:2222, id: "ssh", auto_correct: true
 
   #Expose port 80 -> 8080 for web Service (future)
-  config.vm.network "forwarded_port", guest: 80, host:80, id: "websecure", auto_correct: true
+  config.vm.network "forwarded_port", guest: 80, host:80, id: "webnormal", auto_correct: true
 
   #Expose port 80 -> 8080 for web Service (future)
-  config.vm.network "forwarded_port", guest: 8080, host:8080, id: "websecure", auto_correct: true
+  config.vm.network "forwarded_port", guest: 8080, host:8080, id: "webnormaldos", auto_correct: true
 
   #Expose port 80 -> 8080 for web Service (future)
   config.vm.network "forwarded_port", guest: 443, host:443, id: "websecure", auto_correct: true
