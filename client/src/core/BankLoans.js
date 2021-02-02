@@ -48,14 +48,14 @@ const BankLoans = ({history}) => {
 
         if (!loansVisible){
             return (
-                <p>NO Cargado</p>
+                <p>We are loading your loans, please wait until this message changes</p>
             )
         }else{
             console.log("Estare bien?");
             console.log(loans);
             return (
                 <div>
-                <p>YAAAa</p>
+                <p>Nowww</p>
                 
                 
                     {/* {loansVisible && loans.map(function(d, idx){
