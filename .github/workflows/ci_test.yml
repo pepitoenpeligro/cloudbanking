@@ -4,8 +4,6 @@ on:
     branches: 
       - 'master'
       - 'hito*'
-  pull_request:
-    branches: [ master ]
     paths:
       - 'src/**'
       - 'account/**'
@@ -20,6 +18,9 @@ on:
       - 'Dockerfile.account'
       - 'Dockerfile.card'
       - 'Dockerfile.core'
+  pull_request:
+    branches: [ master ]
+    
 
 env:
   CARGO_TERM_COLOR: always
