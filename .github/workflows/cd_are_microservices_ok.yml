@@ -8,21 +8,20 @@ on:
   workflow_run:
     workflows: ["Continuous Delivery Microservices"]
     branches: [master]
-    paths-ignore:
-      - '**/README.md'
-      - '**/LICENSE'
-      - '**/Vagrantfile'
-      - './test-cases.json'
-      - './taurus_benh.yml'
-      - './openrc.sh'
-      - './local.provision'
-      - './cc.yaml'
-      - './buddy.yml'
-      - './benchmark.lua'
-      - './.env.example'
-      - './.all-contributorsrc'
-      - './_config.yml'
-      - './client'
+    paths:
+      - 'src/**'
+      - 'account/**'
+      - 'card/**'
+      - 'conf/**'
+      - 'funds/**'
+      - 'loans/**'
+      - 'docker-compose.yml'
+      - 'Dockerfile'
+      - 'Cargo.toml'
+      - 'makefile'
+      - 'Dockerfile.account'
+      - 'Dockerfile.card'
+      - 'Dockerfile.core'
     types: 
       - completed
 
