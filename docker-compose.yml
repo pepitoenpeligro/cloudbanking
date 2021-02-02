@@ -7,10 +7,11 @@ services:
   cloudbanking-core:
     # Name of container to create
     container_name: cloudbanking-core
+    image: pepitoenpeligro/cloudbanking-core
     # The file is in . and the dockerfile is Dockerfile.core
-    build:
-      context: .
-      dockerfile: Dockerfile.core
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile.core
     # Exposing port 3030 
     ports:
       - "3030:3030"
@@ -29,9 +30,10 @@ services:
 
   cloudbanking-account:
     container_name: cloudbanking-account
-    build: 
-      context: .
-      dockerfile: Dockerfile.account
+    image: pepitoenpeligro/cloudbanking-account
+    # build: 
+    #   context: .
+    #   dockerfile: Dockerfile.account
     ports:
       - "3031:3031"
     networks:
@@ -41,9 +43,10 @@ services:
 
   cloudbanking-card:
     container_name: cloudbanking-card
-    build: 
-      context: ./card
-      dockerfile: Dockerfile.cards
+    image: pepitoenpeligro/cloudbanking-card
+    # build: 
+    #   context: ./card
+    #   dockerfile: Dockerfile.cards
     ports:
       - "3032:3032"
     networks:
