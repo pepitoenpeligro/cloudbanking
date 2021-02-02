@@ -4,6 +4,8 @@ name: "Continuous Delivery Client React App"
 on:
   push:
     branches: [ master ]
+    paths:
+    - 'client/**'
     
 jobs:
   deploy:
