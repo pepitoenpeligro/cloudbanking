@@ -2,5 +2,6 @@
 applications:
   - name: cloudbanking-client
     memory: 512Mb
-    command: npm run deploy
-    buildpack: nodejs_buildpack
+    command: npm start
+    # command: npm run deploy
+    # buildpack: nodejs_buildpack
