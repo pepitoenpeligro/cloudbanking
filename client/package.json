@@ -28,7 +28,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "postinstall": "if-env NODE_ENV=production && npm run build || echo Avoiding post install",
-    "deploy": "npm run build && node index.js",
+    "deploy": "npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
