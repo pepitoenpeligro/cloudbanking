@@ -1,5 +1,3 @@
-#https://github.com/wmnnd/nginx-certbot/blob/master/init-letsencrypt.sh
-
 #!/bin/bash
 
 if ! [ -x "$(command -v docker-compose)" ]; then
@@ -7,7 +5,7 @@ if ! [ -x "$(command -v docker-compose)" ]; then
   exit 1
 fi
 
-domains=(localhost www.pepecordoba.site)
+domains=("example.org" "pepecordoba.site")
 rsa_key_size=4096
 data_path="./data/certbot"
 email="" # Adding a valid address is strongly recommended
