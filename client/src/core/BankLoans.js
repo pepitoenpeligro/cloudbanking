@@ -1,20 +1,17 @@
-import React, { Component, useState, Fragment } from "react";
+import React, {useState} from "react";
 import Layout from "./Layout";
 import axios from "axios";
-import { r } from "react-router";
+
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
-import { Link } from "react-router-dom";
+
 import Table from "react-bootstrap/Table";
 import * as RB from "react-bootstrap";
+import Lottie from "react-lottie";
 
 const BankLoans = ({ history }) => {
   const [values, setValues] = useState({
-    units: [],
-    unitsVisible: false,
-    testnow: "Test Now!",
-    nombreUnidades: [],
     loans: [],
     loansVisible: false,
     inputAmount: "",
@@ -22,15 +19,21 @@ const BankLoans = ({ history }) => {
   });
 
   const {
-    units,
-    unitsVisible,
-    testnow,
-    nombreUnidades,
     loans,
     loansVisible,
     inputAmount,
     inputDuration,
   } = values;
+
+  const animationOptions = {
+    loop: true,
+    autoplay: true,
+    path: "https://assets8.lottiefiles.com/packages/lf20_4wDd2K.json"
+    // height: 100,
+    // rendererSettings: {
+    //   preserveAspectRatio: "xMidYMid slice",
+    // },
+  };
 
   React.useEffect(() => {
     axios({
@@ -94,16 +97,14 @@ const BankLoans = ({ history }) => {
       });
   };
 
-  const onChange = (event) => {
-    console.log(event);
-  };
+
 
   const generateNewLoanView = (event) => {
     return (
       <RB.Form onSubmit={processMicroserviceRequest}>
         <RB.Form.Row className="align-items-center">
           <RB.Col sm={3} className="my-1">
-            <RB.Form.Label htmlFor="inlineFormInputName" srOnly>
+            <RB.Form.Label htmlFor="inputAmount" srOnly>
               Amount
             </RB.Form.Label>
             <RB.Form.Control
@@ -116,8 +117,8 @@ const BankLoans = ({ history }) => {
           </RB.Col>
 
           <RB.Col sm={3} className="my-1">
-            <RB.Form.Label htmlFor="inlineFormInputName" srOnly>
-              Amount
+            <RB.Form.Label htmlFor="inputduration" srOnly>
+              Duration
             </RB.Form.Label>
             <RB.Form.Control
               id="inputDuration"
@@ -180,7 +181,18 @@ const BankLoans = ({ history }) => {
       <div className="container mt-4 mb-4">
         <div className="row mb-4">
           <div className="col">
-            <h1>Your loans</h1>
+            <h1>Bank Loans</h1>
+
+            <h3>Your Loans</h3>
+            <div className="container">
+              <Lottie
+              options={animationOptions}
+              height={400}
+              width={400}
+              isStopped={false}
+              isPaused={false}
+              />
+            </div>
           </div>
         </div>
 
@@ -190,7 +202,9 @@ const BankLoans = ({ history }) => {
 
         <div className="row mb-4 mt-4">
           <div className="col">
-            <h1>Request a new loan</h1>
+            <h3>Request a new loan</h3>
+
+            
           </div>
         </div>
 

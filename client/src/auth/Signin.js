@@ -1,18 +1,11 @@
 import React, {useState} from 'react'
-import {Link, Redirect} from 'react-router-dom'
+
 import Layout from '../core/Layout'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
-import {isAuth, authenticate} from './helpers'
-import './Signin.css'
-
-
-
-
-
-
-
+import {authenticate} from './helpers'
+import './Signin.css';
 
 const Signin = ({history}) => {
     const [values, setValues] = useState({
@@ -23,7 +16,7 @@ const Signin = ({history}) => {
     
     });
     
-    const {email, password, buttonText} = values;
+    const {buttonText} = values;
 
 
 
@@ -33,8 +26,8 @@ const Signin = ({history}) => {
 
 
     const handleSubmit = event => {
-        event.preventDefault()
-        setValues({... values, buttonText: 'Submitting'})
+        event.preventDefault();
+        setValues({...values, buttonText: 'Submitting'});
         console.log(values);
         authenticate({data: {user: values.email}}, () => {
             history.push('/bankaccounts')

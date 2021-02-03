@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react'
 import {Link, withRouter} from 'react-router-dom'
 import {isAuth, signout} from '../auth/helpers'
-import { ToastContainer, toast } from 'react-toastify';
+import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 
 import './Layout.css';

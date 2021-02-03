@@ -1,9 +1,10 @@
-import React, { Component, useState, Fragment } from 'react'
+import React, {useState} from 'react'
 import Layout from './Layout'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
-import { Link } from 'react-router-dom';
+
+import Lottie from "react-lottie";
 
 
 const BankCards = ({history}) => {
@@ -13,12 +14,20 @@ const BankCards = ({history}) => {
         unitsVisible : false,
         testnow:'Test Now!',
         nombreUnidades:[]
-        
-
-        
      });
  
-    const {units , unitsVisible, testnow, nombreUnidades} = values;
+    const {} = values;
+
+
+    const animationOptions = {
+        loop: true,
+        autoplay: true,
+        path: "https://assets3.lottiefiles.com/packages/lf20_y0hSoJ.json"
+        // height: 100,
+        // rendererSettings: {
+        //   preserveAspectRatio: "xMidYMid slice",
+        // },
+      };
  
 
      React.useEffect(() => {
@@ -40,17 +49,11 @@ const BankCards = ({history}) => {
 
 
 
-    const handleTestUnit = (item) =>  (event) => {
-        history.push(   {pathname: '/testunits',
-                        state:item})
-        console.log("EL boton ve:", item)
+    // const handleTestUnit = (item) =>  (event) => {
+    //     history.push({pathname: '/testunits',state:item})
+    //     console.log("EL boton ve:", item)
+    // }
 
-    }
-
-
-    const handleTestExam = (name) => (event) => {
-        toast.success('A por el test', name)
-    }
 
     const generateBankCardsView = (event) => {
         return(
@@ -63,18 +66,22 @@ const BankCards = ({history}) => {
 
 
     return(
-
-
-
-
-
-
         <Layout>
             <ToastContainer/>
             <div className="container mt-4 mb-4">
             <div className="row mb-4">
                 <div className="col">
                     <h1>Bank Cards</h1>
+
+                    <div className="container">
+                            <Lottie
+                            options={animationOptions}
+                            height={400}
+                            width={400}
+                            isStopped={false}
+                            isPaused={false}
+                            />
+                        </div>
                     </div>
                 </div>
 

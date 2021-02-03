@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, {useState } from 'react'
 import Layout from '../core/Layout';
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
