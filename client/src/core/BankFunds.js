@@ -90,8 +90,9 @@ const BankFunds = ({history}) => {
                     <tr>
                       <th>ID</th>
                       <th>Amount</th>
-                      <th>Duration</th>
-                      <th>Date</th>
+                      <th>Date Start</th>
+                      <th>Date End</th>
+                      <th>status</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -99,6 +100,10 @@ const BankFunds = ({history}) => {
       
                       <tr key={item.id}>
                         <td>{item.id}</td>
+                        <td>{item.amount + '\t€'}</td>
+                        <td>{item.dateStart}</td>
+                        <td>{item.dateEnd}</td>
+                        <td>{(item.status+'')}</td>
                         {/* <td>{item.amount + '\t€'}</td>
                         <td>{item.duration + '\tdays'}</td> */}
       

@@ -92,8 +92,8 @@ services:
       MONGODB_PORT_NUMBER: 27017
     ports:
       - "27017:27017"
-    # volumes:
-    #   - ./:/data/db
+    volumes:
+      - ./data:/data/db
     networks:
       - proxynet
     extra_hosts:
