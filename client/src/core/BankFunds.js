@@ -4,6 +4,7 @@ import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import { Link } from 'react-router-dom';
+import * as RB from "react-bootstrap";
 
 
 const BankFunds = ({history}) => {
@@ -12,16 +13,38 @@ const BankFunds = ({history}) => {
         units: [],
         unitsVisible : false,
         testnow:'Test Now!',
-        nombreUnidades:[]
+        nombreUnidades:[],
+        funds : [],
+        fundsVisible: false
         
 
         
      });
  
-    const {units , unitsVisible, testnow, nombreUnidades} = values;
+    const {funds, fundsVisible} = values;
  
 
      React.useEffect(() => {
+
+        axios({
+            method: "GET",
+            url: `${process.env.REACT_APP_API}/funds`,
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+          }).then(function (response) {
+            console.log(response);
+            console.log(response.data);
+            setValues((values) => ({
+              ...values,
+              funds: response.data,
+              fundsVisible: true,
+            }));
+            console.log("Loans object");
+            console.log(funds);
+            toast.success("Your bank funds have been recovered");
+          });
          
         //  axios({
         //      method: 'POST',
@@ -53,12 +76,47 @@ const BankFunds = ({history}) => {
     }
 
     const generateBankFundsView = (event) => {
-        return(
-            <div>
-                <p>Here you can see all bank funds</p>
-            </div>
-        )
+        if (!fundsVisible) {
+            return (
+              <p>We are loading your funds, please wait until this message changes</p>
+            );
+          } else {
+            console.log("Estare bien?");
+            console.log(funds);
+            return (
+              <div>
+                <RB.Table responsive>
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Amount</th>
+                      <th>Duration</th>
+                      <th>Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {funds.map((item) => (
+      
+                      <tr key={item.id}>
+                        <td>{item.id}</td>
+                        {/* <td>{item.amount + '\t€'}</td>
+                        <td>{item.duration + '\tdays'}</td> */}
+      
+                        
+                        {/* <td>{new Date(item.updatedAt).toLocaleDateString()}</td> */}
+                      </tr>
+                    ))}
+                  </tbody>
+                </RB.Table>
+              </div>
+            );
+          }
     }
+
+
+    const generateFundsTable = (event) => {
+
+    };
 
 
 
