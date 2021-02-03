@@ -7,6 +7,9 @@ jobs:
       # Seleccting the same rust version of our Dockerfile.
       # Important for tokio and warp packages.
       - image: circleci/rust:1.48.0
+        auth:
+          username: $DOCKER_USER
+          password: $DOCKER_PASS
 
     environment:
       # Changing TZ for correct testing of BankAccount and Card
