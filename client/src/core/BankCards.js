@@ -3,7 +3,7 @@ import Layout from './Layout'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
-
+import * as RB from "react-bootstrap";
 import Lottie from "react-lottie";
 
 
@@ -13,10 +13,25 @@ const BankCards = ({history}) => {
         units: [],
         unitsVisible : false,
         testnow:'Test Now!',
-        nombreUnidades:[]
+        nombreUnidades:[],
+        cards:[{
+            "id" : 0,
+            "amount": 544.4,
+            "dateStart": "toady",
+            "dateEnd": "tomorrow",
+            "status": true
+        },
+        {
+            "id" : 1,
+            "amount": 2547,
+            "dateStart": "toady",
+            "dateEnd": "tomorrow",
+            "status": true
+        }],
+        cardsVisible:true
      });
  
-    const {} = values;
+    const {cards, cardsVisible} = values;
 
 
     const animationOptions = {
@@ -56,12 +71,45 @@ const BankCards = ({history}) => {
 
 
     const generateBankCardsView = (event) => {
-        return(
+        if (!cardsVisible) {
+          return (
+            <p>We are loading your cards, please wait until this message changes</p>
+          );
+        } else {
+          console.log("Estare bien?");
+          console.log(cards);
+          return (
             <div>
-                <p>Here you can see all bank cards</p>
+              <RB.Table responsive>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Amount</th>
+                    <th>Date Start</th>
+                    <th>Date End</th>
+                    <th>status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {cards.map((item) => (
+                    <tr key={item.id}>
+                      <td>{item.id}</td>
+                      <td>{item.amount + "\t€"}</td>
+                      <td>{item.dateStart}</td>
+                      <td>{item.dateEnd}</td>
+                      <td>{item.status + ""}</td>
+                      {/* <td>{item.amount + '\t€'}</td>
+                            <td>{item.duration + '\tdays'}</td> */}
+    
+                      {/* <td>{new Date(item.updatedAt).toLocaleDateString()}</td> */}
+                    </tr>
+                  ))}
+                </tbody>
+              </RB.Table>
             </div>
-        )
-    }
+          );
+        }
+      };
 
 
 
