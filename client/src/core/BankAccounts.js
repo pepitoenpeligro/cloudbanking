@@ -1,9 +1,8 @@
 import React, {useState} from 'react'
 import Layout from './Layout'
-import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
-
+import * as RB from "react-bootstrap";
 import Lottie from "react-lottie";
 
 
@@ -11,9 +10,22 @@ import Lottie from "react-lottie";
 
 const BankAccounts = ({history}) => {
 
-    const [values, setValues] = useState({
-        accounts:[],
-        accountsVisible:false
+    const [values] = useState({
+        accounts:[{
+            "id": "999f7f66abf88ee70243988",
+            "swift": "BSCHESMMXXX",
+            "iban": "ES32668805111122223334",
+            "created_at": "2020-07-08T22:18:00",
+            "status": true
+        },
+        {
+            "id": "999f7f66abf88ee70243000",
+            "swift": "BSCHESMMXXX",
+            "iban": "ES32668805111122223000",
+            "created_at": "2020-07-08T22:18:00",
+            "status": true
+        }],
+        accountsVisible:true
      });
  
     const {accounts, accountsVisible} = values;
@@ -30,18 +42,8 @@ const BankAccounts = ({history}) => {
  
 
      React.useEffect(() => {
-         
-        //  axios({
-        //      method: 'POST',
-        //      url: `${process.env.REACT_APP_API}/units/list`,
-        //      headers:{
-        //         'Content-Type': 'application/json',
-        //         'Accept':'application/json'
-        //     }}).then(function(response ){
-        //         console.log("[/units/list] Received:", response.data.listUnidadesName);
-        //         setValues(values => ({...values, nombreUnidades: response.data.listUnidadesName}))
-        //     })
-        }, [])
+        toast.error("This functionality will be completed in the next milestone. Sorry for the inconvenience");
+    }, [])
 
 
 
@@ -54,12 +56,45 @@ const BankAccounts = ({history}) => {
     // }
 
     const generateBankAccountView = (event) => {
-        return(
+        if (!accountsVisible) {
+          return (
+            <p>We are loading your accounts, please wait until this message changes</p>
+          );
+        } else {
+          console.log("Estare bien?");
+          console.log(accounts);
+          return (
             <div>
-                <p>Here you can see all bank accounts</p>
+              <RB.Table responsive>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>SWIFT</th>
+                    <th>IBAN</th>
+                    <th>Creation Date</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {accounts.map((item) => (
+                    <tr key={item.id}>
+                      <td>{item.id}</td>
+                      <td>{item.swift}</td>
+                      <td>{item.iban}</td>
+                      <td>{new Date(item.created_at).toLocaleDateString()}</td>
+                      <td>{item.status + ""}</td>
+                      {/* <td>{item.amount + '\t€'}</td>
+                            <td>{item.duration + '\tdays'}</td> */}
+    
+                      {/* <td>{new Date(item.updatedAt).toLocaleDateString()}</td> */}
+                    </tr>
+                  ))}
+                </tbody>
+              </RB.Table>
             </div>
-        )
-    }
+          );
+        }
+      };
 
 
 

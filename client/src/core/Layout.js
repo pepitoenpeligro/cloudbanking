@@ -58,15 +58,7 @@ const Layout = ({children, match, history}) => {
             { isAuth()  && (
        
                             <Fragment>
-                                <li className="nav-item" >
-                                    <Link to="/bankaccounts" className="nav-link" style={isActive('/bankaccounts')}>
-                                        Accounts</Link>
-                                </li>
-
-                                <li className="nav-item" >
-                                    <Link to="/bankcards" className="nav-link" style={isActive('/bankcards')}>
-                                        Cards</Link>
-                                </li>
+                                
 
                                 <li className="nav-item" >
                                     <Link to="/bankfunds" className="nav-link" style={isActive('/bankfunds')}>
@@ -76,6 +68,16 @@ const Layout = ({children, match, history}) => {
                                 <li className="nav-item" >
                                     <Link to="/bankloans" className="nav-link" style={isActive('/bankloans')}>
                                         Loans</Link>
+                                </li>
+
+                                <li className="nav-item" >
+                                    <Link to="/bankaccounts" className="nav-link" style={isActive('/bankaccounts')}>
+                                        Accounts</Link>
+                                </li>
+
+                                <li className="nav-item" >
+                                    <Link to="/bankcards" className="nav-link" style={isActive('/bankcards')}>
+                                        Cards</Link>
                                 </li>
                             </Fragment>
                         )}

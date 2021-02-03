@@ -55,6 +55,7 @@ const BankLoans = ({ history }) => {
       console.log(loans);
       toast.success("Your bank loans have been recovered");
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const processMicroserviceRequest = (event) => {

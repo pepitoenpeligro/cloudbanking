@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import Layout from './Layout'
-import axios from 'axios'
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import * as RB from "react-bootstrap";
@@ -9,7 +9,7 @@ import Lottie from "react-lottie";
 
 const BankCards = ({history}) => {
 
-    const [values, setValues] = useState({
+    const [values] = useState({
         units: [],
         unitsVisible : false,
         testnow:'Test Now!',
@@ -46,18 +46,8 @@ const BankCards = ({history}) => {
  
 
      React.useEffect(() => {
-         
-        //  axios({
-        //      method: 'POST',
-        //      url: `${process.env.REACT_APP_API}/units/list`,
-        //      headers:{
-        //         'Content-Type': 'application/json',
-        //         'Accept':'application/json'
-        //     }}).then(function(response ){
-        //         console.log("[/units/list] Received:", response.data.listUnidadesName);
-        //         setValues(values => ({...values, nombreUnidades: response.data.listUnidadesName}))
-        //     })
-        }, [])
+        toast.error("This functionality will be completed in the next milestone. Sorry for the inconvenience");
+    }, [])
 
 
 

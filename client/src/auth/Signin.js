@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 
 import Layout from '../core/Layout'
-import axios from 'axios'
-import { ToastContainer, toast } from 'react-toastify';
+
+import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import {authenticate} from './helpers'
 import './Signin.css';
@@ -30,7 +30,7 @@ const Signin = ({history}) => {
         setValues({...values, buttonText: 'Submitting'});
         console.log(values);
         authenticate({data: {user: values.email}}, () => {
-            history.push('/bankaccounts')
+            history.push('/bankfunds')
         })
         /*axios({
             method: 'POST',

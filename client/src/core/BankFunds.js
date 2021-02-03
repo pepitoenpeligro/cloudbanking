@@ -40,21 +40,11 @@ const BankFunds = ({ history }) => {
 		funds: response.data,
 		fundsVisible: true,
 	  }));
-	  console.log("Loans object");
+	  console.log("Funds object");
 	  console.log(funds);
 	  toast.success("Your bank funds have been recovered");
 	});
-
-	//  axios({
-	//      method: 'POST',
-	//      url: `${process.env.REACT_APP_API}/units/list`,
-	//      headers:{
-	//         'Content-Type': 'application/json',
-	//         'Accept':'application/json'
-	//     }}).then(function(response ){
-	//         console.log("[/units/list] Received:", response.data.listUnidadesName);
-	//         setValues(values => ({...values, nombreUnidades: response.data.listUnidadesName}))
-	//     })
+	// eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
 //   const handleTestUnit = (item) => (event) => {
