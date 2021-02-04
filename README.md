@@ -74,9 +74,11 @@
 
 ## Product Demo
 
-<video
+<!-- <video
 src="https://user-images.githubusercontent.com/14912971/106923621-914edd80-670e-11eb-9827-664ad9663bc1.mp4">
-</video>
+</video> -->
+
+[![Watch the video](docs/6/img/play.png)](https://user-images.githubusercontent.com/14912971/106923621-914edd80-670e-11eb-9827-664ad9663bc1.mp4)
 
 <br />
 <br />
