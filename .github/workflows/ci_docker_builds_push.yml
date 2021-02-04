@@ -112,7 +112,7 @@ jobs:
           push: true
           tags: pepitoenpeligro/cloudbanking-cards
           context: ./card
-          file: ./Dockerfile.cards
+          file: ./card/Dockerfile.cards
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
