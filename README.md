@@ -71,6 +71,48 @@
 
 
 
+## [0. Composing and Continuous Deployment](https://pepitoenpeligro.github.io/cloudbanking/docs/6/1)
+
+<p align="center">
+  <img width="200" height="200" src="https://user-images.githubusercontent.com/14912971/106917058-2b5f5780-6708-11eb-95aa-1884e5188e61.gif">
+</p>
+
+
+* [R1-R2-R3-R4-R5](https://pepitoenpeligro.github.io/cloudbanking/docs/6/1)
+
+
+##### Nginx endpoints Https
+
+2. `https://pepecordoba.site:443/accounts`
+3. `https://pepecordoba.site:443/cards`
+4. `https://pepecordoba.site:443/funds`
+5. `https://pepecordoba.site:443/loans`
+
+##### Nginx endpoints Http
+2. `http://pepecordoba.site:80/accounts`
+3. `http://pepecordoba.site:80/cards`
+4. `http://pepecordoba.site:80/funds`
+5. `http://pepecordoba.site:80/loans`
+
+
+![](docs/6/img/connection_flow.png)
+
+
+
+##### React Client
+- [https://cloudbanking-client.eu-gb.mybluemix.net](https://cloudbanking-client.eu-gb.mybluemix.net)
+
+> All documentation can be found here: [https://pepitoenpeligro.github.io/cloudbanking/docs/6/1](https://pepitoenpeligro.github.io/cloudbanking/docs/6/1)
+
+***
+
+<br />
+<br />
+
+
+
+
+
 ## [1. Wiki Section](https://github.com/pepitoenpeligro/cloudbanking/wiki)
 
 <p align="center">
@@ -91,7 +133,7 @@
 <br />
 
 
-## [2. Roadmap](https://pepitoenpeligro.github.io/cloudbanking/docs/roadmap)
+## [2. Roadmap - UPDATED](https://pepitoenpeligro.github.io/cloudbanking/docs/roadmap)
 
 
 <p align="center">
@@ -109,7 +151,7 @@ Do you want to see the development planning of this project with the short and l
 <br />
 <br />
 
-## [3. Documentation](https://raw.githack.com/pepitoenpeligro/cloudbanking/master/docs/documentation/cloudbanking/index.html)
+## [3. Documentation - UPDATED](https://raw.githack.com/pepitoenpeligro/cloudbanking/master/docs/documentation/cloudbanking/index.html)
 
 <p align="center">
   <img width="200" height="200" src="https://user-images.githubusercontent.com/14912971/104065755-9a788780-5200-11eb-8b57-de0b28cb2916.gif">
