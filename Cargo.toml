@@ -31,7 +31,7 @@ actix-rt = "1.1.1"
 
 etcd-client = "0.5"
 
-hyper = "0.13.9"
+hyper = "0.14.5"
 
 
 env_logger = "0.8.2"
